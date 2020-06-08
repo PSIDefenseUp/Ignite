@@ -1,0 +1,11 @@
+public enum UnitAction
+{
+	NONE,
+	MOVELEFT,
+	MOVERIGHT,
+	MOVEUP,
+	MOVEDOWN,
+	TURNLEFT,
+	TURNRIGHT,
+	FIRE,
+}
