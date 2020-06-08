@@ -56,7 +56,7 @@ public class GameplayState : MonoBehaviour
 		EntityManager.AddComponentData(player, new RenderBounds { Value = tileBounds });
 		EntityManager.AddComponentData(player, new MainCameraTargetComponent());
 		EntityManager.AddComponentData(player, new ActorComponent(1));
-
+		EntityManager.AddComponentData(player, new Rotation());
 
 		// Walls
 		var wallMesh = new RenderMesh { mesh = tileMesh, material = wallMaterial };
@@ -86,5 +86,11 @@ public class GameplayState : MonoBehaviour
 		EntityManager.SetComponentData(enemy, new MapPositionComponent(3, 4));
 		EntityManager.SetComponentData(enemy, new RenderBounds{ Value = tileBounds });
 		EntityManager.SetComponentData(enemy, new ActorComponent(1));
+
+		var enemy2 = EntityManager.CreateEntity(enemyArchetype);
+		EntityManager.SetSharedComponentData(enemy2, enemyMesh);
+		EntityManager.SetComponentData(enemy2, new MapPositionComponent(2, 6));
+		EntityManager.SetComponentData(enemy2, new RenderBounds{ Value = tileBounds });
+		EntityManager.SetComponentData(enemy2, new ActorComponent(3));
 	}
 }

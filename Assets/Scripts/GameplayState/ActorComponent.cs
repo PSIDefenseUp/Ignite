@@ -26,9 +26,9 @@ public struct ActorComponent : IComponentData
 		return new ActorComponent(this) { Action = action };
 	}
 
-	public ActorComponent ConsumeAction()
+	public ActorComponent ConsumeAction(int cost)
 	{
-		return new ActorComponent(this) { Action = UnitAction.NONE, RemainingActions = RemainingActions - 1 };
+		return new ActorComponent(this) { Action = UnitAction.NONE, RemainingActions = RemainingActions - cost };
 	}
 
 	public ActorComponent Refresh()

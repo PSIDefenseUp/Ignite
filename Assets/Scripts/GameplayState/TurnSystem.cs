@@ -74,12 +74,34 @@ public class TurnSystem : ComponentSystem
 							var actor = EntityManager.GetComponentData<ActorComponent>(entity);
 
 							ProcessUnitAction(entity, actor);
-							EntityManager.SetComponentData(entity, actor.Refresh());
 						}
 					}
 
 					moveSystem.Update(); // TODO: FIX THIS SHIT
 					gameState.CurrentWaitTime = waitTime;
+				}
+
+				var allActorsHaveGone = true;
+				using (var actorEntities = actorQuery.ToEntityArray(Allocator.TempJob))
+				{
+					foreach (var entity in actorEntities)
+					{
+						var actor = EntityManager.GetComponentData<ActorComponent>(entity);
+						if (actor.RemainingActions > 1)
+						{
+							allActorsHaveGone = false;
+							break;
+						}
+					}
+
+					if (allActorsHaveGone)
+					{
+						foreach (var entity in actorEntities)
+						{
+							var actor = EntityManager.GetComponentData<ActorComponent>(entity);
+							EntityManager.SetComponentData(entity, actor.Refresh());
+						}
+					}
 				}
 			}
 		}
@@ -97,25 +119,29 @@ public class TurnSystem : ComponentSystem
 			// TODO: move this shit anywhere but here what the fuck
 			// this is also really awful in general and I hate it in so many ways, I blame unity
 			var mapPosition = EntityManager.GetComponentData<MapPositionComponent>(entity);
+			var actionCost = 1;
+
 			switch(actor.Action)
 			{
 				case UnitAction.MOVEUP:
-					EntityManager.SetComponentData(entity, new MapPositionComponent(mapPosition, 0, -1));
+					EntityManager.SetComponentData(entity, mapPosition.SetMoveRelative(0, -1));
 					break;
 				case UnitAction.MOVEDOWN:
-					EntityManager.SetComponentData(entity, new MapPositionComponent(mapPosition, 0, 1));
+					EntityManager.SetComponentData(entity, mapPosition.SetMoveRelative(0, 1));
 					break;
 				case UnitAction.MOVELEFT:
-					EntityManager.SetComponentData(entity, new MapPositionComponent(mapPosition, -1, 0));
+					EntityManager.SetComponentData(entity, mapPosition.SetMoveRelative(-1, 0));
 					break;
 				case UnitAction.MOVERIGHT:
-					EntityManager.SetComponentData(entity, new MapPositionComponent(mapPosition, 1, 0));
+					EntityManager.SetComponentData(entity, mapPosition.SetMoveRelative(1, 0));
 					break;
 				case UnitAction.TURNLEFT:
-					EntityManager.SetComponentData(entity, mapPosition.RotateBy(-Math.PI / 2));
+					EntityManager.SetComponentData(entity, mapPosition.RotateBy(Math.PI / 2));
+					actionCost = 0;
 					break;
 				case UnitAction.TURNRIGHT:
-					EntityManager.SetComponentData(entity, mapPosition.RotateBy(Math.PI / 2));
+					EntityManager.SetComponentData(entity, mapPosition.RotateBy(-Math.PI / 2));
+					actionCost = 0;
 					break;
 				case UnitAction.FIRE:
 					break;
@@ -123,7 +149,7 @@ public class TurnSystem : ComponentSystem
 					break;
 			}
 
-			EntityManager.SetComponentData(entity, actor.ConsumeAction());
+			EntityManager.SetComponentData(entity, actor.ConsumeAction(actionCost));
 		}
 	}
 }

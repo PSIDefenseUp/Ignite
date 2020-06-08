@@ -21,7 +21,7 @@ public class InputSystem : ComponentSystem
 
 		if (Input.GetKey(KeyCode.A))
 		{
-			gameState.Commands.Add(Command.MOVELEFT);
+			gameState.Commands.Add(Command.TURNLEFT);
 		}
 
 		if (Input.GetKey(KeyCode.S))
@@ -31,7 +31,17 @@ public class InputSystem : ComponentSystem
 
 		if (Input.GetKey(KeyCode.D))
 		{
+			gameState.Commands.Add(Command.TURNRIGHT);
+		}
+
+		if (Input.GetKey(KeyCode.E))
+		{
 			gameState.Commands.Add(Command.MOVERIGHT);
+		}
+
+		if (Input.GetKey(KeyCode.Q))
+		{
+			gameState.Commands.Add(Command.MOVELEFT);
 		}
 	}
 }

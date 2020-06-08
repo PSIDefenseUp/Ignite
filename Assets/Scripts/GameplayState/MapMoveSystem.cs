@@ -22,7 +22,7 @@ public class MapMoveSystem : ComponentSystem
 		for (int i = 0; i < mapPositions.Length; i++)
 		{
 			var mapPosition = mapPositions[i];
-			var desiredPosition = new MapPositionComponent(mapPosition.X + mapPosition.DeltaX, mapPosition.Y + mapPosition.DeltaY);
+			var desiredPosition = mapPosition.Move();
 
 			if (gameState.Map.Contains(desiredPosition.X, desiredPosition.Y) && !IsOccupied(desiredPosition.X, desiredPosition.Y))
 			{

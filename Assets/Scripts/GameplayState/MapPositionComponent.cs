@@ -36,20 +36,42 @@ public struct MapPositionComponent : IComponentData
 		return new MapPositionComponent(this) { Rotation = rotation };
 	}
 
+	public MapPositionComponent SetMove(int dx, int dy)
+	{
+		return new MapPositionComponent(this) { DeltaX = dx, DeltaY = dy };
+	}
+
+	public MapPositionComponent SetMoveRelative(int dx, int dy)
+	{
+		var relativeOffset = GetRelativeOffset(dx, dy);
+
+		return new MapPositionComponent(this) { DeltaX = relativeOffset.x, DeltaY = relativeOffset.y };
+	}
+
+	public MapPositionComponent Move()
+	{
+		return new MapPositionComponent(this) { X = X + DeltaX, Y = Y + DeltaY, DeltaX = 0, DeltaY = 0 };
+	}
+
 	public MapPositionComponent RotateBy(double rotation)
 	{
 		return new MapPositionComponent(this) { Rotation = (this.Rotation + rotation) % (2 * Math.PI) };
 	}
 
-	public float2 GetRelativePosition(int dx, int dy)
+	public int2 GetRelativeOffset(int dx, int dy)
 	{
 		var relativeMoveAngle = Math.Atan2(dy, dx);
 		var magnitude = Math.Sqrt(dy * dy + dx * dx);
 
-		var worldAngle = this.Rotation + ((2 * Math.PI) + relativeMoveAngle) % (2 * Math.PI);
+		var worldAngle = -this.Rotation + ((2 * Math.PI) + relativeMoveAngle) % (2 * Math.PI);
 		var worldAngleXComponent = (int)(Math.Cos(worldAngle) * magnitude);
 		var worldAngleYComponent = (int)(Math.Sin(worldAngle) * magnitude);
 
-		return new float2(this.X + worldAngleXComponent, this.Y + worldAngleYComponent);
+		return new int2(worldAngleXComponent, worldAngleYComponent);
+	}
+
+	public int2 GetRelativePosition(int dx, int dy)
+	{
+		return new int2(this.X, this.Y) + GetRelativeOffset(dx, dy);
 	}
 }
