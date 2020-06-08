@@ -6,4 +6,6 @@ public enum Command
 	MOVERIGHT,
 	TURNLEFT,
 	TURNRIGHT,
+	FIRE,
+	PASSTURN,
 }

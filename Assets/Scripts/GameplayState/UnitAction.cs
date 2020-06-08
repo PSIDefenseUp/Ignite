@@ -8,4 +8,5 @@ public enum UnitAction
 	TURNLEFT,
 	TURNRIGHT,
 	FIRE,
+	PASSTURN,
 }

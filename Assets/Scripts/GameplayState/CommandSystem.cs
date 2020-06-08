@@ -42,6 +42,12 @@ public class CommandSystem : ComponentSystem
 					case Command.TURNRIGHT:
 						action = UnitAction.TURNRIGHT;
 						break;
+					case Command.FIRE:
+						action = UnitAction.FIRE;
+						break;
+					case Command.PASSTURN:
+						action = UnitAction.PASSTURN;
+						break;
 					default:
 						break;
 				}

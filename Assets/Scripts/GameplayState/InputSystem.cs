@@ -43,5 +43,15 @@ public class InputSystem : ComponentSystem
 		{
 			gameState.Commands.Add(Command.MOVELEFT);
 		}
+
+		if (Input.GetKey(KeyCode.Space))
+		{
+			gameState.Commands.Add(Command.FIRE);
+		}
+
+		if (Input.GetKey(KeyCode.LeftShift))
+		{
+			gameState.Commands.Add(Command.PASSTURN);
+		}
 	}
 }

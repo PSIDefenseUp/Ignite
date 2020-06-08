@@ -1,13 +1,15 @@
 using System;
 using Unity.Collections;
 using Unity.Entities;
-using UnityEngine;
+using Unity.Mathematics;
+using Unity.Rendering;
+using Unity.Transforms;
 
 public class TurnSystem : ComponentSystem
 {
 	private GameplayState gameState;
 
-	private readonly float waitTime = .4f;
+	private readonly float waitTime = .2f;
 	private MapMoveSystem moveSystem;
 	private CommandSystem commandSystem;
 
@@ -143,7 +145,29 @@ public class TurnSystem : ComponentSystem
 					EntityManager.SetComponentData(entity, mapPosition.RotateBy(-Math.PI / 2));
 					actionCost = 0;
 					break;
+				case UnitAction.PASSTURN:
+					actionCost = actor.RemainingActions;
+					break;
 				case UnitAction.FIRE:
+					var bullet = EntityManager.CreateEntity(typeof(Translation), typeof(Rotation), typeof(LocalToWorld), typeof(RenderMesh), typeof(RenderBounds), typeof(MapPositionComponent), typeof(BulletComponent), typeof(ActorComponent));
+					var spawnPos = mapPosition.GetRelativePosition(0, -1);
+
+					// var bulletMesh = new Mesh();
+					// Material bulletMaterial = null;
+					// var bulletRenderMesh = new RenderMesh { mesh = bulletMesh, material = bulletMaterial };
+
+					var bulletRenderMesh = EntityManager.GetSharedComponentData<RenderMesh>(entity);
+
+					var bulletRenderBounds = new AABB
+					{
+						Center = new float3(bulletRenderMesh.mesh.bounds.center),
+						Extents = new float3(bulletRenderMesh.mesh.bounds.extents),
+					};
+
+					EntityManager.SetComponentData(bullet, new MapPositionComponent(mapPosition) { X = spawnPos.x, Y = spawnPos.y, DeltaX = 0, DeltaY = 0 });
+					EntityManager.SetSharedComponentData(bullet, bulletRenderMesh);
+					EntityManager.SetComponentData(bullet, new RenderBounds { Value = bulletRenderBounds });
+					EntityManager.SetComponentData(bullet, new ActorComponent(1));
 					break;
 				default:
 					break;
