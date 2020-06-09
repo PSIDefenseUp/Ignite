@@ -23,7 +23,7 @@ public class GameplayState : MonoBehaviour
 	private AABB tileBounds;
 
 	public Map Map { get; private set; }
-	public List<Command> Commands { get; private set; }
+	public Command Command { get; set; }
 	public EntityManager EntityManager { get; private set; }
 	public float TurnNumber { get; set; } // current turn number
 	public float CurrentWaitTime { get; set; } // current time left to wait until next turn can be taken
@@ -36,7 +36,7 @@ public class GameplayState : MonoBehaviour
 
 		// load level
 		this.Map = new Map();
-		this.Commands = new List<Command>();
+		this.Command = Command.NONE;
 
 		EntityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
 		tileBounds = new AABB
@@ -60,7 +60,7 @@ public class GameplayState : MonoBehaviour
 
 		// Walls
 		var wallMesh = new RenderMesh { mesh = tileMesh, material = wallMaterial };
-		var wallArchetype = EntityManager.CreateArchetype(typeof(MapPositionComponent), typeof(LocalToWorld), typeof(Translation), typeof(RenderBounds), typeof(RenderMesh));
+		var wallArchetype = EntityManager.CreateArchetype(typeof(MapPositionComponent), typeof(LocalToWorld), typeof(Translation), typeof(RenderBounds), typeof(RenderMesh), typeof(SolidComponent));
 
 		for (int y = 0; y < Map.Height; y++)
 		{

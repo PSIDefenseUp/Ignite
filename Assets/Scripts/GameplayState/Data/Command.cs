@@ -1,0 +1,12 @@
+public enum Command
+{
+	NONE,
+	MOVEUP,
+	MOVEDOWN,
+	MOVELEFT,
+	MOVERIGHT,
+	TURNLEFT,
+	TURNRIGHT,
+	FIRE,
+	PASSTURN,
+}
