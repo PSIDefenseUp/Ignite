@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d16c269e8a04a4ca96b03fddbb3e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxActions: 4
-  RemainingActions: 4
+  maxActions: 1
+  RemainingActions: 1
 --- !u!114 &7698107392596950536
 MonoBehaviour:
   m_ObjectHideFlags: 0

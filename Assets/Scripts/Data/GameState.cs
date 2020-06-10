@@ -24,6 +24,7 @@ public class GameState
 	}
 
 	private readonly InputSystem inputSystem;
+	private readonly FaceMouseSystem faceMouseSystem;
 	private readonly TurnSystem turnSystem;
 	private readonly HealthSystem healthSystem; // tick with turn instead of every frame?
 	private readonly BulletReflectionSystem bulletReflectionSystem; // tick with turn instead of every frame?
@@ -35,6 +36,7 @@ public class GameState
 	private GameState()
 	{
 		this.inputSystem = new InputSystem();
+		this.faceMouseSystem = new FaceMouseSystem();
 		this.turnSystem = new TurnSystem(.2f);
 		this.healthSystem = new HealthSystem();
 		this.bulletReflectionSystem = new BulletReflectionSystem();
@@ -45,6 +47,7 @@ public class GameState
 	public void Tick()
 	{
 		inputSystem.Tick();
+		faceMouseSystem.Tick();
 		turnSystem.Tick();
 		bulletReflectionSystem.Tick();
 		bulletCollisionSystem.Tick();

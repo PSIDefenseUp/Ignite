@@ -8,42 +8,40 @@ public class InputSystem
 
 		if (Input.GetKey(KeyCode.W))
 		{
-			GameState.Instance.InputCommand = InputCommand.MOVEFORWARD;
+			GameState.Instance.InputCommand = InputCommand.MOVEUP;
 		}
 
 		if (Input.GetKey(KeyCode.A))
 		{
-			GameState.Instance.InputCommand = InputCommand.TURNLEFT;
+			GameState.Instance.InputCommand = InputCommand.MOVELEFT;
 		}
 
 		if (Input.GetKey(KeyCode.S))
 		{
-			GameState.Instance.InputCommand = InputCommand.MOVEBACK;
+			GameState.Instance.InputCommand = InputCommand.MOVEDOWN;
 		}
 
 		if (Input.GetKey(KeyCode.D))
 		{
-			GameState.Instance.InputCommand = InputCommand.TURNRIGHT;
+			GameState.Instance.InputCommand = InputCommand.MOVERIGHT;
 		}
 
 		if (Input.GetKey(KeyCode.Q))
 		{
-			GameState.Instance.InputCommand = InputCommand.STRAFELEFT;
 		}
 
 		if (Input.GetKey(KeyCode.E))
 		{
-			GameState.Instance.InputCommand = InputCommand.STRAFERIGHT;
 		}
 
 		if (Input.GetKey(KeyCode.Space))
 		{
-			GameState.Instance.InputCommand = InputCommand.FIRE;
+			GameState.Instance.InputCommand = InputCommand.PASSTURN;
 		}
 
-		if (Input.GetKey(KeyCode.LeftShift))
+		if (Input.GetMouseButton(0))
 		{
-			GameState.Instance.InputCommand = InputCommand.PASSTURN;
+			GameState.Instance.InputCommand = InputCommand.FIRE;
 		}
 	}
 }
