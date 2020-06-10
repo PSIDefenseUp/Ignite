@@ -2,9 +2,10 @@ using System;
 
 public static class ArrayExtensions
 {
+	private static readonly Random random = new Random();
+
 	public static T[] Shuffle<T>(this T[] array)
 	{
-		var random = new Random();
 		var newArray = new T[array.Length];
 
 		System.Array.Copy(array, newArray, array.Length);
