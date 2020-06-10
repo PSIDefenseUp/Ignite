@@ -38,6 +38,6 @@ public class FireAction : IAction
 		bulletComponent.Init(bulletDamage);
 
 		var bulletSprite = bulletObject.GetComponent<SpriteRenderer>();
-		bulletSprite.sprite = actor.GetComponent<SpriteRenderer>().sprite;
+		bulletSprite.sprite = Resources.Load<Sprite>("Dev/Sprites/bullet");
 	}
 }

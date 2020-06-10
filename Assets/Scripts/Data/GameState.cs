@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class GameState
@@ -23,6 +24,10 @@ public class GameState
 		}
 	}
 
+	// data
+	public Map Map;
+
+	// systems
 	private readonly InputSystem inputSystem;
 	private readonly FaceMouseSystem faceMouseSystem;
 	private readonly TurnSystem turnSystem;
@@ -30,6 +35,7 @@ public class GameState
 	private readonly BulletReflectionSystem bulletReflectionSystem; // tick with turn instead of every frame?
 	private readonly BulletCollisionSystem bulletCollisionSystem; // tick with turn instead of every frame?
 	private readonly MapToWorldPositionSystem mapToWorldPositionSystem;
+	private readonly CameraFollowSystem cameraFollowSystem;
 
 	public InputCommand InputCommand;
 
@@ -42,6 +48,30 @@ public class GameState
 		this.bulletReflectionSystem = new BulletReflectionSystem();
 		this.bulletCollisionSystem = new BulletCollisionSystem();
 		this.mapToWorldPositionSystem = new MapToWorldPositionSystem();
+		this.cameraFollowSystem = new CameraFollowSystem();
+
+		this.LoadMap(new Map());
+	}
+
+	private void LoadMap(Map map)
+	{
+		this.Map = map;
+
+		for (var y = 0; y < Map.Dimensions.y; y++)
+		{
+			for (var x = 0; x < Map.Dimensions.x; x++)
+			{
+				if (x == 0 || y == 0 || x == Map.Dimensions.x - 1 || y == Map.Dimensions.y - 1)
+				{
+					// create boundary walls
+					var wall = Resources.Load<GameObject>("Prefabs/IndestructibleReflectingWall");
+					var wallPosition = wall.GetComponent<Position>();
+					wallPosition.Value = new int2(x, y);
+
+					Object.Instantiate(wall);
+				}
+			}
+		}
 	}
 
 	public void Tick()
@@ -53,5 +83,6 @@ public class GameState
 		bulletCollisionSystem.Tick();
 		healthSystem.Tick();
 		mapToWorldPositionSystem.Tick();
+		cameraFollowSystem.Tick();
 	}
 }
