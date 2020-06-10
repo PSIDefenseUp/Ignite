@@ -36,6 +36,7 @@ public class GameState
 	private readonly BulletCollisionSystem bulletCollisionSystem; // tick with turn instead of every frame?
 	private readonly MapToWorldPositionSystem mapToWorldPositionSystem;
 	private readonly CameraFollowSystem cameraFollowSystem;
+	private readonly MapToWorldRotationSystem mapToWorldRotationSystem;
 
 	public InputCommand InputCommand;
 
@@ -49,6 +50,7 @@ public class GameState
 		this.bulletCollisionSystem = new BulletCollisionSystem();
 		this.mapToWorldPositionSystem = new MapToWorldPositionSystem();
 		this.cameraFollowSystem = new CameraFollowSystem();
+		this.mapToWorldRotationSystem = new MapToWorldRotationSystem();
 
 		this.LoadMap(new Map());
 	}
@@ -84,5 +86,6 @@ public class GameState
 		healthSystem.Tick();
 		mapToWorldPositionSystem.Tick();
 		cameraFollowSystem.Tick();
+		mapToWorldRotationSystem.Tick();
 	}
 }

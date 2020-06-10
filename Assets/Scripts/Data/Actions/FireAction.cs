@@ -27,6 +27,7 @@ public class FireAction : IAction
 		bulletObject.AddComponent<SpriteRenderer>();
 		bulletObject.AddComponent<Bullet>();
 		bulletObject.AddComponent<BulletThinker>();
+		bulletObject.AddComponent<RotateWithPosition>();
 
 		var bulletPositionComponent = bulletObject.GetComponent<Position>();
 		bulletPositionComponent.Init(bulletPosition, bulletRotation);
