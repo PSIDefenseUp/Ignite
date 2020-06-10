@@ -18,6 +18,22 @@ public class MoveAction : IAction
 	public void Perform(GameObject actor)
 	{
 		var position = actor.GetComponent<Position>();
+		var actorIsSolid = actor.GetComponent<Solid>() != null;
+
+		// don't allow solids to move into other solid objects
+		if (actorIsSolid)
+		{
+			var solids = Object.FindObjectsOfType<Solid>();
+			foreach (var solid in solids)
+			{
+				var solidPosition = solid.GetComponent<Position>();
+				if (solidPosition.Value.Equals(position.Value + delta))
+				{
+					return;
+				}
+			}
+		}
+
 		position.Value += delta;
 	}
 }

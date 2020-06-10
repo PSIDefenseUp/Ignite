@@ -18,6 +18,8 @@ public class MoveRelativeAction : IAction
 	public void Perform(GameObject actor)
 	{
 		var position = actor.GetComponent<Position>();
-		position.Value += position.GetAbsoluteOffset(delta);
+		var absoluteDelta = position.GetAbsoluteOffset(delta);
+		var moveAction = new MoveAction(absoluteDelta.x, absoluteDelta.y);
+		moveAction.Perform(actor);
 	}
 }

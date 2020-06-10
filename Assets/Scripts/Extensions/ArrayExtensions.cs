@@ -20,4 +20,11 @@ public static class ArrayExtensions
 
 		return newArray;
 	}
+
+	public static T RandomValue<T>(this T[] array)
+	{
+		var random = new Random();
+
+		return array[random.Next(array.Length)];
+	}
 }

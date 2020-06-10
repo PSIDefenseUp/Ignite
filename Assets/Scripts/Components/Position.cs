@@ -20,13 +20,25 @@ public class Position : MonoBehaviour
 
 	public int2 GetAbsoluteOffset(int2 relativeDelta)
 	{
-		var relativeMoveAngle = Mathf.Atan2(relativeDelta.y, relativeDelta.x);
+		var relativeMoveAngle = Mathf.Atan2(relativeDelta.y, relativeDelta.x) * Mathf.Rad2Deg;
+		Debug.Log($"relativeMoveAngle: {relativeMoveAngle}");
+
 		var magnitude = Mathf.Sqrt(relativeDelta.y * relativeDelta.y + relativeDelta.x * relativeDelta.x);
+		Debug.Log($"magnitude: {magnitude}");
 
-		var worldAngle = (-Rotation + ((2 * Mathf.PI) + relativeMoveAngle)) % (2 * Mathf.PI);
-		var worldAngleXComponent = (int)(-Mathf.Cos(worldAngle) * magnitude);
-		var worldAngleYComponent = (int)(Mathf.Sin(worldAngle) * magnitude);
+		var worldAngle = (-Rotation + (360 + relativeMoveAngle)) % 360;
+		Debug.Log($"worldAngle: {worldAngle}");
 
-		return new int2(worldAngleXComponent, worldAngleYComponent);
+		// holy shit this became so bad what a disaster
+		// but hey eight directional movement!
+		var worldAngleXComponent = -Mathf.Cos(worldAngle * Mathf.Deg2Rad) * magnitude;
+		var roundedXComponent = Mathf.Abs(worldAngleXComponent) < .7 ? 0 : worldAngleXComponent > 0 ? Mathf.CeilToInt(worldAngleXComponent) : Mathf.FloorToInt(worldAngleXComponent);
+		Debug.Log($"worldangleX: {worldAngleXComponent}, {roundedXComponent}");
+
+		var worldAngleYComponent = Mathf.Sin(worldAngle * Mathf.Deg2Rad) * magnitude;
+		var roundedYComponent = Mathf.Abs(worldAngleYComponent) < .7 ? 0 : worldAngleYComponent > 0 ? Mathf.CeilToInt(worldAngleYComponent) : Mathf.FloorToInt(worldAngleYComponent);
+		Debug.Log($"worldAngleY: {worldAngleYComponent}, {roundedXComponent}");
+
+		return new int2(roundedXComponent, roundedYComponent);
 	}
 }

@@ -42,10 +42,10 @@ public class PlayerThinker : Thinker
 					action = new MoveAction(1, 0);
 					break;
 				case InputCommand.TURNLEFT:
-					action = new TurnAction(Mathf.PI/2);
+					action = new TurnAction(90);
 					break;
 				case InputCommand.TURNRIGHT:
-					action = new TurnAction(-Mathf.PI/2);
+					action = new TurnAction(-90);
 					break;
 				case InputCommand.FIRE:
 					var playerPosition = actor.gameObject.GetComponent<Position>();
