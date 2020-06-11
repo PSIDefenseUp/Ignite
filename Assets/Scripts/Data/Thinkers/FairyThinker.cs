@@ -4,21 +4,36 @@ using UnityEngine;
 
 public class FairyThinker : Thinker
 {
-	private bool hasTurned = false;
-	private bool hasMoved = false;
-	private bool hasFired = false;
-	private readonly float[] turnDirections = new float[] { 0, 90, 180, 270 };
+	private int actionNumber = 0;
 	private readonly int2[] moveDirections = new int2[] { new int2(1, 0), new int2(-1, 0), new int2(0, -1), new int2(0, 1) };
 
 	public override void Think()
 	{
+		var actor = GetComponent<Actor>();
 		IAction action = null;
 
-		var actor = GetComponent<Actor>();
-		var position = GetComponent<Position>();
+		switch(actionNumber)
+		{
+			case 0:
+				action = Move(actor);
+				break;
+			case 1:
+				TurnTowardsPlayer(actor);
+				action = Fire(actor);
+				break;
+			default:
+				break;
+		}
 
+		actor.SetAction(action);
+		actionNumber = (actionNumber + 1) % 2;
+	}
+
+	private IAction Move(Actor actor)
+	{
 		// move in an open direction (where there is not a solid)
 		// choose between valid options at random
+		var position = actor.GetComponent<Position>();
 		var solids = Object.FindObjectsOfType<Solid>();
 		var randomlyOrderedDirections = moveDirections.Shuffle();
 
@@ -37,10 +52,28 @@ public class FairyThinker : Thinker
 
 			if (!positionContainsSolid)
 			{
-				action = new MoveAction(direction.x, direction.y);
+				return new MoveAction(direction.x, direction.y);
 			}
 		}
 
-		actor.SetAction(action);
+		return null;
+	}
+
+	private void TurnTowardsPlayer(Actor actor)
+	{
+		var position = actor.GetComponent<Position>();
+		var player = FindObjectOfType<Player>();
+
+		if (player != null)
+		{
+			var playerPosition = player.GetComponent<Position>();
+			position.Rotation = position.GetClosestAbsoluteDirection(playerPosition.Value, 4);
+		}
+	}
+
+	private IAction Fire(Actor actor)
+	{
+		var position = actor.GetComponent<Position>();
+		return new FireAction(position.GetAbsoluteOffset(new int2(0, 1)) + position.Value, position.Rotation, 1);
 	}
 }

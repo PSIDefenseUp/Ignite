@@ -13,4 +13,5 @@ public enum InputCommand
 	TURNRIGHT,
 	PASSTURN,
 	FIRE,
+	ALTFIRE,
 }

@@ -34,4 +34,16 @@ public class Position : MonoBehaviour
 
 		return new int2(roundedXComponent, roundedYComponent);
 	}
+
+	public float GetClosestAbsoluteDirection(int2 otherPosition, int granularity)
+	{
+		var diff = otherPosition - this.Value;
+		var angle = (Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg + 270) % 360;
+		var incrementsOf = 360 / granularity;
+
+		var increments = (int)(angle / incrementsOf) + (angle % incrementsOf < (incrementsOf/2f) ? 0 : 1);
+		var ret = increments * incrementsOf;
+
+		return ret;
+	}
 }
