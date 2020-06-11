@@ -13,6 +13,7 @@ public class PlayerThinker : Thinker
 
 		foreach (var actor in playerActors)
 		{
+			var playerPosition = actor.gameObject.GetComponent<Position>();
 			IAction action = null;
 
 			switch(command)
@@ -48,9 +49,10 @@ public class PlayerThinker : Thinker
 					action = new TurnAction(-90);
 					break;
 				case InputCommand.FIRE:
-					var playerPosition = actor.gameObject.GetComponent<Position>();
 					action = new FireAction(playerPosition.Value + playerPosition.GetAbsoluteOffset(new int2(0, 1)), playerPosition.Rotation, 1);
-
+					break;
+				case InputCommand.ALTFIRE:
+					action = new WallAction(playerPosition.Value + playerPosition.GetAbsoluteOffset(new int2(0, 1)), 1);
 					break;
 				case InputCommand.PASSTURN:
 					action = new PassTurnAction();

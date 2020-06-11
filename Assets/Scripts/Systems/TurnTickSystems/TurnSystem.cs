@@ -20,9 +20,6 @@ public class TurnSystem
 	{
 		if (secondsUntilNextTurn <= 0)
 		{
-			// THINGKEN
-			thinkSystem.Tick();
-
 			// MAKE ACTORS TAKE ACTIONS
 			var players = Object.FindObjectsOfType<Player>();
 			var playerActors = players.Select(player => player.GetComponent<Actor>()).Where(actor => actor != null);
@@ -48,6 +45,8 @@ public class TurnSystem
 				// players go
 				foreach (var playerActor in playerActors)
 				{
+					var thinker = playerActor.GetComponent<Thinker>();
+					thinker.Think();
 					if (playerActor.RemainingActions > 0 && playerActor.HasAction())
 					{
 						playerActor.Act();
@@ -60,8 +59,10 @@ public class TurnSystem
 				// everyone else go
 				foreach (var actor in actors)
 				{
-					if (actor.RemainingActions > 0 && actor.HasAction())
+					if (actor.RemainingActions > 0)
 					{
+						var thinker = actor.GetComponent<Thinker>();
+						thinker.Think();
 						actor.Act();
 						anyoneActed = true;
 					}

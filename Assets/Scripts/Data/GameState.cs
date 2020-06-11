@@ -44,7 +44,7 @@ public class GameState
 	{
 		this.inputSystem = new InputSystem();
 		this.faceMouseSystem = new FaceMouseSystem();
-		this.turnSystem = new TurnSystem(.2f);
+		this.turnSystem = new TurnSystem(.1f);
 		this.healthSystem = new HealthSystem();
 		this.bulletReflectionSystem = new BulletReflectionSystem();
 		this.bulletCollisionSystem = new BulletCollisionSystem();
@@ -71,6 +71,14 @@ public class GameState
 					wallPosition.Value = new int2(x, y);
 
 					Object.Instantiate(wall);
+				}
+				else
+				{
+					var floorTile = Resources.Load<GameObject>("Prefabs/FloorTile");
+					var tilePosition = floorTile.GetComponent<Position>();
+					tilePosition.Value = new int2(x, y);
+
+					Object.Instantiate(floorTile);
 				}
 			}
 		}

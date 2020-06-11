@@ -43,5 +43,10 @@ public class InputSystem
 		{
 			GameState.Instance.InputCommand = InputCommand.FIRE;
 		}
+
+		if (Input.GetMouseButton(1))
+		{
+			GameState.Instance.InputCommand = InputCommand.ALTFIRE;
+		}
 	}
 }
