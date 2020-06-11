@@ -33,7 +33,7 @@ public class FaceMouseSystem
                 }
                 else
                 {
-                    position.Rotation = 90;
+                    position.Rotation = 90f;
                 }
             }
         }
