@@ -15,7 +15,22 @@ public class AnimationDirectionSystem
             var position = animator.GetComponent<Position>();
             if(position != null)
             {
-                animator.SetFloat("Dir", position.Rotation);
+                switch ((int)position.Rotation)
+                {
+                    case 0:
+                    animator.SetTrigger("Up");
+                    break;
+                    case 90:
+                    animator.SetTrigger("Left");
+                    break;
+                    case 180:
+                    animator.SetTrigger("Down");
+                    break;
+                    case 270:
+                    animator.SetTrigger("Right");
+                    break;
+                }
+                
             }
         }
     }

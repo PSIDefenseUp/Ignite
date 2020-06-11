@@ -37,6 +37,7 @@ public class GameState
 	private readonly MapToWorldPositionSystem mapToWorldPositionSystem;
 	private readonly CameraFollowSystem cameraFollowSystem;
 	private readonly MapToWorldRotationSystem mapToWorldRotationSystem;
+	private readonly AnimationDirectionSystem animationDirectionSystem;
 
 	public InputCommand InputCommand;
 
@@ -51,6 +52,7 @@ public class GameState
 		this.mapToWorldPositionSystem = new MapToWorldPositionSystem();
 		this.cameraFollowSystem = new CameraFollowSystem();
 		this.mapToWorldRotationSystem = new MapToWorldRotationSystem();
+		this.animationDirectionSystem = new AnimationDirectionSystem();
 
 		this.LoadMap(new Map());
 	}
@@ -95,5 +97,6 @@ public class GameState
 		mapToWorldPositionSystem.Tick();
 		cameraFollowSystem.Tick();
 		mapToWorldRotationSystem.Tick();
+		animationDirectionSystem.Tick();
 	}
 }
