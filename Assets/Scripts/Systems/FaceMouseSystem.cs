@@ -13,6 +13,7 @@ public class FaceMouseSystem
         foreach(var entity in entities)
         {
             var position = entity.GetComponent<Position>();
+            // var state = entity.GetComponent<Animator>();
             if(position != null)
             {
                 Vector3 curr = entity.transform.position;
@@ -20,6 +21,7 @@ public class FaceMouseSystem
                 if (angle >= -135 && angle <= -45)
                 {
                     position.Rotation = 180f;
+
                 }
                 else if (angle >= -45 && angle <= 45)
                 {
