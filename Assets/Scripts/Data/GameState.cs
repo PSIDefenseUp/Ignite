@@ -1,5 +1,6 @@
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameState
 {
@@ -104,5 +105,21 @@ public class GameState
 		mapToWorldRotationSystem.Tick();
 		animationDirectionSystem.Tick();
 		cameraFollowSystem.Tick();
+
+		// DEBUGSHIT
+		debugTick();
+	}
+
+	private void debugTick()
+	{
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
+
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
 	}
 }
