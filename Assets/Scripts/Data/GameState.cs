@@ -29,6 +29,8 @@ public class GameState
 	public Map Map;
 	public readonly float SecondsBetweenTurns;
 	public float SecondsUntilNextTurn;
+	public bool GameOver;
+	public bool StageWon;
 
 	// systems
 	private readonly InputSystem inputSystem;
@@ -61,46 +63,15 @@ public class GameState
 		this.SecondsUntilNextTurn = SecondsBetweenTurns;
 
 		this.Map = Map.FromScene();
-		//this.LoadMap(new Map());
+		this.StageWon = false;
+		this.GameOver = false;
 	}
-
-	// private void LoadMap(Map map)
-	// {
-	// 	this.Map = map;
-
-	// 	for (var y = 0; y < Map.Dimensions.y; y++)
-	// 	{
-	// 		for (var x = 0; x < Map.Dimensions.x; x++)
-	// 		{
-	// 			if (x == 0 || y == 0 || x == Map.Dimensions.x - 1 || y == Map.Dimensions.y - 1)
-	// 			{
-	// 				// create boundary walls
-	// 				var wall = Resources.Load<GameObject>("Prefabs/IndestructibleReflectingWall");
-	// 				var wallPosition = wall.GetComponent<Position>();
-	// 				wallPosition.Value = new int2(x, y);
-
-	// 				Object.Instantiate(wall);
-	// 			}
-	// 			else
-	// 			{
-	// 				var floorTile = Resources.Load<GameObject>("Prefabs/FloorTile");
-	// 				var tilePosition = floorTile.GetComponent<Position>();
-	// 				tilePosition.Value = new int2(x, y);
-
-	// 				Object.Instantiate(floorTile);
-	// 			}
-	// 		}
-	// 	}
-	// }
 
 	public void Tick()
 	{
 		inputSystem.Tick();
 		faceMouseSystem.Tick();
 		turnSystem.Tick();
-		bulletReflectionSystem.Tick();
-		bulletCollisionSystem.Tick();
-		healthSystem.Tick();
 		mapToWorldPositionSystem.Tick();
 		mapToWorldRotationSystem.Tick();
 		animationDirectionSystem.Tick();
