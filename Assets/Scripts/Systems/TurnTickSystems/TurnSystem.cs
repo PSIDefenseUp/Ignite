@@ -133,11 +133,10 @@ public class TurnSystem
 
 			if (anyoneActed)
 			{
+				bulletReflectionSystem.Tick();
+
 				haveTickedTurnEndSystems = false;
 				GameState.Instance.SecondsUntilNextTurn = GameState.Instance.SecondsBetweenTurns;
-
-				// tick turn end systems
-				threatSystem.Tick();
 			}
 		}
 		else
@@ -149,9 +148,9 @@ public class TurnSystem
 	private void TickTurnEndSystems()
 	{
 		// TODO: think system? (not used right anymore, but...)
-		bulletReflectionSystem.Tick();
 		bulletCollisionSystem.Tick();
 		healthSystem.Tick();
+		threatSystem.Tick();
 		gameOverSystem.Tick();
 		levelVictorySystem.Tick();
 
