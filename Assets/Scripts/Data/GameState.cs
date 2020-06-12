@@ -120,6 +120,7 @@ public class GameState
 		if (Input.GetKeyDown(KeyCode.R))
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			instance = null;
 		}
 	}
 }
