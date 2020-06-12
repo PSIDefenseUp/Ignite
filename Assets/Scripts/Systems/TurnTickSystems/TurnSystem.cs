@@ -49,8 +49,19 @@ public class TurnSystem
 					if (actor.RemainingActions > 0)
 					{
 						var thinker = actor.GetComponent<Thinker>();
-						thinker.Think();
-						actor.Act();
+						if (thinker != null)
+						{
+							thinker.Think();
+						}
+
+						if (actor.HasAction())
+						{
+							actor.Act();
+						}
+						else
+						{
+							actor.RemainingActions = 0;
+						}
 						anyoneActed = true;
 					}
 				}
