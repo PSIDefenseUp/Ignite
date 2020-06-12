@@ -26,6 +26,8 @@ public class GameState
 
 	// data
 	public Map Map;
+	public readonly float SecondsBetweenTurns;
+	public float SecondsUntilNextTurn;
 
 	// systems
 	private readonly InputSystem inputSystem;
@@ -45,7 +47,7 @@ public class GameState
 	{
 		this.inputSystem = new InputSystem();
 		this.faceMouseSystem = new FaceMouseSystem();
-		this.turnSystem = new TurnSystem(.1f);
+		this.turnSystem = new TurnSystem();
 		this.healthSystem = new HealthSystem();
 		this.bulletReflectionSystem = new BulletReflectionSystem();
 		this.bulletCollisionSystem = new BulletCollisionSystem();
@@ -54,6 +56,8 @@ public class GameState
 		this.mapToWorldRotationSystem = new MapToWorldRotationSystem();
 		this.animationDirectionSystem = new AnimationDirectionSystem();
 
+		this.SecondsBetweenTurns = .1f;
+		this.SecondsUntilNextTurn = SecondsBetweenTurns;
 		this.LoadMap(new Map());
 	}
 
