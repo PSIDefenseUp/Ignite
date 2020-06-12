@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class TurnSystem
 {
+	private readonly ThreatSystem threatSystem = new ThreatSystem();
+
 	public void Tick()
 	{
 		if (GameState.Instance.SecondsUntilNextTurn <= 0)
@@ -78,6 +80,9 @@ public class TurnSystem
 			if (anyoneActed)
 			{
 				GameState.Instance.SecondsUntilNextTurn = GameState.Instance.SecondsBetweenTurns;
+
+				// tick turn end systems
+				threatSystem.Tick();
 			}
 		}
 		else
