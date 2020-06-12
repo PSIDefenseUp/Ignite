@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class SlipNSlide : MonoBehaviour
 {
-	public int2? start, end;
+	public int2? startPosition;
 
-	public void Init(int2 start, int2 end)
+	public void Init(int2 start)
 	{
-		this.start = start;
-		this.end = end;
+		this.startPosition = start;
 	}
 }

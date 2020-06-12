@@ -99,8 +99,8 @@ public class GameState
 		bulletCollisionSystem.Tick();
 		healthSystem.Tick();
 		mapToWorldPositionSystem.Tick();
-		cameraFollowSystem.Tick();
 		mapToWorldRotationSystem.Tick();
 		animationDirectionSystem.Tick();
+		cameraFollowSystem.Tick();
 	}
 }

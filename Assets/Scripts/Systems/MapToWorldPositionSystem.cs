@@ -19,10 +19,10 @@ public class MapToWorldPositionSystem
 			var move = position.GetComponent<SlipNSlide>();
 			if (move != null)
 			{
-				var interpX = Mathf.Lerp(move.start.Value.x, move.end.Value.x, (GameState.Instance.SecondsBetweenTurns - GameState.Instance.SecondsUntilNextTurn) / GameState.Instance.SecondsBetweenTurns);
-				var interpY = Mathf.Lerp(move.start.Value.y, move.end.Value.y, (GameState.Instance.SecondsBetweenTurns - GameState.Instance.SecondsUntilNextTurn) / GameState.Instance.SecondsBetweenTurns);
+				var interpX = Mathf.Lerp(move.startPosition.Value.x, position.Value.x, (GameState.Instance.SecondsBetweenTurns - GameState.Instance.SecondsUntilNextTurn) / GameState.Instance.SecondsBetweenTurns);
+				var interpY = Mathf.Lerp(move.startPosition.Value.y, position.Value.y, (GameState.Instance.SecondsBetweenTurns - GameState.Instance.SecondsUntilNextTurn) / GameState.Instance.SecondsBetweenTurns);
 
-				if (move.end.Value.x == interpX && move.end.Value.y == interpY)
+				if (position.Value.x == interpX && position.Value.y == interpY)
 				{
 					Object.Destroy(move);
 				}
