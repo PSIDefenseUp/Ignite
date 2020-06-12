@@ -12,7 +12,7 @@ public class MapToWorldPositionSystem
 
 			if (isBackgroundTile)
 			{
-				position.transform.position = new Vector3(position.Value.x, position.Value.y, GameState.Instance.Map.Dimensions.y);
+				// position.transform.position = new Vector3(position.Value.x, position.Value.y, GameState.Instance.Map.Dimensions.y);
 				continue;
 			}
 

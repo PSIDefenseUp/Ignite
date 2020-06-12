@@ -58,37 +58,39 @@ public class GameState
 
 		this.SecondsBetweenTurns = .1f;
 		this.SecondsUntilNextTurn = SecondsBetweenTurns;
-		this.LoadMap(new Map());
+
+		this.Map = Map.FromScene();
+		//this.LoadMap(new Map());
 	}
 
-	private void LoadMap(Map map)
-	{
-		this.Map = map;
+	// private void LoadMap(Map map)
+	// {
+	// 	this.Map = map;
 
-		for (var y = 0; y < Map.Dimensions.y; y++)
-		{
-			for (var x = 0; x < Map.Dimensions.x; x++)
-			{
-				if (x == 0 || y == 0 || x == Map.Dimensions.x - 1 || y == Map.Dimensions.y - 1)
-				{
-					// create boundary walls
-					var wall = Resources.Load<GameObject>("Prefabs/IndestructibleReflectingWall");
-					var wallPosition = wall.GetComponent<Position>();
-					wallPosition.Value = new int2(x, y);
+	// 	for (var y = 0; y < Map.Dimensions.y; y++)
+	// 	{
+	// 		for (var x = 0; x < Map.Dimensions.x; x++)
+	// 		{
+	// 			if (x == 0 || y == 0 || x == Map.Dimensions.x - 1 || y == Map.Dimensions.y - 1)
+	// 			{
+	// 				// create boundary walls
+	// 				var wall = Resources.Load<GameObject>("Prefabs/IndestructibleReflectingWall");
+	// 				var wallPosition = wall.GetComponent<Position>();
+	// 				wallPosition.Value = new int2(x, y);
 
-					Object.Instantiate(wall);
-				}
-				else
-				{
-					var floorTile = Resources.Load<GameObject>("Prefabs/FloorTile");
-					var tilePosition = floorTile.GetComponent<Position>();
-					tilePosition.Value = new int2(x, y);
+	// 				Object.Instantiate(wall);
+	// 			}
+	// 			else
+	// 			{
+	// 				var floorTile = Resources.Load<GameObject>("Prefabs/FloorTile");
+	// 				var tilePosition = floorTile.GetComponent<Position>();
+	// 				tilePosition.Value = new int2(x, y);
 
-					Object.Instantiate(floorTile);
-				}
-			}
-		}
-	}
+	// 				Object.Instantiate(floorTile);
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	public void Tick()
 	{
