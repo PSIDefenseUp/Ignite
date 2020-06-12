@@ -24,9 +24,9 @@ public class Map
 	{
 		var positions = Object.FindObjectsOfType<Position>();
 
-		int? minX = null;
+		// int? minX = null;
+		// int? minY = null;
 		int? maxX = null;
-		int? minY = null;
 		int? maxY = null;
 
 		// get minimum and maximum x, y
@@ -37,20 +37,20 @@ public class Map
 
 			position.Value = new int2(positionMapX, positionMapY);
 
-			if (minX == null || position.Value.x < minX)
-			{
-				minX = position.Value.x;
-			}
+			// if (minX == null || position.Value.x < minX)
+			// {
+			// 	minX = position.Value.x;
+			// }
 
 			if (maxX == null || position.Value.x > maxX)
 			{
 				maxX = position.Value.x;
 			}
 
-			if (minY == null || position.Value.y < minY)
-			{
-				minY = position.Value.y;
-			}
+			// if (minY == null || position.Value.y < minY)
+			// {
+			// 	minY = position.Value.y;
+			// }
 
 			if (maxY == null || position.Value.y > maxY)
 			{
@@ -58,14 +58,14 @@ public class Map
 			}
 		}
 
-		int width = maxX.Value - minX.Value + 1;
-		int height = maxY.Value - minY.Value + 1;
+		int width = maxX.Value; //- minX.Value + 1;
+		int height = maxY.Value; //- minY.Value + 1;
 
-		foreach (var position in positions)
-		{
-			// shift those fucking positions, we start at 0
-			position.Value -= new int2(minX.Value, minY.Value);
-		}
+		// foreach (var position in positions)
+		// {
+		// 	// shift those fucking positions, we start at 0
+		// 	position.Value -= new int2(minX.Value, minY.Value);
+		// }
 
 		return new Map(width, height);
 	}
