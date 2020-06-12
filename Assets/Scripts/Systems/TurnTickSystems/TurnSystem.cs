@@ -3,22 +3,9 @@ using UnityEngine;
 
 public class TurnSystem
 {
-	private readonly float secondsBetweenTurns;
-	private float secondsUntilNextTurn;
-
-	private readonly ThinkSystem thinkSystem;
-
-	public TurnSystem(float secondsBetweenTurns)
-	{
-		this.secondsBetweenTurns = secondsBetweenTurns;
-		this.secondsUntilNextTurn = 0;
-
-		this.thinkSystem = new ThinkSystem();
-	}
-
 	public void Tick()
 	{
-		if (secondsUntilNextTurn <= 0)
+		if (GameState.Instance.SecondsUntilNextTurn <= 0)
 		{
 			// MAKE ACTORS TAKE ACTIONS
 			var players = Object.FindObjectsOfType<Player>();
@@ -79,12 +66,12 @@ public class TurnSystem
 
 			if (anyoneActed)
 			{
-				secondsUntilNextTurn = secondsBetweenTurns;
+				GameState.Instance.SecondsUntilNextTurn = GameState.Instance.SecondsBetweenTurns;
 			}
 		}
 		else
 		{
-			secondsUntilNextTurn -= Time.deltaTime;
+			GameState.Instance.SecondsUntilNextTurn -= Time.deltaTime;
 		}
 	}
 }
