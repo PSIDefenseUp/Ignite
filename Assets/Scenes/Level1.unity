@@ -4020,6 +4020,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleWall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8825490517134824634, guid: 7607a502a88bbb34b89003ebc39b8f8b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825490517134824636, guid: 7607a502a88bbb34b89003ebc39b8f8b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 8825490517134824637, guid: 7607a502a88bbb34b89003ebc39b8f8b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4885,6 +4895,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8593852778491264714, guid: baf66db4a304b2044aed52f8b4b8ff2b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: -8593852778491264714, guid: baf66db4a304b2044aed52f8b4b8ff2b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8239749062912133456, guid: baf66db4a304b2044aed52f8b4b8ff2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4898,7 +4918,7 @@ PrefabInstance:
     - target: {fileID: 8239749062912133456, guid: baf66db4a304b2044aed52f8b4b8ff2b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.769531
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8239749062912133456, guid: baf66db4a304b2044aed52f8b4b8ff2b,
         type: 3}
@@ -4944,6 +4964,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InvisibleWall (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239749062912133460, guid: baf66db4a304b2044aed52f8b4b8ff2b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baf66db4a304b2044aed52f8b4b8ff2b, type: 3}
