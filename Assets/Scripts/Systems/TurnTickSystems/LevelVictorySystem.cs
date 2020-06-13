@@ -1,9 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelVictorySystem
 {
 	public void Tick()
 	{
+		if (GameState.Instance.StageWon || GameState.Instance.GameOver)
+		{
+			return;
+		}
+
 		var player = Object.FindObjectOfType<Player>();
 		var endPoints = Object.FindObjectsOfType<LevelEndPoint>();
 
@@ -17,7 +23,13 @@ public class LevelVictorySystem
 
 				if (playerPosition.Value.Equals(endPointPosition.Value))
 				{
-					// TODO: END THE LEVEL, CONGRATS BIG WINNER
+					GameState.Instance.StageWon = true;
+
+					var textPanelObj = GameObject.Find("TextPanel").GetComponent<Image>();
+					var victoryText = GameObject.Find("VictoryText").GetComponent<Text>();
+
+					textPanelObj.enabled = true;
+					victoryText.enabled = true;
 				}
 			}
 		}
