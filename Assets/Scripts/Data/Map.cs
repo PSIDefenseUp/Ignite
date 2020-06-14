@@ -20,6 +20,11 @@ public class Map
 		return x >= 0 && y >= 0 && x < Dimensions.x && y < Dimensions.y;
 	}
 
+	public bool Contains(int2 position)
+	{
+		return position.x >= 0 && position.y >= 0 && position.x < Dimensions.x && position.y < Dimensions.y;
+	}
+
 	public static Map FromScene()
 	{
 		var positions = Object.FindObjectsOfType<Position>();
@@ -58,8 +63,8 @@ public class Map
 			}
 		}
 
-		int width = maxX.Value; //- minX.Value + 1;
-		int height = maxY.Value; //- minY.Value + 1;
+		int width = maxX.Value + 1; //- minX.Value + 1;
+		int height = maxY.Value + 1; //- minY.Value + 1;
 
 		// foreach (var position in positions)
 		// {

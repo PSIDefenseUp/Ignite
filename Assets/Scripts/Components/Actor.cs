@@ -30,7 +30,7 @@ public class Actor : MonoBehaviour
 
 	public bool HasAction()
 	{
-		return Action != null;
+		return Action != null && Action.CanPerform(gameObject);
 	}
 
 	public void Refresh()

@@ -1,17 +1,26 @@
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
 public class FireAction : IAction
 {
-	private int2 bulletPosition;
-	private float bulletRotation;
-	private int bulletDamage;
+	private readonly int2 bulletPosition;
+	private readonly float bulletRotation;
+	private readonly int bulletDamage;
 
 	public FireAction(int2 position, float rotation, int bulletDamage)
 	{
 		this.bulletPosition = position;
 		this.bulletRotation = rotation;
 		this.bulletDamage = bulletDamage;
+	}
+
+	public bool CanPerform(GameObject actor)
+	{
+		// don't let anyone fire a bullet that starts inside a wall (and will immediately bounce back and kill them)
+		var reflectors = Object.FindObjectsOfType<BulletReflector>();
+
+		return !reflectors.Any(reflector => reflector.GetComponent<Position>().Value.Equals(bulletPosition));
 	}
 
 	public int GetCost()

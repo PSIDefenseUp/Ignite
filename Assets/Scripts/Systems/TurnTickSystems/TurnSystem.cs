@@ -15,8 +15,8 @@ public class TurnSystem
 	{
 		if (GameState.Instance.SecondsUntilNextTurn <= 0)
 		{
-			// yes this is written at the beginning of the loop
-			// it is meant to run after the animations for the previous turn have resolved
+			// yes, this is called at the beginning of the loop
+			// run after the animations for the previous turn have resolved
 			if (!haveTickedTurnEndSystems)
 			{
 				TickTurnEndSystems();
@@ -58,7 +58,6 @@ public class TurnSystem
 			}
 			else
 			{
-				// TODO: bullets go, then everyone else
 				var bullets = Object.FindObjectsOfType<Bullet>();
 				var bulletActors = bullets.Select(bullet => bullet.GetComponent<Actor>()).Where(actor => actor != null);
 
@@ -103,10 +102,7 @@ public class TurnSystem
 						if (actor.RemainingActions > 0)
 						{
 							var thinker = actor.GetComponent<Thinker>();
-							if (thinker != null)
-							{
-								thinker.Think();
-							}
+							thinker.Think();
 
 							if (actor.HasAction())
 							{
@@ -147,7 +143,6 @@ public class TurnSystem
 
 	private void TickTurnEndSystems()
 	{
-		// TODO: think system? (not used right anymore, but...)
 		bulletCollisionSystem.Tick();
 		healthSystem.Tick();
 		threatSystem.Tick();

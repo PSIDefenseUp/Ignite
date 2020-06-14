@@ -1,3 +1,4 @@
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -10,9 +11,36 @@ public class MoveAction : IAction
 		this.delta = new int2(dx, dy);
 	}
 
+	public MoveAction(int2 delta)
+	{
+		this.delta = delta;
+	}
+
 	public int GetCost()
 	{
 		return 1;
+	}
+
+	public bool CanPerform(GameObject actor)
+	{
+		// no, you can't move one solid object into another
+		var actorIsSolid = actor.GetComponent<Solid>();
+		var destination = actor.GetComponent<Position>().Value + delta;
+
+		if (!GameState.Instance.Map.Contains(destination))
+		{
+			return false;
+		}
+
+		if (actorIsSolid)
+		{
+			var solids = Object.FindObjectsOfType<Solid>();
+			var canMove = !solids.Any(solid => solid.GetComponent<Position>().Value.Equals(destination));
+
+			return canMove;
+		}
+
+		return true;
 	}
 
 	public void Perform(GameObject actor)

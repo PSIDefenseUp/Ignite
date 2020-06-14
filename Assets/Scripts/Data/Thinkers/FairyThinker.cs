@@ -9,48 +9,36 @@ public class FairyThinker : Thinker
 
 	public override void Think()
 	{
-		var actor = GetComponent<Actor>();
 		IAction action = null;
 
 		switch(actionNumber)
 		{
 			case 0:
-				action = Move(actor);
+				action = Move();
 				break;
 			case 1:
-				TurnTowardsPlayer(actor);
-				action = Fire(actor);
+				TurnTowardsPlayer();
+				action = Fire();
 				break;
 			default:
 				break;
 		}
 
-		actor.SetAction(action);
+		GetComponent<Actor>().SetAction(action);
 		actionNumber = (actionNumber + 1) % 2;
 	}
 
-	private IAction Move(Actor actor)
+	private IAction Move()
 	{
-		// move in an open direction (where there is not a solid)
+		// move in an open direction
 		// choose between valid options at random
-		var position = actor.GetComponent<Position>();
-		var solids = Object.FindObjectsOfType<Solid>();
 		var randomlyOrderedDirections = moveDirections.Shuffle();
 
 		foreach(var direction in randomlyOrderedDirections)
 		{
-			var positionContainsSolid = solids.Any(solid => {
-				var solidPosition = solid.GetComponent<Position>();
+			var moveAction = new MoveAction(direction);
 
-				if (solidPosition.Value.Equals(position.Value + direction))
-				{
-					return true;
-				}
-
-				return false;
-			});
-
-			if (!positionContainsSolid)
+			if (moveAction.CanPerform(gameObject))
 			{
 				return new MoveAction(direction.x, direction.y);
 			}
@@ -59,9 +47,9 @@ public class FairyThinker : Thinker
 		return null;
 	}
 
-	private void TurnTowardsPlayer(Actor actor)
+	private void TurnTowardsPlayer()
 	{
-		var position = actor.GetComponent<Position>();
+		var position = GetComponent<Position>();
 		var player = FindObjectOfType<Player>();
 
 		if (player != null)
@@ -71,9 +59,9 @@ public class FairyThinker : Thinker
 		}
 	}
 
-	private IAction Fire(Actor actor)
+	private IAction Fire()
 	{
-		var position = actor.GetComponent<Position>();
+		var position = GetComponent<Position>();
 		return new FireAction(position.GetAbsoluteOffset(new int2(0, 1)) + position.Value, position.Rotation, 1);
 	}
 }

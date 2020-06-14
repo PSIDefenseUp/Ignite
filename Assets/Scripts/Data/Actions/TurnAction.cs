@@ -15,6 +15,11 @@ public class TurnAction : IAction
 		return 0;
 	}
 
+	public bool CanPerform(GameObject actor)
+	{
+		return true;
+	}
+
 	public void Perform(GameObject actor)
 	{
 		var position = actor.GetComponent<Position>();

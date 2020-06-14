@@ -15,6 +15,14 @@ public class MoveRelativeAction : IAction
 		return 1;
 	}
 
+	public bool CanPerform(GameObject actor)
+	{
+		var position = actor.GetComponent<Position>();
+		var absoluteDelta = position.GetAbsoluteOffset(delta);
+
+		return new MoveAction(absoluteDelta).CanPerform(actor);
+	}
+
 	public void Perform(GameObject actor)
 	{
 		var position = actor.GetComponent<Position>();

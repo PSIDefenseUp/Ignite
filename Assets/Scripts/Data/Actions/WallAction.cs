@@ -1,3 +1,4 @@
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -15,6 +16,26 @@ public class WallAction : IAction
 	public int GetCost()
 	{
 		return 1;
+	}
+
+	public bool CanPerform(GameObject actor)
+	{
+		// no, you can't create a wall in a solid object
+		var actorIsSolid = actor.GetComponent<Solid>();
+
+		if (!GameState.Instance.Map.Contains(wallPosition))
+		{
+			return false;
+		}
+
+		if (actorIsSolid)
+		{
+			var solids = Object.FindObjectsOfType<Solid>();
+
+			return !solids.Any(solid => solid.GetComponent<Position>().Value.Equals(wallPosition));
+		}
+
+		return true;
 	}
 
 	public void Perform(GameObject actor)
