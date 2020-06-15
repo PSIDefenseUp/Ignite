@@ -24,7 +24,8 @@ public class MoveAction : IAction
 	public bool CanPerform(GameObject actor)
 	{
 		// no, you can't move one solid object into another
-		var actorIsSolid = actor.GetComponent<Solid>();
+		var actorIsSolid = actor.GetComponent<Solid>() != null;
+		var bulletCollider = actor.GetComponent<BulletCollider>();
 		var destination = actor.GetComponent<Position>().Value + delta;
 
 		if (!GameState.Instance.Map.Contains(destination))
@@ -37,7 +38,22 @@ public class MoveAction : IAction
 			var solids = Object.FindObjectsOfType<Solid>();
 			var canMove = !solids.Any(solid => solid.GetComponent<Position>().Value.Equals(destination));
 
-			return canMove;
+			if (!canMove)
+			{
+				return false;
+			}
+		}
+
+		if (bulletCollider != null)
+		{
+			// don't let things that get hurt by bullets walk themselves into them
+			var bullets = Object.FindObjectsOfType<Bullet>().Where(bullet => bullet.Team != bulletCollider.Team);
+			var canMove = !bullets.Any(bullet => bullet.GetComponent<Position>().Value.Equals(destination));
+
+			if (!canMove)
+			{
+				return false;
+			}
 		}
 
 		return true;
