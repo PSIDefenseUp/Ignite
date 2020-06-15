@@ -1,7 +1,139 @@
 fileFormatVersion: 2
 guid: 160b2fd6abd724246b42edb7259fd106
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7359236458281785857
+    second: Farie_Attack_Back_0
+  - first:
+      213: -7656183119589805624
+    second: Farie_Attack_Back_1
+  - first:
+      213: -1073112934542917930
+    second: Farie_Attack_Back_2
+  - first:
+      213: 4431027558135552457
+    second: Farie_Attack_Back_3
+  - first:
+      213: 8607974107014908320
+    second: Farie_Attack_Back_4
+  - first:
+      213: -4750573737215704020
+    second: Farie_Attack_Back_5
+  - first:
+      213: -7787344960125052412
+    second: Farie_Attack_Back_6
+  - first:
+      213: -6244863155240196039
+    second: Farie_Attack_Back_7
+  - first:
+      213: 1028833674598837200
+    second: Farie_Attack_Back_8
+  - first:
+      213: -578682637986037911
+    second: Farie_Attack_Back_9
+  - first:
+      213: 7319574128441178037
+    second: Farie_Attack_Back_10
+  - first:
+      213: -6936349115357444156
+    second: Farie_Attack_Back_11
+  - first:
+      213: 9105688305505146966
+    second: Farie_Attack_Back_12
+  - first:
+      213: -3746716741449544579
+    second: Farie_Attack_Back_13
+  - first:
+      213: -6811110632657866561
+    second: Farie_Attack_Back_14
+  - first:
+      213: -8902839830789681438
+    second: Farie_Attack_Back_15
+  - first:
+      213: 1717656513777204016
+    second: Farie_Attack_Back_16
+  - first:
+      213: -5150631422521183442
+    second: Farie_Attack_Back_17
+  - first:
+      213: 7640824791352217635
+    second: Farie_Attack_Back_18
+  - first:
+      213: 1381680319161300686
+    second: Farie_Attack_Back_19
+  - first:
+      213: -954136963009237426
+    second: Farie_Attack_Back_20
+  - first:
+      213: -4204006882825164577
+    second: Farie_Attack_Back_21
+  - first:
+      213: -5953307079438362467
+    second: Farie_Attack_Back_0
+  - first:
+      213: 4511436785535029716
+    second: Farie_Attack_Back_1
+  - first:
+      213: -6151177751843621379
+    second: Farie_Attack_Back_2
+  - first:
+      213: -6717552663755255676
+    second: Farie_Attack_Back_3
+  - first:
+      213: -544271433489991585
+    second: Farie_Attack_Back_4
+  - first:
+      213: 2712287445823771069
+    second: Farie_Attack_Back_5
+  - first:
+      213: -157435142855998381
+    second: Farie_Attack_Back_6
+  - first:
+      213: -6651944386839595284
+    second: Farie_Attack_Back_7
+  - first:
+      213: -458664858748930142
+    second: Farie_Attack_Back_8
+  - first:
+      213: -2220644706809465424
+    second: Farie_Attack_Back_9
+  - first:
+      213: -9124699033199382236
+    second: Farie_Attack_Back_10
+  - first:
+      213: -7816237469149495670
+    second: Farie_Attack_Back_11
+  - first:
+      213: 6376513821809680762
+    second: Farie_Attack_Back_12
+  - first:
+      213: 4222544299959809015
+    second: Farie_Attack_Back_13
+  - first:
+      213: 2794008947206708325
+    second: Farie_Attack_Back_14
+  - first:
+      213: -8032646579700103415
+    second: Farie_Attack_Back_15
+  - first:
+      213: -6329933798178127983
+    second: Farie_Attack_Back_16
+  - first:
+      213: -2130728053114003680
+    second: Farie_Attack_Back_17
+  - first:
+      213: 2961686268575359716
+    second: Farie_Attack_Back_18
+  - first:
+      213: -2387147225823934420
+    second: Farie_Attack_Back_19
+  - first:
+      213: 8837864347097768957
+    second: Farie_Attack_Back_20
+  - first:
+      213: -7040302401471748532
+    second: Farie_Attack_Back_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +172,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +203,507 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Farie_Attack_Back_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d981243d0ca916da0800000000000000
+      internalID: -5953307079438362467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d112749ad7db9e30800000000000000
+      internalID: 4511436785535029716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5331fcc60a2aaa0800000000000000
+      internalID: -6151177751843621379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48093e4817576c2a0800000000000000
+      internalID: -6717552663755255676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58bf61d30c5278f0800000000000000
+      internalID: -544271433489991585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1d319cf0bf3a520800000000000000
+      internalID: 2712287445823771069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354c7ea529da0ddf0800000000000000
+      internalID: -157435142855998381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_7
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6b5ccd2db8fa3a0800000000000000
+      internalID: -6651944386839595284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_8
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7b057bdbe72a9f0800000000000000
+      internalID: -458664858748930142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_9
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b53546976fae21e0800000000000000
+      internalID: -2220644706809465424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 421fcc3f29e8e5180800000000000000
+      internalID: -9124699033199382236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_11
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8efe3b1f65278390800000000000000
+      internalID: -7816237469149495670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_12
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71a556698ded7850800000000000000
+      internalID: 6376513821809680762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_13
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f374773bad799a30800000000000000
+      internalID: 4222544299959809015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_14
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56cd48d855056c620800000000000000
+      internalID: 2794008947206708325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90708ba9e7e468090800000000000000
+      internalID: -8032646579700103415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_16
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 250
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f7adb7fbe8728a0800000000000000
+      internalID: -6329933798178127983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 250
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f1e21ff122e62e0800000000000000
+      internalID: -2130728053114003680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_18
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 250
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2269638f50a1920800000000000000
+      internalID: 2961686268575359716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_19
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 250
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28843aee362fded0800000000000000
+      internalID: -2387147225823934420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df32ad57cc666aa70800000000000000
+      internalID: 8837864347097768957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Attack_Back_21
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4662f85442db4e90800000000000000
+      internalID: -7040302401471748532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

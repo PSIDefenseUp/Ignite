@@ -1,7 +1,139 @@
 fileFormatVersion: 2
 guid: d41465221a818e242a619e1192224cca
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4343989599553855424
+    second: Farie_Idle_Back_0
+  - first:
+      213: 3219073197211814681
+    second: Farie_Idle_Back_1
+  - first:
+      213: -7833246507729211894
+    second: Farie_Idle_Back_2
+  - first:
+      213: 3827223558265480209
+    second: Farie_Idle_Back_3
+  - first:
+      213: -8172056879018500735
+    second: Farie_Idle_Back_4
+  - first:
+      213: 2897253701444181772
+    second: Farie_Idle_Back_5
+  - first:
+      213: 8872966462262871104
+    second: Farie_Idle_Back_6
+  - first:
+      213: -9010800277277678372
+    second: Farie_Idle_Back_7
+  - first:
+      213: -2163318089502895892
+    second: Farie_Idle_Back_8
+  - first:
+      213: -5982471226081182709
+    second: Farie_Idle_Back_9
+  - first:
+      213: -7613985729537365621
+    second: Farie_Idle_Back_10
+  - first:
+      213: 7677788814906991755
+    second: Farie_Idle_Back_11
+  - first:
+      213: 5642197642677674416
+    second: Farie_Idle_Back_12
+  - first:
+      213: -4332873347722890705
+    second: Farie_Idle_Back_13
+  - first:
+      213: 2153491546658473420
+    second: Farie_Idle_Back_14
+  - first:
+      213: 3428343914388664071
+    second: Farie_Idle_Back_15
+  - first:
+      213: 595042765091562107
+    second: Farie_Idle_Back_16
+  - first:
+      213: 3106940852086370447
+    second: Farie_Idle_Back_17
+  - first:
+      213: -2204014908288958004
+    second: Farie_Idle_Back_18
+  - first:
+      213: -4610110842791203528
+    second: Farie_Idle_Back_19
+  - first:
+      213: -5394523058834398384
+    second: Farie_Idle_Back_20
+  - first:
+      213: 4288706924842876567
+    second: Farie_Idle_Back_21
+  - first:
+      213: 7955906467682195269
+    second: Farie_Idle_Back_0
+  - first:
+      213: -1755769850424190245
+    second: Farie_Idle_Back_1
+  - first:
+      213: 4625387198237359071
+    second: Farie_Idle_Back_2
+  - first:
+      213: 8814751264767722104
+    second: Farie_Idle_Back_3
+  - first:
+      213: -2890405039833452485
+    second: Farie_Idle_Back_4
+  - first:
+      213: 7695689894389479059
+    second: Farie_Idle_Back_5
+  - first:
+      213: -1409310153519781464
+    second: Farie_Idle_Back_6
+  - first:
+      213: 4656215350759624722
+    second: Farie_Idle_Back_7
+  - first:
+      213: 4326671548425018554
+    second: Farie_Idle_Back_8
+  - first:
+      213: 3315348725301244522
+    second: Farie_Idle_Back_9
+  - first:
+      213: 3445249048874974674
+    second: Farie_Idle_Back_10
+  - first:
+      213: 4763415415033857469
+    second: Farie_Idle_Back_11
+  - first:
+      213: 4997855209947379511
+    second: Farie_Idle_Back_12
+  - first:
+      213: 7238457362055794528
+    second: Farie_Idle_Back_13
+  - first:
+      213: 5925605979906313520
+    second: Farie_Idle_Back_14
+  - first:
+      213: 4151550387099790577
+    second: Farie_Idle_Back_15
+  - first:
+      213: 5013871981378649680
+    second: Farie_Idle_Back_16
+  - first:
+      213: -2271010996341953099
+    second: Farie_Idle_Back_17
+  - first:
+      213: 5845789213512459700
+    second: Farie_Idle_Back_18
+  - first:
+      213: -7644317239973495829
+    second: Farie_Idle_Back_19
+  - first:
+      213: 2568856114089917890
+    second: Farie_Idle_Back_20
+  - first:
+      213: -3364946498989772657
+    second: Farie_Idle_Back_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +172,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +203,507 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Farie_Idle_Back_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5471e68b7ce096e60800000000000000
+      internalID: 7955906467682195269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda102e9f9042a7e0800000000000000
+      internalID: -1755769850424190245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbb393862da03040800000000000000
+      internalID: 4625387198237359071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872c7ef9299445a70800000000000000
+      internalID: 8814751264767722104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b307ab72ee733e7d0800000000000000
+      internalID: -2890405039833452485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396f5a87f259cca60800000000000000
+      internalID: 7695689894389479059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a92a19d1ef117ce0800000000000000
+      internalID: -1409310153519781464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_7
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2109fbb11333e9040800000000000000
+      internalID: 4656215350759624722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_8
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc99af79dc6b0c30800000000000000
+      internalID: 4326671548425018554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_9
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62ff16a91c720e20800000000000000
+      internalID: 3315348725301244522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ddf1f891cbffcf20800000000000000
+      internalID: 3445249048874974674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_11
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db586b2151d0b1240800000000000000
+      internalID: 4763415415033857469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_12
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737bfbb65d2fb5540800000000000000
+      internalID: 4997855209947379511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_13
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f852bae9a247460800000000000000
+      internalID: 7238457362055794528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_14
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d0f375e3bfb3250800000000000000
+      internalID: 5925605979906313520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fce73ac4154d9930800000000000000
+      internalID: 4151550387099790577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_16
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 250
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ebb5f900ad49540800000000000000
+      internalID: 5013871981378649680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 250
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd280af78fbb70e0800000000000000
+      internalID: -2271010996341953099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_18
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 250
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5683f315a602150800000000000000
+      internalID: 5845789213512459700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_19
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 250
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb3cf8b8fde9e590800000000000000
+      internalID: -7644317239973495829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd7b6f760966a320800000000000000
+      internalID: 2568856114089917890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farie_Idle_Back_21
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f803587ccfe4d41d0800000000000000
+      internalID: -3364946498989772657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
