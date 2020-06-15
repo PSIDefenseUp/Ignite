@@ -7,12 +7,25 @@ public class FireAction : IAction
 	private readonly int2 bulletPosition;
 	private readonly float bulletRotation;
 	private readonly int bulletDamage;
+	private readonly Team bulletTeam;
+	private readonly string spriteName;
 
-	public FireAction(int2 position, float rotation, int bulletDamage)
+	public FireAction(int2 position, float rotation, int bulletDamage, Team team)
 	{
 		this.bulletPosition = position;
 		this.bulletRotation = rotation;
 		this.bulletDamage = bulletDamage;
+		this.bulletTeam = team;
+		this.spriteName = bulletTeam == Team.PLAYER ? "PlayerBullet" : bulletTeam == Team.ENEMY ? "EnemyBullet" : "NeutralBullet";
+	}
+
+	public FireAction(int2 position, float rotation, int bulletDamage, Team team, string spriteName)
+	{
+		this.bulletPosition = position;
+		this.bulletRotation = rotation;
+		this.bulletDamage = bulletDamage;
+		this.bulletTeam = team;
+		this.spriteName = spriteName;
 	}
 
 	public bool CanPerform(GameObject actor)
@@ -45,9 +58,9 @@ public class FireAction : IAction
 		bulletActor.Init(1);
 
 		var bulletComponent = bulletObject.GetComponent<Bullet>();
-		bulletComponent.Init(bulletDamage);
+		bulletComponent.Init(bulletDamage, bulletTeam);
 
 		var bulletSprite = bulletObject.GetComponent<SpriteRenderer>();
-		bulletSprite.sprite = Resources.Load<Sprite>("Dev/Sprites/bullet");
+		bulletSprite.sprite = Resources.Load<Sprite>($"Dev/Sprites/{spriteName}");
 	}
 }

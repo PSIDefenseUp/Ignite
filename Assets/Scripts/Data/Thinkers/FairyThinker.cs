@@ -2,66 +2,51 @@ using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class FairyThinker : Thinker
+public class FairyThinker : EnemyThinker
 {
+	private bool canDodge = true;
 	private int actionNumber = 0;
 	private readonly int2[] moveDirections = new int2[] { new int2(1, 0), new int2(-1, 0), new int2(0, -1), new int2(0, 1) };
+	private readonly int2[] dodgeDirections = new int2[] { new int2(1, 0), new int2(-1, 0) };
 
 	public override void Think()
 	{
+		var actor = GetComponent<Actor>();
 		IAction action = null;
 
-		switch(actionNumber)
+		// should we be using dodge behaviour?
+		if (canDodge)
 		{
-			case 0:
-				action = Move();
-				break;
-			case 1:
-				TurnTowardsPlayer();
-				action = Fire();
-				break;
-			default:
-				break;
-		}
+			// TODO: decide whether or not we should dodge
+			var dodgeDelta = ShouldDodge(dodgeDirections);
 
-		GetComponent<Actor>().SetAction(action);
-		actionNumber = (actionNumber + 1) % 2;
-	}
-
-	private IAction Move()
-	{
-		// move in an open direction
-		// choose between valid options at random
-		var randomlyOrderedDirections = moveDirections.Shuffle();
-
-		foreach(var direction in randomlyOrderedDirections)
-		{
-			var moveAction = new MoveAction(direction);
-
-			if (moveAction.CanPerform(gameObject))
+			if (dodgeDelta != null)
 			{
-				return new MoveAction(direction.x, direction.y);
+				action = new MoveRelativeAction(dodgeDelta.Value);
+				canDodge = false;
 			}
 		}
 
-		return null;
-	}
-
-	private void TurnTowardsPlayer()
-	{
-		var position = GetComponent<Position>();
-		var player = FindObjectOfType<Player>();
-
-		if (player != null)
+		if (action == null)
 		{
-			var playerPosition = player.GetComponent<Position>();
-			position.Rotation = position.GetClosestAbsoluteDirection(playerPosition.Value, 4);
-		}
-	}
+			// standard behaviour
+			switch(actionNumber)
+			{
+				case 0:
+					action = Move(moveDirections);
+					break;
+				case 1:
+					TurnTowardsPlayer(actor);
+					action = Fire(actor);
+					break;
+				default:
+					break;
+			}
 
-	private IAction Fire()
-	{
-		var position = GetComponent<Position>();
-		return new FireAction(position.GetAbsoluteOffset(new int2(0, 1)) + position.Value, position.Rotation, 1);
+			canDodge = true;
+			actionNumber = (actionNumber + 1) % 2;
+		}
+
+		actor.SetAction(action);
 	}
 }

@@ -1,3 +1,4 @@
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class ThreatSystem
 		}
 
 		var playerPos = player.GetComponent<Position>();
-		var bullets = Object.FindObjectsOfType<Bullet>();
+		var bullets = Object.FindObjectsOfType<Bullet>().Where(bullet => bullet.Team != Team.PLAYER);
 		foreach (var bullet in bullets)
 		{
 			var bulletPos = bullet.GetComponent<Position>();

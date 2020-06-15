@@ -1347,6 +1347,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fairy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4915725573359048499, guid: e45cb62666f31bc428a81c11bcc7a0c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4915725573359048511, guid: e45cb62666f31bc428a81c11bcc7a0c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1484,6 +1489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fairy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915725573359048499, guid: e45cb62666f31bc428a81c11bcc7a0c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4915725573359048511, guid: e45cb62666f31bc428a81c11bcc7a0c7,
         type: 3}
@@ -1744,6 +1754,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1316854080259231100, guid: e45cb62666f31bc428a81c11bcc7a0c7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4915725573359048499, guid: e45cb62666f31bc428a81c11bcc7a0c7,
         type: 3}
       propertyPath: m_Name
@@ -3653,6 +3668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fairy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915725573359048499, guid: e45cb62666f31bc428a81c11bcc7a0c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4915725573359048511, guid: e45cb62666f31bc428a81c11bcc7a0c7,
         type: 3}
@@ -6603,6 +6623,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fairy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4915725573359048499, guid: e45cb62666f31bc428a81c11bcc7a0c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4915725573359048511, guid: e45cb62666f31bc428a81c11bcc7a0c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7193,6 +7218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InvisibleWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239749062912133460, guid: baf66db4a304b2044aed52f8b4b8ff2b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baf66db4a304b2044aed52f8b4b8ff2b, type: 3}

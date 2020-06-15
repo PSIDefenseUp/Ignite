@@ -5,6 +5,11 @@ public class MoveRelativeAction : IAction
 {
 	private readonly int2 delta;
 
+	public MoveRelativeAction(int2 delta)
+	{
+		this.delta = delta;
+	}
+
 	public MoveRelativeAction(int dx, int dy)
 	{
 		this.delta = new int2(dx, dy);

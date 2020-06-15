@@ -49,7 +49,7 @@ public class PlayerThinker : Thinker
 					action = new TurnAction(-90);
 					break;
 				case InputCommand.FIRE:
-					action = new FireAction(playerPosition.Value + playerPosition.GetAbsoluteOffset(new int2(0, 1)), playerPosition.Rotation, 1);
+					action = new FireAction(playerPosition.Value + playerPosition.GetAbsoluteOffset(new int2(0, 1)), playerPosition.Rotation, 1, Team.PLAYER);
 					break;
 				case InputCommand.ALTFIRE:
 					action = new WallAction(playerPosition.Value + playerPosition.GetAbsoluteOffset(new int2(0, 1)), 1);

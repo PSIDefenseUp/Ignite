@@ -13,6 +13,11 @@ public class BulletCollisionSystem
 
 			foreach (var bulletCollider in bulletColliders)
 			{
+				if (bullet.Team == bulletCollider.Team)
+				{
+					continue;
+				}
+
 				var colliderPosition = bulletCollider.GetComponent<Position>();
 
 				if (bulletPosition.Value.Equals(colliderPosition.Value))

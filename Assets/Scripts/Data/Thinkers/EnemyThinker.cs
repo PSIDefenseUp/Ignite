@@ -4,74 +4,28 @@ using UnityEngine;
 
 public class EnemyThinker : Thinker
 {
-	private bool canDodge = true;
-	private int actionNumber = 0;
-	private readonly int2[] moveDirections = new int2[] { new int2(1, 0), new int2(-1, 0), new int2(0, -1), new int2(0, 1) };
-	private readonly int2[] dodgeDirections = new int2[] { new int2(1, 0), new int2(-1, 0), new int2(0, -1), new int2(0, 1) };
-
 	public override void Think()
 	{
-		var actor = GetComponent<Actor>();
-		IAction action = null;
 
-		// should we be using dodge behaviour?
-		if (canDodge)
-		{
-			// TODO: decide whether or not we should dodge
-			var dodgeDelta = ShouldDodge(dodgeDirections);
-
-			if (dodgeDelta != null)
-			{
-				// TODO: DODGE
-				action = new MoveAction(dodgeDelta.Value);
-				canDodge = false;
-			}
-		}
-
-		if (action == null)
-		{
-			// standard behaviour
-			switch(actionNumber)
-			{
-				case 0:
-					action = Move(actor, moveDirections);
-					break;
-				case 1:
-					TurnTowardsPlayer(actor);
-					action = Fire(actor);
-					break;
-				default:
-					break;
-			}
-
-			actionNumber = (actionNumber + 1) % 2;
-		}
-
-		actor.SetAction(action);
 	}
 
 	protected virtual int2? ShouldDodge(int2[] dodgeDirections)
 	{
-		// TODO: determine if we should dodge this turn, and where to dodge to
-		// get positions of all player bullets
-		// if any will hit our location without a move, we probably want to dodge
-		// check positions to (relative) left and right
-		// if either one is both open and safe to move to (no bullet right there right now), dodge there
-		// if not, don't dodge and continue with normal behaviour
 		var currentPosition = GetComponent<Position>();
-		var bulletPositions = Object.FindObjectsOfType<Bullet>().Select(bullet => bullet.GetComponent<Position>());
+		var bulletPositions = FindObjectsOfType<Bullet>().Where(bullet => bullet.Team != Team.ENEMY).Select(bullet => bullet.GetComponent<Position>());
 
-		foreach (var bullet in bulletPositions)
+		if (WillBeHitByBullet(currentPosition.Value))
 		{
-			var nextBulletPosition = bullet.Value + bullet.GetAbsoluteOffset(new int2(0, 1));
-			if (nextBulletPosition.Equals(currentPosition.Value))
-			{
-				// find somewhere to dodge to
-				dodgeDirections = dodgeDirections.Shuffle();
+			// find somewhere to dodge to
+			dodgeDirections = dodgeDirections.Shuffle();
 
-				foreach(var dodgeDirection in dodgeDirections)
+			foreach(var dodgeDirection in dodgeDirections)
+			{
+				var dodgeSpace = currentPosition.GetAbsoluteOffset(dodgeDirection) + currentPosition.Value;
+				if (!bulletPositions.Any(bulletPosition => bulletPosition.Value.Equals(dodgeSpace)))
 				{
-					if (!bulletPositions.Any(bulletPosition => bulletPosition.Value.Equals(dodgeDirection)))
+					var moveAction = new MoveRelativeAction(dodgeDirection);
+					if (moveAction.CanPerform(gameObject))
 					{
 						return dodgeDirection;
 					}
@@ -82,12 +36,29 @@ public class EnemyThinker : Thinker
 		return null;
 	}
 
-	private IAction Move(Actor actor, int2[] moveDirections)
+	protected bool WillBeHitByBullet(int2 position)
+	{
+		var bulletPositions = FindObjectsOfType<Bullet>().Where(bullet => bullet.Team != Team.ENEMY).Select(bullet => bullet.GetComponent<Position>());
+
+		foreach (var bullet in bulletPositions)
+		{
+			var nextBulletPosition = bullet.Value + bullet.GetAbsoluteOffset(new int2(0, 1));
+			if (nextBulletPosition.Equals(position))
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	protected IAction Move(int2[] moveDirections)
 	{
 		// move in an open direction (where there is not a solid)
 		// choose between valid options at random
-		var position = actor.GetComponent<Position>();
-		var solids = Object.FindObjectsOfType<Solid>();
+		var position = GetComponent<Position>();
+		var solids = FindObjectsOfType<Solid>();
+		var bullets = FindObjectsOfType<Bullet>().Where(bullet => bullet.Team != Team.ENEMY);
 		var randomlyOrderedDirections = moveDirections.Shuffle();
 
 		foreach(var direction in randomlyOrderedDirections)
@@ -103,7 +74,18 @@ public class EnemyThinker : Thinker
 				return false;
 			});
 
-			if (!positionContainsSolid)
+			var positionContainsBullet = bullets.Any(bullet => {
+				var bulletPosition = bullet.GetComponent<Position>();
+
+				if (bulletPosition.Value.Equals(position.Value + direction))
+				{
+					return true;
+				}
+
+				return false;
+			});
+
+			if (!positionContainsSolid && !positionContainsBullet)
 			{
 				return new MoveAction(direction.x, direction.y);
 			}
@@ -112,7 +94,7 @@ public class EnemyThinker : Thinker
 		return null;
 	}
 
-	private void TurnTowardsPlayer(Actor actor)
+	protected void TurnTowardsPlayer(Actor actor)
 	{
 		var position = actor.GetComponent<Position>();
 		var player = FindObjectOfType<Player>();
@@ -124,9 +106,9 @@ public class EnemyThinker : Thinker
 		}
 	}
 
-	private IAction Fire(Actor actor)
+	protected IAction Fire(Actor actor)
 	{
 		var position = actor.GetComponent<Position>();
-		return new FireAction(position.GetAbsoluteOffset(new int2(0, 1)) + position.Value, position.Rotation, 1);
+		return new FireAction(position.GetAbsoluteOffset(new int2(0, 1)) + position.Value, position.Rotation, 1, Team.ENEMY);
 	}
 }
