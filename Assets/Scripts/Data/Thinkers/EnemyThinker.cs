@@ -63,31 +63,10 @@ public class EnemyThinker : Thinker
 
 		foreach(var direction in randomlyOrderedDirections)
 		{
-			var positionContainsSolid = solids.Any(solid => {
-				var solidPosition = solid.GetComponent<Position>();
-
-				if (solidPosition.Value.Equals(position.Value + direction))
-				{
-					return true;
-				}
-
-				return false;
-			});
-
-			var positionContainsBullet = bullets.Any(bullet => {
-				var bulletPosition = bullet.GetComponent<Position>();
-
-				if (bulletPosition.Value.Equals(position.Value + direction))
-				{
-					return true;
-				}
-
-				return false;
-			});
-
-			if (!positionContainsSolid && !positionContainsBullet)
+			var moveAction = new MoveAction(direction.x, direction.y);
+			if (moveAction.CanPerform(gameObject))
 			{
-				return new MoveAction(direction.x, direction.y);
+				return moveAction;
 			}
 		}
 
