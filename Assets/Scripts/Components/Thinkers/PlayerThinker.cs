@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerThinker : Thinker
 {
+	private static Sprite bulletSprite;
+
+	public void Start()
+	{
+		bulletSprite = Resources.Load<Sprite>("Dev/Sprites/PlayerBullet");
+	}
+
 	public override void Think()
 	{
 		var command = GameState.Instance.InputCommand;
@@ -49,7 +56,10 @@ public class PlayerThinker : Thinker
 					action = new TurnAction(-90);
 					break;
 				case InputCommand.FIRE:
-					action = new FireAction(playerPosition.Value + playerPosition.GetAbsoluteOffset(new int2(0, 1)), playerPosition.Rotation, 1, Team.PLAYER);
+					var bulletData = new BulletData(playerPosition.GetRelativePosition(new int2(1, 1)), playerPosition.Rotation, 1, Team.PLAYER, bulletSprite);
+					var bullet2Data = new BulletData(playerPosition.GetRelativePosition(new int2(0, 1)), playerPosition.Rotation, 1, Team.PLAYER, bulletSprite);
+					var bullet3Data = new BulletData(playerPosition.GetRelativePosition(new int2(-1, 1)), playerPosition.Rotation, 1, Team.PLAYER, bulletSprite);
+					action = new FireAction(bulletData, bullet2Data, bullet3Data);
 					break;
 				case InputCommand.ALTFIRE:
 					action = new WallAction(playerPosition.Value + playerPosition.GetAbsoluteOffset(new int2(0, 1)), 1);

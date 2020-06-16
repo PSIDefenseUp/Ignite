@@ -99,7 +99,7 @@ public class TurnSystem
 					// everyone else go
 					foreach (var actor in actors)
 					{
-						if (actor.RemainingActions > 0)
+						if (actor.RemainingActions > 0 && actor.GetComponent<Player>() == null && actor.GetComponent<Bullet>() == null)
 						{
 							var thinker = actor.GetComponent<Thinker>();
 							thinker.Think();
@@ -119,7 +119,7 @@ public class TurnSystem
 				}
 			}
 
-			if (!Object.FindObjectsOfType<Actor>().Any(actor => actor.RemainingActions > 0))
+			if (!actors.Any(actor => actor.RemainingActions > 0)) // (!Object.FindObjectsOfType<Actor>().Any(actor => actor.RemainingActions > 0))
 			{
 				foreach(var actor in actors)
 				{

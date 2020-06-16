@@ -4,36 +4,29 @@ using UnityEngine;
 
 public class FireAction : IAction
 {
-	private readonly int2 bulletPosition;
-	private readonly float bulletRotation;
-	private readonly int bulletDamage;
-	private readonly Team bulletTeam;
-	private readonly string spriteName;
+	private readonly BulletData[] bulletData;
 
-	public FireAction(int2 position, float rotation, int bulletDamage, Team team)
+	public FireAction(params BulletData[] bulletData)
 	{
-		this.bulletPosition = position;
-		this.bulletRotation = rotation;
-		this.bulletDamage = bulletDamage;
-		this.bulletTeam = team;
-		this.spriteName = bulletTeam == Team.PLAYER ? "PlayerBullet" : bulletTeam == Team.ENEMY ? "EnemyBullet" : "NeutralBullet";
-	}
-
-	public FireAction(int2 position, float rotation, int bulletDamage, Team team, string spriteName)
-	{
-		this.bulletPosition = position;
-		this.bulletRotation = rotation;
-		this.bulletDamage = bulletDamage;
-		this.bulletTeam = team;
-		this.spriteName = spriteName;
+		this.bulletData = bulletData;
 	}
 
 	public bool CanPerform(GameObject actor)
 	{
-		// don't let anyone fire a bullet that starts inside a wall (and will immediately bounce back and kill them)
+		// can fire so long as at least one bullet isn't being spawned in a wall
 		var reflectors = Object.FindObjectsOfType<BulletReflector>();
 
-		return !reflectors.Any(reflector => reflector.GetComponent<Position>().Value.Equals(bulletPosition));
+		return bulletData.Any(bullet => {
+			foreach (var reflector in reflectors)
+			{
+				if (reflector.GetComponent<Position>().Value.Equals(bullet.Position))
+				{
+					return false;
+				}
+			}
+
+			return true;
+		});
 	}
 
 	public int GetCost()
@@ -43,24 +36,9 @@ public class FireAction : IAction
 
 	public void Perform(GameObject actor)
 	{
-		var bulletObject = new GameObject();
-		bulletObject.AddComponent<Position>();
-		bulletObject.AddComponent<Actor>();
-		bulletObject.AddComponent<SpriteRenderer>();
-		bulletObject.AddComponent<Bullet>();
-		bulletObject.AddComponent<BulletThinker>();
-		bulletObject.AddComponent<RotateWithPosition>();
-
-		var bulletPositionComponent = bulletObject.GetComponent<Position>();
-		bulletPositionComponent.Init(bulletPosition, bulletRotation);
-
-		var bulletActor = bulletObject.GetComponent<Actor>();
-		bulletActor.Init(1);
-
-		var bulletComponent = bulletObject.GetComponent<Bullet>();
-		bulletComponent.Init(bulletDamage, bulletTeam);
-
-		var bulletSprite = bulletObject.GetComponent<SpriteRenderer>();
-		bulletSprite.sprite = Resources.Load<Sprite>($"Dev/Sprites/{spriteName}");
+		foreach (var bullet in bulletData)
+		{
+			bullet.Instantiate();
+		}
 	}
 }

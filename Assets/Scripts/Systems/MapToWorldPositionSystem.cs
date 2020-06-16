@@ -22,7 +22,7 @@ public class MapToWorldPositionSystem
 			}
 
 			var move = position.GetComponent<SlipNSlide>();
-			if (move != null)
+			if (move != null && move.HasNotFinished)
 			{
 				var t = (GameState.Instance.SecondsBetweenTurns - GameState.Instance.SecondsUntilNextTurn) / GameState.Instance.SecondsBetweenTurns;
 				var interpX = Mathf.Lerp(move.startPosition.Value.x, position.Value.x, t);
@@ -30,7 +30,7 @@ public class MapToWorldPositionSystem
 
 				if (position.Value.x == interpX && position.Value.y == interpY)
 				{
-					Object.Destroy(move);
+					move.Finish();
 				}
 
 				position.transform.position = new Vector3(interpX, interpY, interpY);

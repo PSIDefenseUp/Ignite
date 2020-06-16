@@ -78,7 +78,6 @@ public class MoveAction : IAction
 			}
 		}
 
-		actor.AddComponent<SlipNSlide>();
 		var move = actor.GetComponent<SlipNSlide>();
 		move.Init(position.Value);
 		position.Value += delta;

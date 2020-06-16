@@ -63,7 +63,7 @@ public class EnemyThinker : Thinker
 
 		foreach(var direction in randomlyOrderedDirections)
 		{
-			var moveAction = new MoveAction(direction.x, direction.y);
+			var moveAction = new MoveRelativeAction(direction.x, direction.y);
 			if (moveAction.CanPerform(gameObject))
 			{
 				return moveAction;
@@ -73,9 +73,9 @@ public class EnemyThinker : Thinker
 		return null;
 	}
 
-	protected void TurnTowardsPlayer(Actor actor)
+	protected void TurnTowardsPlayer()
 	{
-		var position = actor.GetComponent<Position>();
+		var position = GetComponent<Position>();
 		var player = FindObjectOfType<Player>();
 
 		if (player != null)
@@ -85,9 +85,8 @@ public class EnemyThinker : Thinker
 		}
 	}
 
-	protected IAction Fire(Actor actor)
+	protected IAction Fire(params BulletData[] bullets)
 	{
-		var position = actor.GetComponent<Position>();
-		return new FireAction(position.GetAbsoluteOffset(new int2(0, 1)) + position.Value, position.Rotation, 1, Team.ENEMY);
+		return new FireAction(bullets);
 	}
 }
