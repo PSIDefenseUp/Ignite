@@ -33,7 +33,6 @@ public class GameState
 	public bool StageWon;
 
 	// systems
-	private readonly InputSystem inputSystem;
 	private readonly FaceMouseSystem faceMouseSystem;
 	private readonly TurnSystem turnSystem;
 	private readonly MapToWorldPositionSystem mapToWorldPositionSystem;
@@ -45,7 +44,6 @@ public class GameState
 
 	private GameState()
 	{
-		this.inputSystem = new InputSystem();
 		this.faceMouseSystem = new FaceMouseSystem();
 		this.turnSystem = new TurnSystem();
 		this.mapToWorldPositionSystem = new MapToWorldPositionSystem();
@@ -63,29 +61,35 @@ public class GameState
 
 	public void Tick()
 	{
-		inputSystem.Tick();
-		faceMouseSystem.Tick();
-		turnSystem.Tick();
-		mapToWorldPositionSystem.Tick();
-		mapToWorldRotationSystem.Tick();
-		animationDirectionSystem.Tick();
-		cameraFollowSystem.Tick();
+		InputSystem.Instance.Tick();
 
-		// DEBUGSHIT
-		debugTick();
-	}
+		if (!StageWon)
+		{
+			faceMouseSystem.Tick();
+			turnSystem.Tick();
+			mapToWorldPositionSystem.Tick();
+			mapToWorldRotationSystem.Tick();
+			animationDirectionSystem.Tick();
+			cameraFollowSystem.Tick();
+		}
 
-	private void debugTick()
-	{
-		if (Input.GetKeyDown(KeyCode.Escape))
+		if (GameOver || StageWon) // TODO: stage won should load the next scene, not do a reload
+		{
+			if (InputCommand != InputCommand.NONE)
+			{
+				LoadScene(SceneManager.GetActiveScene().name);
+			}
+		}
+
+		if (InputCommand == InputCommand.EXIT)
 		{
 			Application.Quit();
 		}
+	}
 
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-			instance = null;
-		}
+	private void LoadScene(string name)
+	{
+		SceneManager.LoadScene(name);
+		instance = null;
 	}
 }

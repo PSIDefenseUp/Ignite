@@ -14,4 +14,5 @@ public enum InputCommand
 	PASSTURN,
 	FIRE,
 	ALTFIRE,
+	EXIT,
 }
