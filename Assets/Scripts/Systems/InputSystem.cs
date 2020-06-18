@@ -1,52 +1,123 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InputSystem
 {
+	private const string KEYBINDS_PREF_KEY = "KEYBINDS";
+
+	private static InputSystem instance;
+	private static readonly object instanceLock = new object();
+	public static InputSystem Instance
+	{
+		get
+		{
+			if (instance == null)
+			{
+				lock(instanceLock)
+				{
+					if (instance == null)
+					{
+						instance = new InputSystem();
+					}
+				}
+			}
+
+			return instance;
+		}
+	}
+
+	private Dictionary<KeyCode, InputCommand> keybinds;
+
+	private InputSystem()
+	{
+		LoadBinds();
+	}
+
+	~InputSystem()
+	{
+		SaveBinds();
+	}
+
+	private void LoadBinds()
+	{
+		var serializedKeybinds = PlayerPrefs.GetString(KEYBINDS_PREF_KEY);
+
+		if (serializedKeybinds == null || serializedKeybinds.Length == 0)
+		{
+			ResetBinds();
+		}
+		else
+		{
+			// TODO: read keybinds from playerprefs and deserialize
+		}
+	}
+
+	private void SaveBinds()
+	{
+		// TODO: save off serialized keybinds to playerprefs
+
+		//string serializedKeybinds = "";
+		//PlayerPrefs.SetString(KEYBINDS_PREF_KEY, serializedKeybinds);
+	}
+
 	public void Tick()
 	{
 		GameState.Instance.InputCommand = InputCommand.NONE;
 
-		if (Input.GetKey(KeyCode.W))
+		foreach(var bind in keybinds)
 		{
-			GameState.Instance.InputCommand = InputCommand.MOVEUP;
+			if (Input.GetKeyDown(bind.Key))
+			{
+				GameState.Instance.InputCommand = bind.Value;
+			}
 		}
+	}
 
-		if (Input.GetKey(KeyCode.A))
-		{
-			GameState.Instance.InputCommand = InputCommand.MOVELEFT;
-		}
+	public KeyCode GetKey(InputCommand command)
+	{
+		// get just the first one we come across I guess
+		// we're only realistically supporting exclusive keybinds anyway
+		return keybinds.Where(bind => bind.Value == command).Select(bind => bind.Key).FirstOrDefault();
+	}
 
-		if (Input.GetKey(KeyCode.S))
-		{
-			GameState.Instance.InputCommand = InputCommand.MOVEDOWN;
-		}
+	public void Bind(KeyCode key, InputCommand command)
+	{
+		keybinds[key] = command;
+	}
 
-		if (Input.GetKey(KeyCode.D))
-		{
-			GameState.Instance.InputCommand = InputCommand.MOVERIGHT;
-		}
+	public void Unbind(KeyCode key)
+	{
+		keybinds.Remove(key);
+	}
 
-		if (Input.GetKey(KeyCode.Q))
-		{
-		}
+	public void Unbind(InputCommand command)
+	{
+		var keysToRemove = keybinds.Where(bind => bind.Value == command).Select(bind => bind.Key).ToArray();
 
-		if (Input.GetKey(KeyCode.E))
+		foreach (var key in keysToRemove)
 		{
+			keybinds.Remove(key);
 		}
+	}
 
-		if (Input.GetKey(KeyCode.Space))
+	public void ResetBinds()
+	{
+		keybinds = new Dictionary<KeyCode, InputCommand>()
 		{
-			GameState.Instance.InputCommand = InputCommand.PASSTURN;
-		}
-
-		if (Input.GetMouseButton(0))
-		{
-			GameState.Instance.InputCommand = InputCommand.FIRE;
-		}
-
-		if (Input.GetMouseButton(1))
-		{
-			GameState.Instance.InputCommand = InputCommand.ALTFIRE;
-		}
+			[KeyCode.W] = InputCommand.MOVEUP,
+			[KeyCode.A] = InputCommand.MOVELEFT,
+			[KeyCode.S] = InputCommand.MOVEDOWN,
+			[KeyCode.D] = InputCommand.MOVERIGHT,
+			[KeyCode.Q] = InputCommand.STRAFELEFT,
+			[KeyCode.E] = InputCommand.STRAFERIGHT,
+			[KeyCode.Space] = InputCommand.PASSTURN,
+			[KeyCode.Mouse0] = InputCommand.FIRE,
+			[KeyCode.Mouse1] = InputCommand.ALTFIRE,
+			[KeyCode.I] = InputCommand.MOVEFORWARD,
+			[KeyCode.J] = InputCommand.TURNLEFT,
+			[KeyCode.K] = InputCommand.MOVEBACK,
+			[KeyCode.L] = InputCommand.TURNRIGHT,
+		};
 	}
 }

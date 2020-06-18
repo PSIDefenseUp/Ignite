@@ -2,39 +2,64 @@ using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class ShamisenThinker : Thinker
+public class ShamisenThinker : EnemyThinker
 {
-	private readonly int2[] moveDirections = new int2[] { new int2(1, 0), new int2(-1, 0), new int2(0, -1), new int2(0, 1) };
+	private bool canDodge = true;
+	private int actionNumber = 0;
+	private readonly int2[] moveDirections = new int2[] { new int2(0, 1), new int2(1, 0), new int2(-1, 0) };
+	private readonly int2[] dodgeDirections = new int2[] { new int2(-1, -1), new int2(1, -1) };
+	private static Sprite bulletSprite;
+
+	public void Start()
+	{
+		bulletSprite = Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
+	}
 
 	public override void Think()
 	{
+		var actor = GetComponent<Actor>();
 		IAction action = null;
 
-		var actor = GetComponent<Actor>();
-		var position = GetComponent<Position>();
-
-		// move in an open direction (where there is not a solid)
-		// choose between valid options at random
-		var solids = Object.FindObjectsOfType<Solid>();
-		var randomlyOrderedDirections = moveDirections.Shuffle();
-
-		foreach(var direction in randomlyOrderedDirections)
+		if (canDodge)
 		{
-			var positionContainsSolid = solids.Any(solid => {
-				var solidPosition = solid.GetComponent<Position>();
+			var dodgeDelta = ShouldDodge(dodgeDirections);
 
-				if (solidPosition.Value.Equals(position.Value + direction))
-				{
-					return true;
-				}
-
-				return false;
-			});
-
-			if (!positionContainsSolid)
+			if (dodgeDelta != null)
 			{
-				action = new MoveAction(direction.x, direction.y);
+				action = new MoveRelativeAction(dodgeDelta.Value);
+				canDodge = false;
 			}
+		}
+		else
+		{
+			action = new PassTurnAction();
+			canDodge = true;
+		}
+
+		if (action == null)
+		{
+			var position = GetComponent<Position>();
+
+			// standard behaviour
+			switch(actionNumber)
+			{
+				case 0:
+					TurnTowardsPlayer();
+					action = Move(moveDirections);
+					break;
+				case 1:
+					TurnTowardsPlayer();
+					var bulletCenter = new BulletData(position.GetRelativePosition(new int2(0, 1)), position.Rotation, 1, Team.ENEMY, bulletSprite);
+					var bulletLeft = new BulletData(position.GetRelativePosition(new int2(-1, 1)), position.Rotation - 45, 1, Team.ENEMY, bulletSprite);
+					var bulletRight = new BulletData(position.GetRelativePosition(new int2(1, 1)), position.Rotation + 45, 1, Team.ENEMY, bulletSprite);
+					action = Fire(bulletCenter, bulletLeft, bulletRight);
+					canDodge = false;
+					break;
+				default:
+					break;
+			}
+
+			actionNumber = (actionNumber + 1) % 2;
 		}
 
 		actor.SetAction(action);
