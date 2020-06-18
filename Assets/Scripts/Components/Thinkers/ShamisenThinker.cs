@@ -7,7 +7,6 @@ public class ShamisenThinker : EnemyThinker
 	private bool canDodge = true;
 	private int actionNumber = 0;
 	private readonly int2[] moveDirections = new int2[] { new int2(0, 1), new int2(1, 0), new int2(-1, 0) };
-	private readonly int2[] dodgeDirections = new int2[] { new int2(-1, -1), new int2(1, -1) };
 	private static Sprite bulletSprite;
 
 	public void Start()
@@ -17,16 +16,18 @@ public class ShamisenThinker : EnemyThinker
 
 	public override void Think()
 	{
+		var position = GetComponent<Position>();
 		var actor = GetComponent<Actor>();
 		IAction action = null;
 
 		if (canDodge)
 		{
-			var dodgeDelta = ShouldDodge(dodgeDirections);
+			var dodgeDirection = GetDodgeDirection();
 
-			if (dodgeDelta != null)
+			if (dodgeDirection != null)
 			{
-				action = new MoveRelativeAction(dodgeDelta.Value);
+				position.Rotation = dodgeDirection.Value;
+				action = new WallAction(position.GetRelativePosition(new int2(0,1)), 1);
 				canDodge = false;
 			}
 		}
@@ -38,8 +39,6 @@ public class ShamisenThinker : EnemyThinker
 
 		if (action == null)
 		{
-			var position = GetComponent<Position>();
-
 			// standard behaviour
 			switch(actionNumber)
 			{
@@ -49,11 +48,7 @@ public class ShamisenThinker : EnemyThinker
 					break;
 				case 1:
 					TurnTowardsPlayer();
-					var bulletCenter = new BulletData(position.GetRelativePosition(new int2(0, 1)), position.Rotation, 1, Team.ENEMY, bulletSprite);
-					var bulletLeft = new BulletData(position.GetRelativePosition(new int2(-1, 1)), position.Rotation - 45, 1, Team.ENEMY, bulletSprite);
-					var bulletRight = new BulletData(position.GetRelativePosition(new int2(1, 1)), position.Rotation + 45, 1, Team.ENEMY, bulletSprite);
-					action = Fire(bulletCenter, bulletLeft, bulletRight);
-					canDodge = false;
+					action = new WallAction(position.GetRelativePosition(new int2(0,1)), 1);
 					break;
 				default:
 					break;
@@ -63,5 +58,22 @@ public class ShamisenThinker : EnemyThinker
 		}
 
 		actor.SetAction(action);
+	}
+
+	protected float? GetDodgeDirection()
+	{
+		var bullets = FindObjectsOfType<Bullet>().Where(bullet => bullet.Team != Team.ENEMY).Select(bullet => bullet.GetComponent<Position>());
+		var position = GetComponent<Position>();
+		
+		foreach (var bullet in bullets)
+		{
+			//find bullet that is 2 moves away from hitting us and rotate towrds direction.
+			if (bullet.GetRelativePosition(new int2(0, 2)).Equals(position.Value))
+			{
+				return position.GetClosestAbsoluteDirection(bullet.Value, 4);
+			}
+		}
+
+		return null;
 	}
 }
