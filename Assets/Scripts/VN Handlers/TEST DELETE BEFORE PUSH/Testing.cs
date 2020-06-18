@@ -16,8 +16,8 @@ public class Testing : MonoBehaviour
     public string[] s = new string[]
     {
         "WAIII ACAB AKARI ACAB DAISUKE:Akari",
-        "ACAB WAIIII",
-        "Google 40% Cops for a cool suprise",
+        "ACAB WAIIII:kyoko",
+        "Google 40% Cops for a cool suprise:akari",
     };
     int index = 0;
     void Update()
@@ -37,6 +37,5 @@ public class Testing : MonoBehaviour
         string speech = parts[0];
         string speaker = (parts.Length >= 2) ? parts[1]: "";
         dialogue.Say(speech, speaker);
-
     }
 }
