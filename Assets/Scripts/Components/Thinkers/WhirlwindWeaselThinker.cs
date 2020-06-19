@@ -6,15 +6,16 @@ using UnityEngine;
 
 public class WhirlwindWeaselThinker : EnemyThinker
 {
-    private enum WeaselState
-    {
-
-    }
     // Start is called before the first frame update
-    private Sprite bulletSprite;
+	private static GameObject whirlwindPrefab;
+	private static GameObject deployedWeaselPrefab;
+    private static Sprite bulletSprite;
 	public void Start()
-	{
-		bulletSprite = Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
+	{	
+		bulletSprite = bulletSprite ?? Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
+		whirlwindPrefab = whirlwindPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/Whirlwind");
+		deployedWeaselPrefab = deployedWeaselPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/DeployedWeasel");
+
 	}
 
 	private bool AreWithinDistance(int2 a, int2 b, int distance)
@@ -105,13 +106,44 @@ public class WhirlwindWeaselThinker : EnemyThinker
 
 			if(player != null)
 			{
-				position.Rotation = position.GetClosestAbsoluteDirection(player.GetComponent<Position>().Value, 4);
-				actor.SetAction(new MoveRelativeAction(new int2(0, 1)));
+				var playerPosition = player.GetComponent<Position>();
+				var behindPlayer = playerPosition.GetRelativePosition(new int2 (0, -1));
+				
+				if(AreWithinDistance(playerPosition.Value, position.Value, 4) && CanCreateWeasel(behindPlayer))
+				{
+					//create whirlwind here
+					var whirlwind = Instantiate(whirlwindPrefab);
+					var whirlwindPosition = whirlwind.GetComponent<Position>();
+					whirlwindPosition.Value = position.Value;
+
+					//create deployedweasel behind player
+					var weasel = Instantiate(deployedWeaselPrefab);
+					var weaselPosition = weasel.GetComponent<Position>();
+					weaselPosition.Value = behindPlayer;
+
+					Destroy(this.gameObject);
+				}
+				else
+				{
+					position.Rotation = position.GetClosestAbsoluteDirection(playerPosition.Value, 4);
+					actor.SetAction(new MoveRelativeAction(new int2(0, 1)));
+				}
 			}
 			else
 			{
 				actor.SetAction(new PassTurnAction());	
 			}	
 		}
+	}
+	private bool CanCreateWeasel(int2 destination)
+	{
+		if (!GameState.Instance.Map.Contains(destination))
+		{
+			return false;
+		}
+		var solids = Object.FindObjectsOfType<Solid>();
+		var isDestinationOpen = !solids.Any(solid => solid.GetComponent<Position>().Value.Equals(destination));
+		return isDestinationOpen;
+		
 	}
 }
