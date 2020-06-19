@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1045730856972417517}
   - component: {fileID: 8734594817817137762}
   - component: {fileID: 2336857014452715034}
+  - component: {fileID: 5566446885451686136}
   m_Layer: 0
   m_Name: sadshami
   m_TagString: Untagged
@@ -183,3 +184,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6172f5831f896d443a9533df1861d841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &5566446885451686136
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7229972092117375009}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2d274125a5507644ac985e0bfa92ff8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

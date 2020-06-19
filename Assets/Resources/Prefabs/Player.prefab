@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4771067453331853732}
   - component: {fileID: 4771067453331853733}
   - component: {fileID: -5302365115631783666}
+  - component: {fileID: 8069016369483289252}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3250691258491627732, guid: a6da3aa8633901c4fb64f56438fc3250,
+  m_Sprite: {fileID: 4652466291664503602, guid: 9c33b478a84aeda43ae9b6317613efd8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -241,4 +242,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f32b13ab84956409adf899827e9de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HasFinished: 0
+  HasNotFinished: 0
+--- !u!114 &8069016369483289252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6011499088580226145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 489493102607f99429c7a3909cc00b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  animations:
+  - name: Up
+    fps: 12
+    frames:
+    - {fileID: 7744427667942777445, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: -8221946515155255300, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: 7238226516571415183, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: -7626548849181985070, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: 2398388494708942600, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: 7783799983150864065, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: -3149394288299464390, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: -5292433238657772613, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: -3363680706389641413, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: 6182491824063073512, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: -1339222005845775779, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: 4944736337208189068, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: 6880786373103671398, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: 5334766112576028452, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    - {fileID: -2330254559479738757, guid: 4c5d571b97b4d0a4084bdebbef1b6296, type: 3}
+    triggers: []
+  - name: Left
+    fps: 12
+    frames:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    triggers: []
+  - name: 
+    fps: 0
+    frames: []
+    triggers: []
+  playAnimationOnStart: 

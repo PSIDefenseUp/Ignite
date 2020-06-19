@@ -56,10 +56,9 @@ public class PlayerThinker : Thinker
 					action = new TurnAction(-90);
 					break;
 				case InputCommand.FIRE:
-					var bulletData = new BulletData(playerPosition.GetRelativePosition(new int2(1, 1)), playerPosition.Rotation, 1, Team.PLAYER, bulletSprite);
-					var bullet2Data = new BulletData(playerPosition.GetRelativePosition(new int2(0, 1)), playerPosition.Rotation, 1, Team.PLAYER, bulletSprite);
-					var bullet3Data = new BulletData(playerPosition.GetRelativePosition(new int2(-1, 1)), playerPosition.Rotation, 1, Team.PLAYER, bulletSprite);
-					action = new FireAction(bulletData, bullet2Data, bullet3Data);
+					var bulletData = new BulletData(playerPosition.GetRelativePosition(new int2(0, 1)), playerPosition.Rotation, 1, Team.PLAYER, bulletSprite);
+					
+					action = new FireAction(bulletData);
 					break;
 				case InputCommand.ALTFIRE:
 					action = new WallAction(playerPosition.Value + playerPosition.GetAbsoluteOffset(new int2(0, 1)), 1);

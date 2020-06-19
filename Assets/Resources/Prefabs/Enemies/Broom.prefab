@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4186890526437553448}
   - component: {fileID: 5597551960438218407}
   - component: {fileID: 1510908738229416656}
+  - component: {fileID: -3125812753234038885}
   m_Layer: 0
   m_Name: Broom
   m_TagString: Untagged
@@ -183,3 +184,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc141ceba0798a4794c78ac08d12687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &-3125812753234038885
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5823146773675742436}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 790a48b2ae8257f4eac23595ee357ba5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
