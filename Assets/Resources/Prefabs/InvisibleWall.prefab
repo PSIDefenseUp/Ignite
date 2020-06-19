@@ -58,10 +58,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25a3ef6548ae441bbc331f8d14570b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ReflectedBulletTeams: 000000000100000002000000
   reflectDirections:
   - 180
   - 135
   - 225
+  PushesBulletBack: 1
+  ChangesBulletTeam: 0
+  ReflectedBulletTeam: 0
 --- !u!114 &8239749062912133461
 MonoBehaviour:
   m_ObjectHideFlags: 0

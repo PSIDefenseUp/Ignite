@@ -1,11 +1,17 @@
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
-using System.Collections.Generic;
 
-public class BroomThinker : Thinker
+public class WhirlwindWeaselThinker : EnemyThinker
 {
-	private Sprite bulletSprite;
+    private enum WeaselState
+    {
+
+    }
+    // Start is called before the first frame update
+    private Sprite bulletSprite;
 	public void Start()
 	{
 		bulletSprite = Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
@@ -23,7 +29,7 @@ public class BroomThinker : Thinker
 		var bullets = FindObjectsOfType<Bullet>()
 			.Where(bullet => bullet.Team != Team.ENEMY)
 			.Select(bullet => bullet.GetComponent<Position>())
-			.Where(bullet => AreWithinDistance(bullet.Value, position.Value, 2));
+			.Where(bullet => AreWithinDistance(bullet.Value, position.Value, 1));
 		var up = new List<Position>();
 		var down = new List<Position>();
 		var left = new List<Position>();
@@ -38,23 +44,23 @@ public class BroomThinker : Thinker
 		
 			foreach (var bullet in bullets)
 			{
-				if(AreWithinDistance(bullet.Value, rightPos, 1))
+				if(rightPos.Equals(bullet.Value))
 				{
 					right.Add(bullet);
 				}
-				if(AreWithinDistance(bullet.Value, leftPos, 1))
+				if(leftPos.Equals(bullet.Value))
 				{
 					left.Add(bullet);
 				}
-				if(AreWithinDistance(bullet.Value, upPos, 1))
+				if(upPos.Equals(bullet.Value))
 				{
 					up.Add(bullet);
 				}
-				if(AreWithinDistance(bullet.Value, downPos, 1))
+				if(downPos.Equals(bullet.Value))
 				{
 					down.Add(bullet);
 				}
-				if(AreWithinDistance(bullet.Value, position.Value, 1))
+				if(position.Value.Equals(bullet.Value))
 				{
 					standing.Add(bullet);
 				}
@@ -81,30 +87,15 @@ public class BroomThinker : Thinker
 				destination = leftPos;
 				curr = left;
 			}
-
-			var xBullets = curr.Where(bullet => bullet.Value.x == destination.x);
-			var yBullets = curr.Where(bullet => bullet.Value.y == destination.y);
-			if(yBullets.Count() > xBullets.Count())
-			{
-				foreach(var bullet in yBullets)
+            var reflectDirections = new float[]{0, 90, 180, 270};
+            foreach(var bullet in curr)
 				{
-					bullet.Rotation = bullet.GetClosestAbsoluteDirection(destination, 4) + 180;
-					var bulletOfTheBullet = bullet.GetComponent<Bullet>();
-					bulletOfTheBullet.Team = Team.ENEMY;
-					bulletOfTheBullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
-				}
-			}
-			else
-			{
-				foreach(var bullet in xBullets)
-				{
-					bullet.Rotation = bullet.GetClosestAbsoluteDirection(destination, 4) + 180;
+					bullet.Rotation = reflectDirections.RandomValue();
 					var bulletOfTheBullet = bullet.GetComponent<Bullet>();
 					bulletOfTheBullet.Team = Team.ENEMY;
 					bulletOfTheBullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
 
 				}
-			}
 			actor.SetAction(new MoveAction(destination-position.Value));
 		}
 		
