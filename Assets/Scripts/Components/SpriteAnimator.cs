@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
- 
+
 public class SpriteAnimator : MonoBehaviour
 {
         [System.Serializable]
@@ -9,45 +9,45 @@ public class SpriteAnimator : MonoBehaviour
                 public int frame;
                 public string name;
         }
- 
+
         [System.Serializable]
         public class Animation
         {
                 public string name;
                 public int fps;
                 public Sprite[] frames;
- 
+
                 public AnimationTrigger[] triggers;
         }
- 
+
         public SpriteRenderer spriteRenderer;
         public Animation[] animations;
- 
+
         public bool playing { get; private set; }
         public Animation currentAnimation { get; private set; }
         public int currentFrame { get; private set; }
         public bool loop { get; private set; }
- 
+
         public string playAnimationOnStart;
- 
+
         void Awake()
         {
                 if (!spriteRenderer)
                         spriteRenderer = GetComponent<SpriteRenderer>();
         }
- 
+
         void OnEnable()
         {
                 if (playAnimationOnStart != "")
                         Play(playAnimationOnStart);
         }
- 
+
         void OnDisable()
         {
                 playing = false;
                 currentAnimation = null;
         }
- 
+
         public void Play(string name, bool loop = true, int startFrame = 0)
         {
                 Animation animation = GetAnimation(name);
@@ -63,7 +63,7 @@ public class SpriteAnimator : MonoBehaviour
                         Debug.LogWarning("could not find animation: " + name);
                 }
         }
- 
+
         public void ForcePlay(string name, bool loop = true, int startFrame = 0)
         {
                 Animation animation = GetAnimation(name);
@@ -78,7 +78,7 @@ public class SpriteAnimator : MonoBehaviour
                         StartCoroutine(PlayAnimation(currentAnimation));
                 }
         }
- 
+
         public void SlipPlay(string name, int wantFrame, params string[] otherNames)
         {
                 for (int i = 0; i < otherNames.Length; i++)
@@ -91,12 +91,12 @@ public class SpriteAnimator : MonoBehaviour
                 }
                 Play(name, true, wantFrame);
         }
- 
+
         public bool IsPlaying(string name)
         {
                 return (currentAnimation != null && currentAnimation.name == name);
         }
- 
+
         public Animation GetAnimation(string name)
         {
                 foreach (Animation animation in animations)
@@ -108,14 +108,14 @@ public class SpriteAnimator : MonoBehaviour
                 }
                 return null;
         }
- 
+
         IEnumerator PlayAnimation(Animation animation)
         {
                 float timer = 0f;
                 float delay = 1f / (float)animation.fps;
                 while (loop || currentFrame < animation.frames.Length-1)
                 {
- 
+
                         while (timer < delay)
                         {
                                 timer += Time.deltaTime;
@@ -126,13 +126,13 @@ public class SpriteAnimator : MonoBehaviour
                                 timer -= delay;
                                 NextFrame(animation);
                         }
- 
+
                         spriteRenderer.sprite = animation.frames[currentFrame];
                 }
- 
+
                 currentAnimation = null;
         }
- 
+
         void NextFrame(Animation animation)
         {
                 currentFrame++;
@@ -143,7 +143,7 @@ public class SpriteAnimator : MonoBehaviour
                                 gameObject.SendMessageUpwards(animationTrigger.name);
                         }
                 }
- 
+
                 if (currentFrame >= animation.frames.Length)
                 {
                         if (loop)
@@ -152,12 +152,12 @@ public class SpriteAnimator : MonoBehaviour
                                 currentFrame = animation.frames.Length - 1;
                 }
         }
- 
+
         public int GetFacing()
         {
                 return (int)Mathf.Sign(spriteRenderer.transform.localScale.x);
         }
- 
+
         public void FlipTo(float dir)
         {
                 if (dir < 0f)
@@ -165,7 +165,7 @@ public class SpriteAnimator : MonoBehaviour
                 else
                         spriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
         }
- 
+
         public void FlipTo(Vector3 position)
         {
                 float diff = position.x - transform.position.x;

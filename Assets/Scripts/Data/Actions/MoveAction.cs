@@ -23,6 +23,12 @@ public class MoveAction : IAction
 
 	public bool CanPerform(GameObject actor)
 	{
+		// yes, you can just sit still and call it a move
+		if (delta.x == 0 && delta.y == 0)
+		{
+			return true;
+		}
+
 		// no, you can't move one solid object into another
 		var actorIsSolid = actor.GetComponent<Solid>() != null;
 		var bulletCollider = actor.GetComponent<BulletCollider>();

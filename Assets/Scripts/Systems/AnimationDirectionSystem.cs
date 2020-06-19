@@ -16,17 +16,17 @@ public class AnimationDirectionSystem
 				switch ((int)position.Rotation)
 				{
 					case 0:
-					animator.SetTrigger("Up");
-					break;
+						//animator.SetTrigger("Up");
+						break;
 					case 90:
-					animator.SetTrigger("Left");
-					break;
+						//animator.SetTrigger("Left");
+						break;
 					case 180:
-					animator.SetTrigger("Down");
+						//animator.SetTrigger("Down");
 					break;
 					case 270:
-					animator.SetTrigger("Right");
-					break;
+						//animator.SetTrigger("Right");
+						break;
 				}
 			}
 		}
