@@ -73,11 +73,19 @@ public class GameState
 			cameraFollowSystem.Tick();
 		}
 
-		if (GameOver || StageWon) // TODO: stage won should load the next scene, not do a reload
+		if (GameOver) // TODO: stage won should load the next scene, not do a reload
 		{
 			if (InputCommand != InputCommand.NONE)
 			{
 				LoadScene(SceneManager.GetActiveScene().name);
+			}
+		}
+
+		if (StageWon) // TODO: stage won should load the next scene, not do a reload
+		{
+			if (InputCommand != InputCommand.NONE)
+			{
+				LoadScene(Object.FindObjectOfType<LevelEndPoint>().NextSceneName);
 			}
 		}
 
