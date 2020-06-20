@@ -91,11 +91,12 @@ public class DialogueSystem : MonoBehaviour
 	[System.Serializable]
 	public class ELEMENTS
 	{
-		public GameObject speechPanel;
-		public Text speakerNameText;
-		public Text speechText;
+		public GameObject SpeechPanel;
+		public Text SpeakerNameText;
+		public Text SpeechText;
+		public string NextSceneName;
 	}
-	public GameObject speechPanel {get{return elements.speechPanel;}}
-	public Text speakerNameText {get{return elements.speakerNameText;}}
-	public Text speechText {get{return elements.speechText;}}
+	public GameObject speechPanel {get{return elements.SpeechPanel;}}
+	public Text speakerNameText {get{return elements.SpeakerNameText;}}
+	public Text speechText {get{return elements.SpeechText;}}
 }
