@@ -10,6 +10,7 @@ public class TurnSystem
 	private readonly HealthSystem healthSystem = new HealthSystem();
 	private readonly GameOverSystem gameOverSystem = new GameOverSystem();
 	private readonly LevelVictorySystem levelVictorySystem = new LevelVictorySystem();
+	private readonly ExpirationDateSystem expirationDateSystem = new ExpirationDateSystem();
 
 	public void Tick()
 	{
@@ -121,6 +122,8 @@ public class TurnSystem
 
 			if (!actors.Any(actor => actor.RemainingActions > 0)) // (!Object.FindObjectsOfType<Actor>().Any(actor => actor.RemainingActions > 0))
 			{
+				TickRoundEndSystems();
+
 				foreach(var actor in actors)
 				{
 					actor.Refresh();
@@ -141,6 +144,13 @@ public class TurnSystem
 		}
 	}
 
+	// where a round is EVERY ACTOR USES ALL THEIR ACTIONS
+	private void TickRoundEndSystems()
+	{
+		expirationDateSystem.Tick();
+	}
+
+	// where a turn is WHATEVER SET OF ACTORS ARE ACTING THIS TIME TAKE AN ACTION
 	private void TickTurnEndSystems()
 	{
 		bulletCollisionSystem.Tick();

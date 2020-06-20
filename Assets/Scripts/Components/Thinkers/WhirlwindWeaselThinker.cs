@@ -11,7 +11,7 @@ public class WhirlwindWeaselThinker : EnemyThinker
 	private static GameObject deployedWeaselPrefab;
     private static Sprite bulletSprite;
 	public void Start()
-	{	
+	{
 		bulletSprite = bulletSprite ?? Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
 		whirlwindPrefab = whirlwindPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/Whirlwind");
 		deployedWeaselPrefab = deployedWeaselPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/DeployedWeasel");
@@ -42,7 +42,7 @@ public class WhirlwindWeaselThinker : EnemyThinker
 		int2 downPos = position.Value + new int2 (0, -1);
 		if(bullets.Count() != 0)
 		{
-		
+
 			foreach (var bullet in bullets)
 			{
 				if(rightPos.Equals(bullet.Value))
@@ -99,7 +99,7 @@ public class WhirlwindWeaselThinker : EnemyThinker
 				}
 			actor.SetAction(new TurnMoveAction(destination-position.Value));
 		}
-		
+
 		if (!actor.HasAction())
 		{
 			var player = FindObjectOfType<Player>();
@@ -108,7 +108,7 @@ public class WhirlwindWeaselThinker : EnemyThinker
 			{
 				var playerPosition = player.GetComponent<Position>();
 				var behindPlayer = playerPosition.GetRelativePosition(new int2 (0, -1));
-				
+
 				if(AreWithinDistance(playerPosition.Value, position.Value, 4) && CanCreateWeasel(behindPlayer))
 				{
 					//create whirlwind here
@@ -131,8 +131,8 @@ public class WhirlwindWeaselThinker : EnemyThinker
 			}
 			else
 			{
-				actor.SetAction(new PassTurnAction());	
-			}	
+				actor.SetAction(new PassTurnAction());
+			}
 		}
 	}
 	private bool CanCreateWeasel(int2 destination)
@@ -141,9 +141,10 @@ public class WhirlwindWeaselThinker : EnemyThinker
 		{
 			return false;
 		}
+
 		var solids = Object.FindObjectsOfType<Solid>();
 		var isDestinationOpen = !solids.Any(solid => solid.GetComponent<Position>().Value.Equals(destination));
+
 		return isDestinationOpen;
-		
 	}
 }

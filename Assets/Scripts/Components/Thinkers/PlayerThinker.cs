@@ -57,7 +57,7 @@ public class PlayerThinker : Thinker
 					break;
 				case InputCommand.FIRE:
 					var bulletData = new BulletData(playerPosition.GetRelativePosition(new int2(0, 1)), playerPosition.Rotation, 1, Team.PLAYER, bulletSprite);
-					
+
 					action = new FireAction(bulletData);
 					break;
 				case InputCommand.ALTFIRE:
