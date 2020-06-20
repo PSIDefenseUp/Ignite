@@ -6,11 +6,13 @@ public class WallAction : IAction
 {
 	private readonly int2 wallPosition;
 	private readonly int wallHealth;
+	private readonly Team wallTeam;
 
-	public WallAction(int2 position, int health)
+	public WallAction(int2 position, int health, Team wallTeam = Team.NEUTRAL)
 	{
 		this.wallPosition = position;
 		this.wallHealth = health;
+		this.wallTeam = wallTeam;
 	}
 
 	public int GetCost()
@@ -32,7 +34,20 @@ public class WallAction : IAction
 		{
 			var solids = Object.FindObjectsOfType<Solid>();
 
-			return !solids.Any(solid => solid.GetComponent<Position>().Value.Equals(wallPosition));
+			if (solids.Any(solid => solid.GetComponent<Position>().Value.Equals(wallPosition)))
+			{
+				return false;
+			}
+		}
+
+		// you also can't create a wall inside of a bullet that will hit it
+		var bulletPositions = Object.FindObjectsOfType<Bullet>()
+			.Where(bullet => wallTeam == Team.NEUTRAL || bullet.Team != wallTeam)
+			.Select(bullet => bullet.GetComponent<Position>());
+
+		if (bulletPositions.Any(bulletPos => bulletPos.Value.Equals(wallPosition)))
+		{
+			return false;
 		}
 
 		return true;
@@ -46,6 +61,9 @@ public class WallAction : IAction
 
 		var health = wall.GetComponent<Health>();
 		health.Init(wallHealth);
+
+		var bulletCollider = wall.GetComponent<BulletCollider>();
+		bulletCollider.Team = wallTeam;
 
 		Object.Instantiate(wall);
 	}
