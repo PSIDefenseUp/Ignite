@@ -83,7 +83,7 @@ MonoBehaviour:
   Value:
     x: 1
     y: 1
-  Rotation: 0
+  Rotation: 180
 --- !u!212 &5823146773675742443
 SpriteRenderer:
   m_ObjectHideFlags: 0

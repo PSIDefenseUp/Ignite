@@ -38,16 +38,16 @@ public class PlayerThinker : Thinker
 					action = new MoveRelativeAction(1, 0);
 					break;
 				case InputCommand.MOVEUP:
-					action = new MoveAction(0, 1);
+					action = new TurnMoveAction(0, 1);
 					break;
 				case InputCommand.MOVEDOWN:
-					action = new MoveAction(0, -1);
+					action = new TurnMoveAction(0, -1);
 					break;
 				case InputCommand.MOVELEFT:
-					action = new MoveAction(-1, 0);
+					action = new TurnMoveAction(-1, 0);
 					break;
 				case InputCommand.MOVERIGHT:
-					action = new MoveAction(1, 0);
+					action = new TurnMoveAction(1, 0);
 					break;
 				case InputCommand.TURNLEFT:
 					action = new TurnAction(90);

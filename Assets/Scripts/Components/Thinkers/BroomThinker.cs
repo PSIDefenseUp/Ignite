@@ -104,7 +104,7 @@ public class BroomThinker : Thinker
 				bulletOfTheBullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
 			}
 
-			actor.SetAction(new MoveAction(destination - position.Value));
+			actor.SetAction(new TurnMoveAction(destination - position.Value));
 		}
 
 		if (!actor.HasAction())
