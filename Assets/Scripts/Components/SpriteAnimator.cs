@@ -8,7 +8,7 @@ public class SpriteAnimator : MonoBehaviour
 	[HideInInspector]
 	public int CurrentFrame = 0;
 
-	public float Framerate = 8;
+	public float Framerate = 16;
 	public bool Loop = true;
 
 	private float FrameTime => 1 / Framerate;

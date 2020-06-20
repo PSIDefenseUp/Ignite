@@ -39,12 +39,12 @@ public class AnimationDirectionSystem
 
 			var animator = directionalSpriteSet.GetComponent<SpriteAnimator>();
 
-			if (animator != null)
+			if (animator != null && sprites != null)
 			{
 				if (animator.Frames != sprites)
 				{
 					animator.Frames = sprites;
-					animator.CurrentFrame = 0;
+					// animator.CurrentFrame = 0;
 				}
 			}
 		}
