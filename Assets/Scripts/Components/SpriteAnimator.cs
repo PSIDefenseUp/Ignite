@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class SpriteAnimator : MonoBehaviour
 {
 
@@ -23,6 +22,10 @@ public class SpriteAnimator : MonoBehaviour
 	public void Update()
 	{
 		FrameProgress += Time.deltaTime;
+        if(Frames == null || Frames.Length == 0)
+        {
+            return;
+        }
 
 		if (FrameProgress > FrameTime)
 		{
@@ -30,6 +33,6 @@ public class SpriteAnimator : MonoBehaviour
 			FrameProgress %= FrameTime;
 		}
 
-		renderer.sprite = Frames[CurrentFrame];
+		renderer.sprite = Frames[CurrentFrame%Frames.Length];             
 	}
 }
