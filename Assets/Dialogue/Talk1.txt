@@ -1,6 +1,0 @@
-[display](Neutral|Marisa|Left)[say](Marisa|Heh… I made it out of the village.)
-
-[say](Marisa|…)
-
-[expression](Nervous|Marisa)[say](Marisa|There sure is a lot of trash around…)
-[load](Level1)

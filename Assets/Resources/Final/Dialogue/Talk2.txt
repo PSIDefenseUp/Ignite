@@ -1,0 +1,57 @@
+[display](Neutral|Yukari|Right)
+[display](Neutral|Marisa|Left)
+[say](Yukari|A human child… wandering out and about so late at night.\nHow dangerous~)
+
+[say](Marisa|Who are you?)
+
+[say](Yukari|Oh, just a yokai passing by.) 
+
+[expression](Nervous|Marisa)
+[say](Marisa|A yokai?!)
+
+[expression](Joking|Yukari)
+[say](Yukari|Oh yes, I’m a big scary yokai! You best head on home before something bad happens to you.)
+[expression](Determined|Marisa)
+[say](Marisa|No thank you! I’m going to see someone very important, and you can’t stop me!)
+
+[expression](Neutral|Yukari)
+[say](Yukari|Hm hm~ A stubborn little girl. Well, I won’t stop you now, but what’s to say someone else won’t?)
+[delete](Yukari)
+[display](Neutral|Umbrella)
+[say] (Umbrella|Hm? Who’s there?!)
+
+[expression](Nervous|Marisa)
+[say](Marisa|Crap..! An adult!!)
+
+[expression](Neutral|Marisa) 
+[say](Marisa|…! That weird lady is gone...)
+
+[expression](Neutral|Umbrella)
+[say](Umbrella|Hello? Where are y-)
+
+[expression](Surprised|Umbrella)
+[say](Umbrella|Oh! A human child?)
+
+[expression](Nervous|Marisa)
+[say](Marisa|Um… Hey there, miss)
+
+[expression](Neutral|Umbrella)
+[say](Umbrella|What are you doing out of the village so late at night?! Don’t you know there are dangerous yokai out and about??)
+
+[expression](Determined|Marisa)
+[say](Marisa|I’m on my way to the Hakurei Shrine to see my friend! I’m not afraid of any yokai!)
+
+[say](Umbrella|No no no, this won’t do. You are quite fortunate you bumped into me before anything else.)
+
+[say](Umbrella|I know you want to see your friend, but it’s really dangerous out at night, especially for a human child like you.)
+
+[say](Umbrella|Please be patient and wait for an adult to take you there tomorrow morning! In the meantime, please go home.)
+
+[expression](Angry|Marisa)
+[say](Marisa|No! I’m going to see Reimu!)
+
+[expression](Annoyed|Umbrella)
+[say](Umbrella|I don’t want to do this, but it’s for your own good, my child! I’m taking you back to the village right this instant!)
+[load](UmbrellaBoss)
+
+ 

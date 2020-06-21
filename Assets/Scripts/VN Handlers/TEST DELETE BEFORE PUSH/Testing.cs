@@ -9,8 +9,8 @@ public class Testing : MonoBehaviour
 	void Start()
 	{
 		dialogue = DialogueSystem.instance;
-		var parser = new ScriptParser("");
-		parser.ReadNextCommand();
+		// var parser = new ScriptParser("");
+		// parser.ReadNextCommand();
 	}
 
 

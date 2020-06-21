@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueSystem : MonoBehaviour 
 {
@@ -92,11 +93,10 @@ public class DialogueSystem : MonoBehaviour
 	public class ELEMENTS
 	{
 		public GameObject SpeechPanel;
-		public Text SpeakerNameText;
-		public Text SpeechText;
-		public string NextSceneName;
+		public TextMeshProUGUI SpeakerNameText;
+		public TextMeshProUGUI SpeechText;
 	}
 	public GameObject speechPanel {get{return elements.SpeechPanel;}}
-	public Text speakerNameText {get{return elements.SpeakerNameText;}}
-	public Text speechText {get{return elements.SpeechText;}}
+	public TextMeshProUGUI speakerNameText {get{return elements.SpeakerNameText;}}
+	public TextMeshProUGUI speechText {get{return elements.SpeechText;}}
 }
