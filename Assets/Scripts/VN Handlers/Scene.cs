@@ -20,7 +20,7 @@ public class Scene : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
 		{
 			if(!Dialogue.isSpeaking || Dialogue.isWaitingForUserInput)
 			{
@@ -29,7 +29,7 @@ public class Scene : MonoBehaviour
 		}
 
     }
-    public void Display(string expression, string name, string side)
+    public void Display(string expression, string name, string side = "Right")
     {
 
         newActor = Instantiate(Resources.Load<GameObject>("Prefabs/VN/"+name),CharacterLayer.transform);
@@ -38,7 +38,6 @@ public class Scene : MonoBehaviour
     }    
     public void Say(string name, string content)
     {
-        Debug.Log(content);
         Dialogue.Say(content, name);
     }
     public void Expression(string expression, string name)
@@ -50,6 +49,7 @@ public class Scene : MonoBehaviour
         if(actors.ContainsKey(name))
         {
             actors[name].Remove();  
+            actors.Remove(name);
         }
         else
         {
