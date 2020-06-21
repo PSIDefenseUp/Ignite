@@ -1,6 +1,6 @@
 [display](Neutral|Yukari|Right)
 [display](Neutral|Marisa|Left)
-[say](Yukari|A human child... wandering out and about so late at night.\nHow dangerous~)
+[say](Yukari|A human child... wandering out and about so late at night.How dangerous~)
 
 [say](Marisa|Who are you?)
 
