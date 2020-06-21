@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NitoriTurretThinker : Thinker
 {
+	private const int TURNS_BETWEEN_SHOTS = 3;
+	private int firingCooldown;
 	private static Sprite bulletSprite;
 
 	public void Start()
@@ -13,6 +15,8 @@ public class NitoriTurretThinker : Thinker
 
 	public override void Think()
 	{
+		firingCooldown--;
+
 		var playerPosition = FindObjectOfType<Player>()?.GetComponent<Position>();
 		var actor = GetComponent<Actor>();
 		var position = GetComponent<Position>();
@@ -30,10 +34,14 @@ public class NitoriTurretThinker : Thinker
 				if (turret.Value.Equals(position.Value))
 				{
 					// FIRE
-					position.Rotation = position.GetClosestAbsoluteDirection(playerPosition.Value, 4);
-					var bulletData = new BulletData(position.GetRelativePosition(new int2(0, 1)), position.Rotation, 1, Team.ENEMY, bulletSprite);
-					actor.SetAction(new FireAction(bulletData));
-					return;
+					if (firingCooldown <= 0)
+					{
+						position.Rotation = position.GetClosestAbsoluteDirection(playerPosition.Value, 4);
+						var bulletData = new BulletData(position.GetRelativePosition(new int2(0, 1)), position.Rotation, 1, Team.ENEMY, bulletSprite);
+						actor.SetAction(new FireAction(bulletData));
+						firingCooldown = TURNS_BETWEEN_SHOTS;
+						return;
+					}
 				}
 			}
 		}
