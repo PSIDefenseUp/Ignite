@@ -10,7 +10,7 @@ public struct Command
 public class ScriptParser
 {
     public DialogueSystem DialogueSystem;
-    public SpriteSelect Scene;
+    public Scene Scene;
     private string script;
     private int index;
     private string commandRegex = "\\[(?<command>[A-Za-z]+)\\]\\((?<parameters>[A-Za-z ,]*)\\)"; //"[COMMANDNAME](ARGSLIST)"
@@ -37,7 +37,7 @@ public class ScriptParser
         return new Command
         {
             CommandName = match.Groups[1].Value,
-            Args = match.Groups[2].Value.Split(',').Select(arg => arg.Trim()).ToArray()
+            Args = match.Groups[2].Value.Split('|').Select(arg => arg.Trim()).ToArray()
         };
 
     }
