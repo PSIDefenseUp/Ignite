@@ -1,0 +1,59 @@
+[display](Neutral|Marisa|left)
+[display](Neutral|Sen|right)
+
+[Expression] (Sob|Sen)
+[say](Sen|Ow ow ow... jeez what the hell are you made of?!)
+
+[Expression] (Happy|Marisa)
+[say](Marisa|I win! Now you can’t eat me anymore!)
+
+[Expression] (Neutral|Sen)
+[say](Sen|Right right but you still can’t go to the shrine, I was told by th-)
+
+[say]( |* BONK *)
+[delete](Marisa)
+[display](Neutral|Hayami|left)
+[Expression] (Sob|Sen)
+[say](Sen|oW! What the hell?!)
+
+[Expression](Angry|Hayami)
+[say](Hayami|The nerve! Bullying and scaring a little child like that! Have you no shame?!)
+
+[say](Hayami|Apologize to her now!)
+
+[Expression] (Surprised|Sen)
+[say](Sen| What..? Who even are y-)
+
+[Expression] (Sob|Sen)
+[say](Sen|OW OKAY OKAY I’M SORRY!)
+
+[Expression] (Annoyed|Hayami)
+[say](Hayami| Geez! Women don’t like people who aren’t good with kids you know?!)
+
+[Expression] (Nervous|Sen)
+[say](Sen|Y-you don’t - I mean, they don’t?)
+
+[Expression] (Nervous Smile|Sen)
+[say](Sen|...ahem.)
+[delete](Hayami)
+[display](Neutral|Marisa|left)
+[Expression] (Grin|Sen)
+[say](Sen|Well, little girl, it seems we got off on the wrong foot.) 
+
+[say](Sen|You seem like a capable little magician-in-training, and I know a  thing or two about magic myself!)
+
+[say](Sen|Why don’t you let me teach you some of my tricks?)
+
+[Expression](Neutral|Marisa)
+[say](Marisa|You’re not going to try to eat me?)
+
+[Expression] (Surprised|Sen)
+[say](Sen|..n-NO no, definitely not. I’ll teach you some cool tricks, I swear.)
+
+[Expression] (Happy|Marisa)
+[say](Marisa|Sweet! Thanks a lot, miss!)
+
+[Expression] (Nervous) Sen| ....)
+
+[say](Sen|I hope she’s not mad...)
+[load](talk 10)
