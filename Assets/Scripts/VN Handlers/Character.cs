@@ -29,7 +29,7 @@ public class Character : MonoBehaviour
     }
     public Character Instantiate(string expression, string side)
     {
-        if(side == "Right")
+        if(side == "Right" || side == "right")
         {
             ActivateRight();
         }

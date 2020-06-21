@@ -21,12 +21,13 @@ public class Expressive : MonoBehaviour
     {
     
         myImage = myImage ?? GetComponent<Image>();
+        gameObject.SetActive(true);
         
 
     }
     public void Deactivate()
     {
-        myImage = null;
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
