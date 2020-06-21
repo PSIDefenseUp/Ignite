@@ -6,15 +6,22 @@ public class NeetoriThinker : Thinker
 {
 	private static Sprite bulletSprite;
 	private static GameObject turretPrefab;
+	private static GameObject wallPrefab;
 
-	private const int TURNS_BETWEEN_WAVES = 3;
+	private const int TURNS_BETWEEN_WAVES = 5;
 	private bool isRepairing = false;
 	private int turnsUntilNextWave = TURNS_BETWEEN_WAVES;
 
 	public void Start()
 	{
 		bulletSprite = bulletSprite ?? Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
-		turretPrefab = turretPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/NitoriTurret");
+		turretPrefab = turretPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/Nitori/NitoriTurret");
+		wallPrefab = wallPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/Nitori/NitoriWall");
+	}
+
+	public void OnDestroy()
+	{
+		GameState.Instance.StageWon = true;
 	}
 
 	public override void Think()
@@ -37,6 +44,11 @@ public class NeetoriThinker : Thinker
 				}
 
 				// TODO: disable all turret walls
+				var walls = FindObjectsOfType<NitoriWall>();
+				foreach(var wall in walls)
+				{
+					Destroy(wall.gameObject);
+				}
 			}
 		}
 
@@ -45,20 +57,21 @@ public class NeetoriThinker : Thinker
 			var mountToRepair = turretMounts
 				.Where(mount => mount.NeedsRepair)
 				.OrderBy(mount => mount.Index)
-				.Select(mount => mount.GetComponent<Position>())
 				.FirstOrDefault();
 
 			if (mountToRepair != null)
 			{
-				position.Rotation = position.GetClosestAbsoluteDirection(mountToRepair.Value, 4);
+				var mountPosition = mountToRepair.GetComponent<Position>();
+				position.Rotation = position.GetClosestAbsoluteDirection(mountPosition.Value, 4);
 
 				// repair mount if adjacent, otherwise move closer
-				if (position.DistanceTo(mountToRepair.Value) == 1)
+				if (position.DistanceTo(mountPosition.Value) == 1)
 				{
 					// to repair, create a turret on top of the mount
 					var turret = Instantiate(turretPrefab);
 					var turretPosition = turret.GetComponent<Position>();
-					turretPosition.Value = mountToRepair.Value;
+					turretPosition.Value = mountPosition.Value;
+					mountToRepair.NeedsRepair = false;
 				}
 				else
 				{
@@ -69,7 +82,15 @@ public class NeetoriThinker : Thinker
 			{
 				isRepairing = false;
 
-				// TODO: reactivate all turet walls
+				var wallBases = FindObjectsOfType<NitoriWallBase>()
+					.Select(wallBase => wallBase.GetComponent<Position>());
+
+				foreach (var wallBase in wallBases)
+				{
+					var wall = Instantiate(wallPrefab);
+					var wallPosition = wall.GetComponent<Position>();
+					wallPosition.Value = wallBase.Value;
+				}
 			}
 
 			return;

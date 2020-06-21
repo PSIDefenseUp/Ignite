@@ -21,7 +21,7 @@ public class LevelVictorySystem
 			{
 				var endPointPosition = endPoint.GetComponent<Position>();
 
-				if (playerPosition.Value.Equals(endPointPosition.Value))
+				if (endPointPosition != null && playerPosition.Value.Equals(endPointPosition.Value))
 				{
 					GameState.Instance.StageWon = true;
 
