@@ -6,6 +6,7 @@ public class NeetoriThinker : Thinker
 {
 	private static Sprite bulletSprite;
 	private static GameObject turretPrefab;
+	private static GameObject wallPrefab;
 
 	private const int TURNS_BETWEEN_WAVES = 5;
 	private bool isRepairing = false;
@@ -15,6 +16,12 @@ public class NeetoriThinker : Thinker
 	{
 		bulletSprite = bulletSprite ?? Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
 		turretPrefab = turretPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/Nitori/NitoriTurret");
+		wallPrefab = wallPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/Nitori/NitoriWall");
+	}
+
+	public void OnDestroy()
+	{
+		GameState.Instance.StageWon = true;
 	}
 
 	public override void Think()
@@ -37,6 +44,11 @@ public class NeetoriThinker : Thinker
 				}
 
 				// TODO: disable all turret walls
+				var walls = FindObjectsOfType<NitoriWall>();
+				foreach(var wall in walls)
+				{
+					Destroy(wall.gameObject);
+				}
 			}
 		}
 
@@ -70,7 +82,15 @@ public class NeetoriThinker : Thinker
 			{
 				isRepairing = false;
 
-				// TODO: reactivate all turet walls
+				var wallBases = FindObjectsOfType<NitoriWallBase>()
+					.Select(wallBase => wallBase.GetComponent<Position>());
+
+				foreach (var wallBase in wallBases)
+				{
+					var wall = Instantiate(wallPrefab);
+					var wallPosition = wall.GetComponent<Position>();
+					wallPosition.Value = wallBase.Value;
+				}
 			}
 
 			return;
