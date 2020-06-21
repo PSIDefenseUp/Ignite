@@ -1,7 +1,7 @@
 [Display](Neutral|Marisa|Right)
 [Display](Neutral|Yukari|Left)
 [Expression](Neutral|Marisa)[say](Marisa|Hey! It’s that weird lady again!)
- 
+
 [Expression](Joking|Yukari)
 [say](Yukari|Yes, indeed. It’s me, the weird lady.)
 
@@ -38,7 +38,7 @@
 [delete](Yukari)
 [display](Neutral|Nitori|Right)
 
-[Expression](Neutral|Nitori)[say](Hey you!) 
+[Expression](Neutral|Nitori)[say](Hey you!)
 
 [display](Neutral|Yukari|Left)
 
@@ -46,7 +46,7 @@
 [say](Yukari|Oh, it looks like someone’s looking for you~)
 [delete](Yukari)
 [display](Neutral|Marisa|Left)
-[Expression](Neutral|Marisa)[say](Marisa|Huh? Wh- aaand the weird lady’s gone again.) 
+[Expression](Neutral|Marisa)[say](Marisa|Huh? Wh- aaand the weird lady’s gone again.)
 
 [Expression](Annoyed|Nitori)[say](You there! Human! What are you doing in my territory?!)
 
@@ -65,5 +65,4 @@
 [Expression](Happy|Nitori)[say](Nitori|No thanks. How about... if you play a little game with me, I’ll let you cross the river!)
 
 [Expression](Happy| Marisa)[say](Marisa|Sounds good! You’re on!)
-[load](NitoriBoss)
-
+[load](NitoriBattle)

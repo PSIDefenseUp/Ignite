@@ -5,7 +5,7 @@
 [say](Yukari|Well, well, well! Look at you! You’ve made it this far, and you’ve found a new friend to boot!)
 
 [Expression] (Nervous|Marisa)
-[say](Marisa|WAH!) 
+[say](Marisa|WAH!)
 
 [Expression] (Neutral|Marisa)
 [say](Marisa|How do you do that?)
@@ -39,7 +39,7 @@
 [say](Marisa|Are you the big bad yokai that’s going to try to eat me?)
 
 [Expression](Nervous Smile)
-[say](Sen|W-wha..?) 
+[say](Sen|W-wha..?)
 
 [Expression](Grin|Sen)
 [say](Sen|Uh- Th-That’s right! I haven’t had dinner so I’m real hungry right now! You best go away before I catch you for my next meal!)
@@ -49,4 +49,4 @@
 
 [Expression](Surprised|Sen)
 [say](Sen|Um… hold on a second there... What a pain...)
-[load](SenBoss)
+[load](FoxBattle)

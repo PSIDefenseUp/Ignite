@@ -38,7 +38,7 @@
 [delete](Hayami)
 [display](Neutral|Marisa|left)
 [Expression] (Grin|Sen)
-[say](Sen|Well, little girl, it seems we got off on the wrong foot.) 
+[say](Sen|Well, little girl, it seems we got off on the wrong foot.)
 
 [say](Sen|You seem like a capable little magician-in-training, and I know a  thing or two about magic myself!)
 
@@ -56,4 +56,4 @@
 [Expression] (Nervous|Sen)[say](Sen| ...)
 
 [say](Sen|I hope she’s not mad...)
-[load](talk 10)
+[load](talk10)

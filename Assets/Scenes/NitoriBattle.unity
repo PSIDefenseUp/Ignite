@@ -2587,7 +2587,7 @@ PrefabInstance:
     - target: {fileID: 7982322718711625958, guid: e1e1b6e043e49744b9d429a3d2843e6b,
         type: 3}
       propertyPath: NextSceneName
-      value: Level1
+      value: Talk6
       objectReference: {fileID: 0}
     - target: {fileID: 7982322718711625959, guid: e1e1b6e043e49744b9d429a3d2843e6b,
         type: 3}
