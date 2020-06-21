@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Assets/Dialogue/Talk4.txt
 [Display](Neutral|Marisa|Right)
 [Display](Neutral|Hayami|Left)
 [Expression](Neutral|Marisa)[say](Marisa|If I remember it right, this path through the forest should lead to the shrine.)
@@ -8,15 +7,4 @@
 [Expression](Happy|Marisa)[say](Marisa|Bah!) Careful is my middle name!)
 
 [Expression](Nervous|Marisa)[say](Marisa|... It’s a bit spooky though...)
-=======
-[Display](Neutral|Marisa|Right)
-[Display](Neutral|Umbrella|Left)
-[Expression](Neutral|Marisa)[say](Marisa|If I remember it right, this path through the forest should lead to the shrine.)
-
-[Expression](Neutral|Umbrella)[say](Umbrella|A forest huh… do be careful, my child.)
-
-[Expression](Happy|Marisa)[say](Marisa|Bah!) Careful is my middle name!)
-
-[Expression](Nervous|Marisa)[say](Marisa|… It’s a bit spooky though...)
->>>>>>> 2597144b74f6d48fb02c13a36c455cfa4fe7328b:Assets/Resources/Final/Dialogue/Talk4.txt
 [load](Level5)

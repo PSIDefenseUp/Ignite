@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Assets/Dialogue/Talk6.txt
 [display](Neutral|Marisa|left)
 [display](Neutral|Nitori|right)
 [Expression](Happy|Marisa)
@@ -33,39 +32,3 @@
 [say](Marisa|Sure, why not? More the merrier!)
 [load](talk7)
 
-=======
-[display](Neutral|Marisa|left)
-[display](Neutral|Nitori|right)
-[Expression](Happy|Marisa)
-[say](Marisa|Haha! I win!)
-
-[Expression](Annoyed|Nitori)
-[say](Nitori|Gah, you got me. That was a cheap shot!)
-
-[Expression](Neutral|Marisa)
-[say](Marisa|Hey, a win’s a win.)
-
-[Expression](Neutral|Nitori)
-[say](Nitori|Fine fine. I had fun anyway. Here, I’ll help you two cross the river.)
-
-[Expression](Happy|Marisa)
-[say](Marisa|Hey thanks! You’re a nice gal you know that?)
-
-[Expression](Surprised|Nitori)
-[say](Nitori|...y-yea?)
-
-[say](Marisa|Yea!I had lots of fun playing with you too! See you around!)
-
-[Expression](Bashful|Nitori)
-[say](Nitori|W-Wait!)
-
-[Expression](Neutral|Marisa)
-[say](Marisa|Hm?)
-
-[say](Nitori|If you don’t mind… Do you think I can tag along with you for a bit? It gets a little boring being by myself back at the river…)
-
-[Expression](Happy|Marisa)
-[say](Marisa|Sure, why not? More the merrier!)
-[load](talk7)
-
->>>>>>> 2597144b74f6d48fb02c13a36c455cfa4fe7328b:Assets/Resources/Final/Dialogue/Talk6.txt

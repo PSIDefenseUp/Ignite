@@ -1,14 +1,6 @@
-<<<<<<< HEAD:Assets/Dialogue/Talk1.txt
 [display](Neutral|Marisa|Left)[say](Marisa|Heh... I made it out of the village.)
 
 [say](Marisa|...)
 
 [expression](Nervous|Marisa)[say](Marisa|There sure is a lot of trash around...)
-=======
-[display](Neutral|Marisa|Left)[say](Marisa|Heh… I made it out of the village.)
-
-[say](Marisa|…)
-
-[expression](Nervous|Marisa)[say](Marisa|There sure is a lot of trash around…)
->>>>>>> 2597144b74f6d48fb02c13a36c455cfa4fe7328b:Assets/Resources/Final/Dialogue/Talk1.txt
 [load](Level1)
