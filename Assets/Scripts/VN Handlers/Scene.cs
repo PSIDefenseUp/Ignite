@@ -9,10 +9,13 @@ public class Scene : MonoBehaviour
     private ScriptParser script;
     public string ScriptPath;
     public GameObject CharacterLayer;
+    void Awake()
+    {
+        script = new ScriptParser(ScriptPath , this);
+    }
     void Start()
     {
         actors = new Dictionary<string, Character>();
-        script = new ScriptParser(ScriptPath , this);
         while(!Dialogue.isSpeaking)
         {
             script.Next();
