@@ -60,7 +60,7 @@
 
 [Expression](Neutral| Nitori)[say](Nitori|Well… yes, but I’m not just gonna let you cross for free.)
 
-Marisa)[say](Marisa|What do I gotta pay? I have a few mushrooms if you want those.)
+[say](Marisa|What do I gotta pay? I have a few mushrooms if you want those.)
 
 [Expression](Happy|Nitori)[say](Nitori|No thanks. How about… if you play a little game with me, I’ll let you cross the river!)
 

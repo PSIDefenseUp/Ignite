@@ -762,6 +762,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speech
       objectReference: {fileID: 0}
+    - target: {fileID: 8664080259475959947, guid: e93cc43ffec26ad448985798dc0c69a7,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e93cc43ffec26ad448985798dc0c69a7, type: 3}
 --- !u!114 &1659452723 stripped
