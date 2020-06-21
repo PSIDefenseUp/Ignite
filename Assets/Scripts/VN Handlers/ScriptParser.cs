@@ -70,9 +70,9 @@ public class ScriptParser
                 break;
             case "expression":
                 Scene.Expression(c.Args[0], c.Args[1]);
+                Next();
                 break;
             case "delete":
-
                 Scene.Delete(c.Args[0]);
                 break;
             case "load":
