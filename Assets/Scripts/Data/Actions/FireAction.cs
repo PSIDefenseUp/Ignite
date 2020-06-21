@@ -38,6 +38,8 @@ public class FireAction : IAction
 	{
 		foreach (var bullet in bulletData)
 		{
+			// TODO: animation?
+
 			bullet.Instantiate();
 		}
 	}
