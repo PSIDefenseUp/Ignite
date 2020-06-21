@@ -1,97 +1,70 @@
 fileFormatVersion: 2
-guid: 5221eda95ce57ed478abd14472e54411
+guid: a033b739dbfb3a240965d4307af00eab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3249867187076352130
-    second: marisa_move_right_250_0
+      213: 8409496543312982646
+    second: Marisa_Idle_Side_0
   - first:
-      213: -8751229640651011448
-    second: marisa_move_right_250_1
+      213: -303905845392659321
+    second: Marisa_Idle_Side_1
   - first:
-      213: 2739233495774927328
-    second: marisa_move_right_250_2
+      213: -2140205050681368453
+    second: Marisa_Idle_Side_2
   - first:
-      213: 7656259616374095216
-    second: marisa_move_right_250_3
+      213: -69998806764843503
+    second: Marisa_Idle_Side_3
   - first:
-      213: -7091556151745000017
-    second: marisa_move_right_250_4
+      213: -7078458921303660415
+    second: Marisa_Idle_Side_4
   - first:
-      213: 661440593320300148
-    second: marisa_move_right_250_5
+      213: -4704453716589471528
+    second: Marisa_Idle_Side_5
   - first:
-      213: -2144274212981845049
-    second: marisa_move_right_250_6
+      213: 6029836637103193252
+    second: Marisa_Idle_Side_6
   - first:
-      213: -7442233068397156859
-    second: marisa_move_right_250_7
+      213: -1137559799676239761
+    second: Marisa_Idle_Side_7
   - first:
-      213: -3724809586207787258
-    second: marisa_move_right_250_8
+      213: -6124293438578896072
+    second: Marisa_Idle_Side_8
   - first:
-      213: 4331437592591515236
-    second: marisa_move_right_250_9
+      213: -8894471385642429205
+    second: Marisa_Idle_Side_9
   - first:
-      213: 8000380369296576381
-    second: marisa_move_right_250_10
+      213: -192486878060411987
+    second: Marisa_Idle_Side_10
   - first:
-      213: 370349010061852180
-    second: marisa_move_right_250_11
+      213: -2188102777111976654
+    second: Marisa_Idle_Side_11
   - first:
-      213: 2323712661922236920
-    second: marisa_move_right_250_12
+      213: 1594597777265256220
+    second: Marisa_Idle_Side_12
   - first:
-      213: 3711075594688351549
-    second: marisa_move_right_250_13
+      213: -7664337400384846190
+    second: Marisa_Idle_Side_13
   - first:
-      213: -6015295055241988046
-    second: marisa_move_right_250_14
+      213: 6564410750371283293
+    second: Marisa_Idle_Side_14
   - first:
-      213: -6919004596048746449
-    second: marisa_move_right_250_0
+      213: -8791853036113974337
+    second: Marisa_Idle_Side_15
   - first:
-      213: -5081850156066302085
-    second: marisa_move_right_250_1
+      213: -5615932987643468948
+    second: Marisa_Idle_Side_16
   - first:
-      213: -3383885139816745368
-    second: marisa_move_right_250_2
+      213: -2972048905706000024
+    second: Marisa_Idle_Side_17
   - first:
-      213: 5172429807017349153
-    second: marisa_move_right_250_3
+      213: 1118668333484838226
+    second: Marisa_Idle_Side_18
   - first:
-      213: -4994810741149071843
-    second: marisa_move_right_250_4
+      213: -5532576608463753525
+    second: Marisa_Idle_Side_19
   - first:
-      213: -3185540535632006067
-    second: marisa_move_right_250_5
-  - first:
-      213: 1851307455386059434
-    second: marisa_move_right_250_6
-  - first:
-      213: 3344251211833812338
-    second: marisa_move_right_250_7
-  - first:
-      213: -5019740316261206081
-    second: marisa_move_right_250_8
-  - first:
-      213: -3738114859285105505
-    second: marisa_move_right_250_9
-  - first:
-      213: 6142671691133858824
-    second: marisa_move_right_250_10
-  - first:
-      213: 2889818192926849862
-    second: marisa_move_right_250_11
-  - first:
-      213: -5670759032866339001
-    second: marisa_move_right_250_12
-  - first:
-      213: -1592929621918702127
-    second: marisa_move_right_250_13
-  - first:
-      213: -795104807843718366
-    second: marisa_move_right_250_14
+      213: 8930119231630487776
+    second: Marisa_Idle_Side_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -174,18 +147,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -201,7 +162,217 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: marisa_move_right_250_0
+      name: Marisa_Idle_Side_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672bb0cfc8884b470800000000000000
+      internalID: 8409496543312982646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_Idle_Side_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ca4386e3f48cbf0800000000000000
+      internalID: -303905845392659321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_Idle_Side_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70e3af78d67c42e0800000000000000
+      internalID: -2140205050681368453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_Idle_Side_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e8414c470570ff0800000000000000
+      internalID: -69998806764843503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_Idle_Side_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1000
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18820864d1344cd90800000000000000
+      internalID: -7078458921303660415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_Idle_Side_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d81b60254c66beb0800000000000000
+      internalID: -4704453716589471528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_Idle_Side_6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4acfb2859784ea350800000000000000
+      internalID: 6029836637103193252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_Idle_Side_7
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f608885a3639630f0800000000000000
+      internalID: -1137559799676239761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_Idle_Side_8
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833df35c093220ba0800000000000000
+      internalID: -6124293438578896072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_Idle_Side_9
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 750
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be418e1566d709480800000000000000
+      internalID: -8894471385642429205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_Idle_Side_10
       rect:
         serializedVersion: 2
         x: 0
@@ -215,14 +386,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2828357af1caff90800000000000000
-      internalID: -6919004596048746449
+      spriteID: da309494436245df0800000000000000
+      internalID: -192486878060411987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marisa_move_right_250_1
+      name: Marisa_Idle_Side_11
       rect:
         serializedVersion: 2
         x: 250
@@ -236,14 +407,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7797e53534a979b0800000000000000
-      internalID: -5081850156066302085
+      spriteID: 235e1360e1c42a1e0800000000000000
+      internalID: -2188102777111976654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marisa_move_right_250_2
+      name: Marisa_Idle_Side_12
       rect:
         serializedVersion: 2
         x: 500
@@ -257,14 +428,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 866ff78d4660a01d0800000000000000
-      internalID: -3383885139816745368
+      spriteID: c17e589da36212610800000000000000
+      internalID: 1594597777265256220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marisa_move_right_250_3
+      name: Marisa_Idle_Side_13
       rect:
         serializedVersion: 2
         x: 750
@@ -278,14 +449,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12059e8318928c740800000000000000
-      internalID: 5172429807017349153
+      spriteID: 2960253edbdc2a590800000000000000
+      internalID: -7664337400384846190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marisa_move_right_250_4
+      name: Marisa_Idle_Side_14
       rect:
         serializedVersion: 2
         x: 1000
@@ -299,14 +470,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d160185381edeaab0800000000000000
-      internalID: -4994810741149071843
+      spriteID: d51c2a73cc8791b50800000000000000
+      internalID: 6564410750371283293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marisa_move_right_250_5
+      name: Marisa_Idle_Side_15
       rect:
         serializedVersion: 2
         x: 0
@@ -320,14 +491,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d44fb04b2cfaac3d0800000000000000
-      internalID: -3185540535632006067
+      spriteID: fbbacf0be301df580800000000000000
+      internalID: -8791853036113974337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marisa_move_right_250_6
+      name: Marisa_Idle_Side_16
       rect:
         serializedVersion: 2
         x: 250
@@ -341,14 +512,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa28150725a21b910800000000000000
-      internalID: 1851307455386059434
+      spriteID: c63ec15c3b23012b0800000000000000
+      internalID: -5615932987643468948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marisa_move_right_250_7
+      name: Marisa_Idle_Side_17
       rect:
         serializedVersion: 2
         x: 500
@@ -362,14 +533,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 275260132ca296e20800000000000000
-      internalID: 3344251211833812338
+      spriteID: 8613e40544921c6d0800000000000000
+      internalID: -2972048905706000024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marisa_move_right_250_8
+      name: Marisa_Idle_Side_18
       rect:
         serializedVersion: 2
         x: 750
@@ -383,14 +554,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb73b8037cc465ab0800000000000000
-      internalID: -5019740316261206081
+      spriteID: 25d87de1cee468f00800000000000000
+      internalID: 1118668333484838226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marisa_move_right_250_9
+      name: Marisa_Idle_Side_19
       rect:
         serializedVersion: 2
         x: 1000
@@ -404,14 +575,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f94b3b2475c8f1cc0800000000000000
-      internalID: -3738114859285105505
+      spriteID: bcee1ef23e65833b0800000000000000
+      internalID: -5532576608463753525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marisa_move_right_250_10
+      name: Marisa_Idle_Side_20
       rect:
         serializedVersion: 2
         x: 0
@@ -425,92 +596,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 804b1e99b572f3550800000000000000
-      internalID: 6142671691133858824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marisa_move_right_250_11
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 0
-        width: 250
-        height: 250
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64bbdd6e552ba1820800000000000000
-      internalID: 2889818192926849862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marisa_move_right_250_12
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 0
-        width: 250
-        height: 250
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7470a2f54ba6d41b0800000000000000
-      internalID: -5670759032866339001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marisa_move_right_250_13
-      rect:
-        serializedVersion: 2
-        x: 750
-        y: 0
-        width: 250
-        height: 250
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d5a655d2f6c4e9e0800000000000000
-      internalID: -1592929621918702127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marisa_move_right_250_14
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 250
-        height: 250
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22b1541d36837f4f0800000000000000
-      internalID: -795104807843718366
+      spriteID: 0e0383b90282eeb70800000000000000
+      internalID: 8930119231630487776
       vertices: []
       indices: 
       edges: []
