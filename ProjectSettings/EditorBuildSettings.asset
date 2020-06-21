@@ -57,22 +57,37 @@ EditorBuildSettings:
     path: Assets/Scenes/FoxBattle.unity
     guid: 01f27a5c14317004b85d314f02de2964
   - enabled: 1
-    path: Assets/Scenes/Talk1.unity
+    path: Assets/Scenes/talk1.unity
     guid: 3c9dde2de5449c847b488c0966280ac3
   - enabled: 1
-    path: Assets/Scenes/Talk2.unity
+    path: Assets/Scenes/talk2.unity
     guid: de1ca3dde69f7984eb52c78254283531
   - enabled: 1
-    path: Assets/Scenes/Talk3.unity
+    path: Assets/Scenes/prologue.unity
+    guid: e66ac9c90e25c4b4b96de5ca48044fdd
+  - enabled: 1
+    path: Assets/Scenes/talk7.unity
+    guid: 5ddb359f3ab9dbf4cb8f8e4e4f24bc63
+  - enabled: 1
+    path: Assets/Scenes/talk8.unity
+    guid: ab7350e356eef7f48b112655f96238a8
+  - enabled: 1
+    path: Assets/Scenes/talk9.unity
+    guid: 29b5ca6cfde6d41409c96f34f70cd4ad
+  - enabled: 1
+    path: Assets/Scenes/talk10.unity
+    guid: c90d0161cc418a64c8a99f9379ae5bfc
+  - enabled: 1
+    path: Assets/Scenes/talk3.unity
     guid: 1ffcc3329013d7646a69be67e790dc2a
   - enabled: 1
-    path: Assets/Scenes/Talk4.unity
+    path: Assets/Scenes/talk4.unity
     guid: ce429971b00323d48b99a8fd87d85ec1
   - enabled: 1
-    path: Assets/Scenes/Talk5.unity
+    path: Assets/Scenes/talk5.unity
     guid: 9ff7c1dd005ef464ba6a57dba0397085
   - enabled: 1
-    path: Assets/Scenes/Talk6.unity
+    path: Assets/Scenes/talk6.unity
     guid: 2a034b1574c184448969c55a82cbd9bd
   - enabled: 0
     path: Assets/Scenes/VNtest.unity
