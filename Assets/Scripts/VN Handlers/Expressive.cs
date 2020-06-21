@@ -14,20 +14,24 @@ public class Expressive : MonoBehaviour
     // public Dictionary<string,Sprite> Expressions;
     public Expression[] Expressions;
     private Image myImage;
-    void Start()
+
+    private GameObject self;
+    void Awake()
     {
+        self = this.gameObject;
+        myImage = self.GetComponent<Image>();
     }
     public void Activate()
     {
     
         myImage = myImage ?? GetComponent<Image>();
-        gameObject.SetActive(true);
+        self.SetActive(true);
         
 
     }
     public void Deactivate()
     {
-        gameObject.SetActive(false);
+        GameObject.Destroy(self);
     }
 
     // Update is called once per frame

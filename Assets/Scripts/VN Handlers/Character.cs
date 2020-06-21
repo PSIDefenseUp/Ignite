@@ -24,8 +24,6 @@ public class Character : MonoBehaviour
                 Debug.Log("Left Set");
             }
         }
-        Left.Deactivate();
-        Right.Deactivate();
     }
     public Character Instantiate(string expression, string side)
     {
@@ -45,6 +43,11 @@ public class Character : MonoBehaviour
         Right.Deactivate();
         Left.Activate();;
         active = Left;
+    }
+    public void Remove()
+    {
+        Right.Deactivate();
+        Left.Deactivate();
     }
     void ActivateRight()
     {

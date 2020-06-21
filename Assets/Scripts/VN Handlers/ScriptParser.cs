@@ -15,7 +15,7 @@ public class ScriptParser
     private Scene Scene;
     private string script;
     private int index;
-    private string commandRegex = "\\[(?<command>[A-Za-z]+)\\]\\((?<parameters>[\\w | .!?…~\"',-*]*)\\)"; //"[COMMANDNAME](ARGSLIST)"
+    private string commandRegex = "\\[(?<command>[A-Za-z]+)\\]\\((?<parameters>[\\w | .!?…~\"',-n’ ]*)\\)"; //"[COMMANDNAME](ARGSLIST)"
     private Regex regex;
     public ScriptParser(string filepath, Scene s)
     {
@@ -60,6 +60,7 @@ public class ScriptParser
         {
             case "display":
                 Scene.Display(c.Args[0], c.Args[1], c.Args[2]);
+                Debug.Log("Display Invoked on: "+ c.Args[2]);
                 break;
             case "say":
                 Scene.Say(c.Args[0], c.Args[1]);
@@ -75,6 +76,7 @@ public class ScriptParser
                 Scene.Delete(c.Args[0]);
                 break;
             case "load":
+                Scene.Say("", "");
                 SceneManager.LoadScene(c.Args[0]);
                 break;
         }

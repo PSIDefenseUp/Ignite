@@ -49,7 +49,7 @@ public class Scene : MonoBehaviour
     {
         if(actors.ContainsKey(name))
         {
-            GameObject.Destroy(actors[name]);  
+            actors[name].Remove();  
         }
         else
         {
