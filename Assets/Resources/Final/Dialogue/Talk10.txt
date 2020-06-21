@@ -1,0 +1,150 @@
+[display](Neutral|Marisa|left)
+[display](Neutral|Yukari|right)
+
+[expression](Joking|Yukari)
+[say] (Yukari| Yoohoo~)
+
+[expression](Neutral|Marisa)
+[say] (Marisa| It’s the weird lady!)
+[delete](Marisa)
+[display](Neutral|Sen|left)
+[expression](Surprised|Sen)
+[say] (Sen| Oh sh*t, Lady Yukari...)
+[delete](Yukari)
+[display](Neutral|Hayami|right)
+[expression](Annoyed|Hayami) 
+[say](Hayami|Language!) 
+
+[expression](Nervous Smile|Sen) 
+[say](Sen| S-sorry!)
+[delete](Hayami)
+[delete](Sen)
+[display](Neutral|Marisa|left)
+[display](Neutral|Yukari|right)
+[expression](Neutral|Yukari)
+[say](Yukari| Despite all the trials and tests that’s been thrown at you, you still managed to reach the shrine.)
+
+[say](Yukari| Good job!)
+
+[expression](Happy|Marisa) 
+[say](Marisa|Thanks! Now can you please move so I can go see Reimu?)
+
+[expression](Serious|Yukari) 
+[say](Yukari| I’m afraid not!)
+
+[expression](Determined|Marisa)
+[say](Marisa| !!!)
+
+[expression](Dangerous|Yukari)
+[say](Yukari| You see, I am your final bo-)
+
+[expression](Deadpan|Marisa)
+[say](Marisa| Will you move aside if I give you something cool?)
+
+[expression](Neutral|Yukari) 
+[say](Yukari| Oh? What have you got-)
+[delete](Marisa)
+[display](Tsuchinoko)
+[expression](YOOOOOO|Yukari) 
+[say](Yukari| YOOOOOOOOOO IS THAT A TSUCHINOKO?!)
+
+[expression](Joking|Yukari) 
+[say](Yukari| FORGET THE BOSS FIGHT, YOU’RE GOOD TO GO.) 
+[delete] (Tsuchinoko)
+[delete](Yukari)
+[display](Neutral|Marisa|left)
+[display](Neutral|Reimu|right)
+[expression](Annoyed|Reimu) 
+[say](Reimu| Who the hell is being so loud so late at night?!)
+
+[expression](Happy|Marisa)
+[say] (Marisa|Reimu!!)
+
+[expression](Surprised|Reimu) 
+[say](Reimu| (Marisa?! What are you doing here?!)
+
+[expression](Bashful|Marisa) 
+[say](Marisa| I came to see you!! I really wanted to play with you again.)
+
+[expression](Deadpan|Marisa)
+[say](Marisa| There was a weird lady who was blocking the way, but I gave her a fat snake thing I found, and she let me come in.)
+
+
+[expression](Surprised|Reimu)
+[say](Reimu| Fat snake? Weird lady?) 
+
+[expression](Neutral|Reimu) 
+[say](Reimu| Well, no matter.) 
+
+[expression](Bashful|Reimu)
+[say](Reimu| I actually really wanted to see you again too.)
+
+[expression](Bashful|Marisa)
+[say](Marisa| Really?)
+
+[say](Reimu| Yea, really.) 
+
+[expression](Neutral|Reimu) 
+[say](Reimu|Well, what are you waiting for? Come inside, it’s getting cold out here.)
+
+[say](Reimu| I should have some snacks and an extra futon lying around somewhere.)
+[delete](Reimu)
+[delete](Marisa)
+[display](Neutral|Sen|left)
+[display](Neutral|Yukari|right)
+[expression](Nervous|Sen) 
+[say](Sen| Um... Lady Yukari, I apologize... I failed to uh...)
+
+[expression](Neutral|Yukari)
+[say] (Yukari| It’s fine, it’s fine. I just wanted to mess with the girl a little.) 
+
+[say](Yukari| Ah, such lively youngsters. Really brings back memories.)
+
+[expression](Joking|Yukari)
+[say] (Yukari| Now, tonight has certainly been fun.)
+
+[expression](Neutral|Yukari)
+[say] (Yukari| But if you’ll excuse me, I have some business to attend to. Have a good evening~)
+[delete](Yukari)
+[expression](Nervous Smile|Sen) 
+[say](Sen| ...eh..?)
+[display](Neutral|Nitori|right)
+[expression](Neutral|Nitori) 
+[say](Nitori|E-excuse me, ma’am...)
+[delete](Sen)
+[display](Neutral|Hayami|left)
+[expression](Smile|Hayami)
+[say]( Hayami| Oh? Yes, what is it, my child?)
+
+[say](Nitori| I’m getting kinda dried out... Do you mind taking me back to the river?)
+
+[say](Hayami| Of course. It’s on the way back to my home anyway.) 
+
+[say](Hayami| Let’s go~)
+[delete](Nitori)
+[display](Neutral|Sen|right)
+[expression](Surprised|Sen) 
+[say](Sen|W-wait!)
+
+[expression](Neutral|Hayami) 
+[say](Hayami|???)
+
+[expression](Bashful|Sen)
+[say](Sen| Uh... I was thinking... You came from the village right?) 
+
+[say](Sen|It’s a long way from here to there, so I was thinking, maybe I can uh... escort you home...)
+
+[expression](Smile|Hayami)
+[say]( Hayami|An escort would certainly put my mind at ease on the journey back.) I accept your offer~)
+
+[expression](Surprised|Sen)
+[say](Sen| Y-you do?)
+
+[expression](Grin|Sen) 
+[say](Sen| Um... Ye-yea, you do!! Right! Uh... Right this way, miss!)
+[delete](Sen)
+[delete](Hayami)
+[display](Neutral|Nitori|right)
+[expression](Confused|Nitori) 
+[say](Nitori|...adults sure are weird...)
+[load](MainMenu)

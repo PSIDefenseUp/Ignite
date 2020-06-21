@@ -1,0 +1,13 @@
+[display](Neutral|Marisa|left)
+[display](Neutral|Nitori|right)
+
+[Expression] (Determined|Marisa)
+[Say](Marisa|Hm... I think I recognize this area. We must be getting close!)
+
+[Expression] (Neutral|Nitori)[Say](Nitori|I forgot to ask back there, but where are you going?)
+
+[Expression] (Neutral|Marisa)[Say](Marisa|Oh, I’m going to see a good friend of mine! Her name’s Reimu, she’s  real smart and real pretty!) 
+[Say](Marisa|She lives at the Hakurei Shrine!)
+
+[Expression] (Confused|Nitori)[Say](Nitori|A good friend huh...)
+[load](level 9)

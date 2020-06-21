@@ -1,10 +1,10 @@
 [Display](Neutral|Marisa|Right)
-[Display](Neutral|Umbrella|Left)
+[Display](Neutral|Hayami|Left)
 [Expression](Neutral|Marisa)[say](Marisa|If I remember it right, this path through the forest should lead to the shrine.)
 
-[Expression](Neutral|Umbrella)[say](Umbrella|A forest huh… do be careful, my child.)
+[Expression](Neutral|Hayami)[say](Hayami|A forest huh... do be careful, my child.)
 
 [Expression](Happy|Marisa)[say](Marisa|Bah!) Careful is my middle name!)
 
-[Expression](Nervous|Marisa)[say](Marisa|… It’s a bit spooky though...)
+[Expression](Nervous|Marisa)[say](Marisa|... It’s a bit spooky though...)
 [load](Level5)

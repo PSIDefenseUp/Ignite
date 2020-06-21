@@ -1,0 +1,11 @@
+[say](Narration| A long time ago, there was a little witch who had a friend.) 
+
+[say](Narration| She loved this friend from the bottom of her little witchy heart.)
+
+[say](Narration| So much so, that even a night full of dangerous yokai could not stop her from going to see her friend.)
+
+[say](Narration| And so, this is a sweet little story from way back when.)
+
+[say](Narration| the witch and the shrine maiden were still small.)
+
+[load](talk1)

@@ -26,7 +26,7 @@
 [Expression](Neutral|Marisa)
 [say](Marisa|Hm?)
 
-[say](Nitori|If you don’t mind… Do you think I can tag along with you for a bit? It gets a little boring being by myself back at the river…)
+[say](Nitori|If you don’t mind... Do you think I can tag along with you for a bit? It gets a little boring being by myself back at the river...)
 
 [Expression](Happy|Marisa)
 [say](Marisa|Sure, why not? More the merrier!)

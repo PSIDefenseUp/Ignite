@@ -9,16 +9,16 @@
 [Expression](Neutral|Yukari)
 [say](Yukari|I see you’ve picked up a little chaperone, or perhaps she’s just a cunning yokai waiting for the best time to go and devour you?)
 [delete](Marisa)
-[Display](Neutral|Umbrella|Right)
-[Expression](Annoyed|Umbrella)
-[say](Umbrella|...)
+[Display](Neutral|Hayami|Right)
+[Expression](Annoyed|Hayami)
+[say](Hayami|...)
 
 [Expression](Joking|Yukari)
 [say](Yukari|Oh, don’t look at me like that, I was just joking.)
 
 [Expression](Serious|Yukari)
 [say](Yukari|Anyway, the forest has even more dangerous beings than you’ve encountered, you know? You should turn back before things get worse.)
-[delete](Umbrella)
+[delete](Hayami)
 [Display](Neutral|Marisa|Right)
 [Expression](Determined|Marisa)
 [say](Marisa|Nuh-uh! I can handle any yokai that tries to eat me! I know some spells!)
@@ -32,7 +32,7 @@
 [say](Marisa|What? What river-)
 
 [Expression](Nervous|Marisa)
-[say](Marisa|Oh. Uh…)
+[say](Marisa|Oh. Uh...)
 
 [delete](Marisa)
 [delete](Yukari)
@@ -50,7 +50,7 @@
 
 [Expression](Annoyed|Nitori)[say](You there! Human! What are you doing in my territory?!)
 
-[say](Marisa|Uh… I was just passing through. I gotta cross that river to get to the Hakurei Shrine.)
+[say](Marisa|Uh... I was just passing through. I gotta cross that river to get to the Hakurei Shrine.)
 
 [Expression](Happy|Marisa)[say](Marisa| Name’s Marisa, by the way. Nice to meet you!)
 
@@ -58,11 +58,11 @@
 
 [Expression](Neutral| Marisa)[say](Marisa|So do you happen to know a way to cross this river?)
 
-[Expression](Neutral| Nitori)[say](Nitori|Well… yes, but I’m not just gonna let you cross for free.)
+[Expression](Neutral| Nitori)[say](Nitori|Well... yes, but I’m not just gonna let you cross for free.)
 
-[say](Marisa|What do I gotta pay? I have a few mushrooms if you want those.)
+Marisa)[say](Marisa|What do I gotta pay? I have a few mushrooms if you want those.)
 
-[Expression](Happy|Nitori)[say](Nitori|No thanks. How about… if you play a little game with me, I’ll let you cross the river!)
+[Expression](Happy|Nitori)[say](Nitori|No thanks. How about... if you play a little game with me, I’ll let you cross the river!)
 
 [Expression](Happy| Marisa)[say](Marisa|Sounds good! You’re on!)
 [load](NitoriBoss)

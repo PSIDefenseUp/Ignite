@@ -1,0 +1,52 @@
+[display](Neutral|Marisa|right)
+[display](Neutral|Yukari|left)
+
+[Expression] (Joking|Yukari)
+[say](Yukari|Well, well, well! Look at you! You’ve made it this far, and you’ve found a new friend to boot!)
+
+[Expression] (Nervous|Marisa)
+[say](Marisa|WAH!) 
+
+[Expression] (Neutral|Marisa)
+[say](Marisa|How do you do that?)
+
+[Expression] (Neutural|Yukari)
+[say](Yukari|Hehe.. perhaps you’ll find out some day~)
+
+[Expression] (Serious|Yukari)
+[say](Yukari|But on a more serious note, there are MUCH stronger enemies up ahead. You should really go home now.)
+
+[Expression] (Determined|Marisa)
+[say](Marisa|No thank you. Like you said before, I got this far. I'm not going home now!)
+
+[Expression] (Neutral|Yukari)
+[say](Yukari|Well, suit yourself. Don’t blame me if you get eaten by a big bad yokai~)
+[delete](Marisa)
+[display](Grin|Sen|right)
+[Expression] (Grin|Sen)
+[say](Sen|Huh? Is that a human I see?)
+
+[Expression] (Joking|Yukari)
+[say](Yukari|Oh would you look at that A kitsune! Good luck~)
+[delete](Yukari)
+[display](Nervous|Marisa|Left)
+[Expression] (Nervous|Marisa)[say]
+(Marisa|...How does she do that?)
+
+[say](Sen|Ah! I knew it! A human child!)
+
+[Expression](Neutral|Marisa)
+[say](Marisa|Are you the big bad yokai that’s going to try to eat me?)
+
+[Expression](Nervous Smile)
+[say](Sen|W-wha..?) 
+
+[Expression](Grin|Sen)
+[say](Sen|Uh- Th-That’s right! I haven’t had dinner so I’m real hungry right now! You best go away before I catch you for my next meal!)
+
+[Expression](Angry|Marisa)[say]
+(Marisa|No thank you! Get out of my way, I’m going to the shrine!)
+
+[Expression](Surprised|Sen)
+[say](Sen|Um… hold on a second there... What a pain...)
+[load](SenBoss)
