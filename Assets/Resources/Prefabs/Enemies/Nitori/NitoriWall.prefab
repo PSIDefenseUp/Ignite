@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 4674496858978237077}
   - component: {fileID: 5268881133604833043}
   - component: {fileID: -7781505010931612907}
+  - component: {fileID: 2040428864133461547}
+  - component: {fileID: -6019692320585999304}
   m_Layer: 0
   m_Name: NitoriWall
   m_TagString: Untagged
@@ -116,7 +118,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13cbcd58135184143ac946eb2012f8ae, type: 3}
+  m_Sprite: {fileID: -7729289880294279129, guid: 42bec632b05d5f74083b8bebd6ff325b,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,3 +154,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f1cb98a13bf2b4f871ff3ead8eb722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2040428864133461547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674496858978237080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a761bbead1b6964f95f257cad41c539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6019692320585999304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674496858978237080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0925827b94ae8c48b95ef6e0123841a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Frames:
+  - {fileID: -7729289880294279129, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: 1798162728468878240, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: 2612247001257472028, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: -2833188733006501220, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: 9124395212790647722, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: 6901066446679160948, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: -7308224274651481077, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: 2317697529054757164, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: -1252876335605576096, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: -4876676268318524537, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: -8177399976234725232, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: -3175935654362192306, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: -3807090121173738332, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: 6358724770989109687, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  - {fileID: -1458467463258043749, guid: 42bec632b05d5f74083b8bebd6ff325b, type: 3}
+  CurrentFrame: 0
+  Framerate: 16
+  Loop: 1

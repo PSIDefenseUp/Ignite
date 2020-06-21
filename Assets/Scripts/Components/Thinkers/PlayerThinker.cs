@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerThinker : Thinker
 {
-	private static Sprite bulletSprite;
+	private static Sprite[] bulletSprite;
 
 	public void Start()
 	{
-		bulletSprite = Resources.Load<Sprite>("Dev/Sprites/PlayerBullet");
+		bulletSprite = Resources.LoadAll<Sprite>("Final/Marisa_Projectile");
 	}
 
 	public override void Think()
@@ -38,16 +38,16 @@ public class PlayerThinker : Thinker
 					action = new MoveRelativeAction(1, 0);
 					break;
 				case InputCommand.MOVEUP:
-					action = new TurnMoveAction(0, 1);
+					action = new MoveAction(0, 1);
 					break;
 				case InputCommand.MOVEDOWN:
-					action = new TurnMoveAction(0, -1);
+					action = new MoveAction(0, -1);
 					break;
 				case InputCommand.MOVELEFT:
-					action = new TurnMoveAction(-1, 0);
+					action = new MoveAction(-1, 0);
 					break;
 				case InputCommand.MOVERIGHT:
-					action = new TurnMoveAction(1, 0);
+					action = new MoveAction(1, 0);
 					break;
 				case InputCommand.TURNLEFT:
 					action = new TurnAction(90);

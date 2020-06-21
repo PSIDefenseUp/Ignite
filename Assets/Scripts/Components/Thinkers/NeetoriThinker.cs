@@ -14,14 +14,17 @@ public class NeetoriThinker : Thinker
 
 	public void Start()
 	{
-		bulletSprite = bulletSprite ?? Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
+		bulletSprite = bulletSprite ?? Resources.Load<Sprite>("Final/Enemy_Bullet");
 		turretPrefab = turretPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/Nitori/NitoriTurret");
 		wallPrefab = wallPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/Nitori/NitoriWall");
 	}
 
 	public void OnDestroy()
 	{
-		GameState.Instance.StageWon = true;
+		if (GetComponent<Health>().Value <= 0)
+		{
+			GameState.Instance.StageWon = true;
+		}
 	}
 
 	public override void Think()
@@ -43,7 +46,6 @@ public class NeetoriThinker : Thinker
 					mount.NeedsRepair = true;
 				}
 
-				// TODO: disable all turret walls
 				var walls = FindObjectsOfType<NitoriWall>();
 				foreach(var wall in walls)
 				{
@@ -70,12 +72,19 @@ public class NeetoriThinker : Thinker
 					// to repair, create a turret on top of the mount
 					var turret = Instantiate(turretPrefab);
 					var turretPosition = turret.GetComponent<Position>();
+					var turretComponent = turret.GetComponent<NitoriTurret>();
+
+					turretComponent.Index = mountToRepair.Index;
 					turretPosition.Value = mountPosition.Value;
 					mountToRepair.NeedsRepair = false;
+
+					actor.SetAction(new MoveRelativeAction(0, 1));
+					return;
 				}
 				else
 				{
 					actor.SetAction(new MoveRelativeAction(0, 1));
+					return;
 				}
 			}
 			else
@@ -92,8 +101,6 @@ public class NeetoriThinker : Thinker
 					wallPosition.Value = wallBase.Value;
 				}
 			}
-
-			return;
 		}
 
 		if (nitoriHome.Value.Equals(position.Value))

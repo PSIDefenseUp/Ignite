@@ -73,7 +73,7 @@ public class GameState
 			cameraFollowSystem.Tick();
 		}
 
-		if (GameOver) // TODO: stage won should load the next scene, not do a reload
+		if (GameOver)
 		{
 			if (InputCommand != InputCommand.NONE)
 			{
@@ -81,7 +81,7 @@ public class GameState
 			}
 		}
 
-		if (StageWon) // TODO: stage won should load the next scene, not do a reload
+		if (StageWon)
 		{
 			if (InputCommand != InputCommand.NONE)
 			{

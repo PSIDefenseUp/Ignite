@@ -411,116 +411,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chicken_Side_Idle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2250
-        width: 250
-        height: 250
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9d85fbfb8ab91c70800000000000000
-      internalID: 8942383645511224733
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chicken_Side_Idle_1
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 2250
-        width: 250
-        height: 250
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de664f5d1ec2d93f0800000000000000
-      internalID: -892507802680662291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chicken_Side_Idle_2
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 2250
-        width: 250
-        height: 250
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a8911c5285c3bf90800000000000000
-      internalID: -6938985437166724959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chicken_Side_Idle_3
-      rect:
-        serializedVersion: 2
-        x: 750
-        y: 2250
-        width: 250
-        height: 250
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ac0e0f3970620080800000000000000
-      internalID: -9222703013036159834
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chicken_Side_Idle_4
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 2250
-        width: 250
-        height: 250
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84079c6e6f0baac90800000000000000
-      internalID: -7157714083271577528
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Chicken_Side_Idle_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 2000
+        y: 1750
         width: 250
         height: 250
       alignment: 9
@@ -541,7 +436,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 2000
+        y: 1750
         width: 250
         height: 250
       alignment: 9
@@ -562,7 +457,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 2000
+        y: 1750
         width: 250
         height: 250
       alignment: 9
@@ -583,7 +478,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 750
-        y: 2000
+        y: 1750
         width: 250
         height: 250
       alignment: 9
@@ -604,7 +499,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 2000
+        y: 1750
         width: 250
         height: 250
       alignment: 9
@@ -625,7 +520,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1750
+        y: 1500
         width: 250
         height: 250
       alignment: 9
@@ -646,7 +541,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 1750
+        y: 1500
         width: 250
         height: 250
       alignment: 9
@@ -667,7 +562,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 1750
+        y: 1500
         width: 250
         height: 250
       alignment: 9
@@ -688,7 +583,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 750
-        y: 1750
+        y: 1500
         width: 250
         height: 250
       alignment: 9
@@ -709,7 +604,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 1750
+        y: 1500
         width: 250
         height: 250
       alignment: 9
@@ -730,7 +625,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1500
+        y: 1250
         width: 250
         height: 250
       alignment: 9
@@ -751,7 +646,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 1500
+        y: 1250
         width: 250
         height: 250
       alignment: 9
@@ -772,7 +667,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 1500
+        y: 1250
         width: 250
         height: 250
       alignment: 9
@@ -793,7 +688,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 750
-        y: 1500
+        y: 1250
         width: 250
         height: 250
       alignment: 9
@@ -814,7 +709,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 1500
+        y: 1250
         width: 250
         height: 250
       alignment: 9
@@ -835,7 +730,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1250
+        y: 1000
         width: 250
         height: 250
       alignment: 9
@@ -856,7 +751,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 1250
+        y: 1000
         width: 250
         height: 250
       alignment: 9
@@ -877,7 +772,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 1250
+        y: 1000
         width: 250
         height: 250
       alignment: 9
@@ -898,7 +793,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 750
-        y: 1250
+        y: 1000
         width: 250
         height: 250
       alignment: 9
@@ -919,7 +814,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 1250
+        y: 1000
         width: 250
         height: 250
       alignment: 9
@@ -940,7 +835,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1000
+        y: 750
         width: 250
         height: 250
       alignment: 9
@@ -961,7 +856,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 1000
+        y: 750
         width: 250
         height: 250
       alignment: 9
@@ -982,7 +877,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 1000
+        y: 750
         width: 250
         height: 250
       alignment: 9
@@ -1003,7 +898,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 750
-        y: 1000
+        y: 750
         width: 250
         height: 250
       alignment: 9
@@ -1024,7 +919,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 1000
+        y: 750
         width: 250
         height: 250
       alignment: 9
@@ -1045,7 +940,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 750
+        y: 500
         width: 250
         height: 250
       alignment: 9
@@ -1066,7 +961,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 750
+        y: 500
         width: 250
         height: 250
       alignment: 9
@@ -1087,7 +982,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 750
+        y: 500
         width: 250
         height: 250
       alignment: 9
@@ -1108,7 +1003,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 750
-        y: 750
+        y: 500
         width: 250
         height: 250
       alignment: 9
@@ -1129,7 +1024,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 750
+        y: 500
         width: 250
         height: 250
       alignment: 9
@@ -1150,7 +1045,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 500
+        y: 250
         width: 250
         height: 250
       alignment: 9
@@ -1171,7 +1066,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 500
+        y: 250
         width: 250
         height: 250
       alignment: 9
@@ -1192,7 +1087,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 500
+        y: 250
         width: 250
         height: 250
       alignment: 9
@@ -1213,7 +1108,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 750
-        y: 500
+        y: 250
         width: 250
         height: 250
       alignment: 9
@@ -1234,7 +1129,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 500
+        y: 250
         width: 250
         height: 250
       alignment: 9
@@ -1255,7 +1150,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 250
+        y: 0
         width: 250
         height: 250
       alignment: 9
@@ -1276,7 +1171,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 250
+        y: 0
         width: 250
         height: 250
       alignment: 9
@@ -1297,7 +1192,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 250
+        y: 0
         width: 250
         height: 250
       alignment: 9
@@ -1318,7 +1213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 750
-        y: 250
+        y: 0
         width: 250
         height: 250
       alignment: 9
@@ -1339,7 +1234,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 250
+        y: 0
         width: 250
         height: 250
       alignment: 9
@@ -1356,11 +1251,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chicken_Side_Idle_45
+      name: Chicken_Side_Idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 2000
         width: 250
         height: 250
       alignment: 9
@@ -1370,18 +1265,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b8ce590b7ae42960800000000000000
-      internalID: 7576438287303100600
+      spriteID: e1eb4f20153dd1350800000000000000
+      internalID: 5989175424368033310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chicken_Side_Idle_46
+      name: Chicken_Side_Idle_1
       rect:
         serializedVersion: 2
         x: 250
-        y: 0
+        y: 2000
         width: 250
         height: 250
       alignment: 9
@@ -1391,18 +1286,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a9971449ab138260800000000000000
-      internalID: 7098547851471853990
+      spriteID: e7b0f62fa47985f20800000000000000
+      internalID: 3411643065883888510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chicken_Side_Idle_47
+      name: Chicken_Side_Idle_2
       rect:
         serializedVersion: 2
         x: 500
-        y: 0
+        y: 2000
         width: 250
         height: 250
       alignment: 9
@@ -1412,18 +1307,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d959eb3273cc21e80800000000000000
-      internalID: -8209274633548032611
+      spriteID: b418d420cc70de6b0800000000000000
+      internalID: -5265543816532885173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chicken_Side_Idle_48
+      name: Chicken_Side_Idle_3
       rect:
         serializedVersion: 2
         x: 750
-        y: 0
+        y: 2000
         width: 250
         height: 250
       alignment: 9
@@ -1433,18 +1328,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aafe3a068c3a68560800000000000000
-      internalID: 7315714725720092586
+      spriteID: be7b4bf4a95c02140800000000000000
+      internalID: 4692968078272935915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chicken_Side_Idle_49
+      name: Chicken_Side_Idle_4
       rect:
         serializedVersion: 2
         x: 1000
-        y: 0
+        y: 2000
         width: 250
         height: 250
       alignment: 9
@@ -1454,8 +1349,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6183d0d534a539f0800000000000000
-      internalID: -489304433456086676
+      spriteID: 64b9f02534edda9f0800000000000000
+      internalID: -455463606573622458
       vertices: []
       indices: 
       edges: []

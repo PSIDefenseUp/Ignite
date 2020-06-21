@@ -16,6 +16,7 @@ public class AnimationDirectionSystem
 			}
 
 			Sprite[] sprites = null;
+			var actionSpriteSet = directionalSpriteSet.GetComponent<ActionSprite>();
 
 			switch ((int)position.Rotation)
 			{

@@ -11,7 +11,7 @@ public class ShamisenThinker : EnemyThinker
 
 	public void Start()
 	{
-		bulletSprite = Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
+		bulletSprite = Resources.Load<Sprite>("Final/Enemy_Bullet");
 	}
 
 	public override void Think()
@@ -64,7 +64,7 @@ public class ShamisenThinker : EnemyThinker
 	{
 		var bullets = FindObjectsOfType<Bullet>().Where(bullet => bullet.Team != Team.ENEMY).Select(bullet => bullet.GetComponent<Position>());
 		var position = GetComponent<Position>();
-		
+
 		foreach (var bullet in bullets)
 		{
 			//find bullet that is 2 moves away from hitting us and rotate towrds direction.

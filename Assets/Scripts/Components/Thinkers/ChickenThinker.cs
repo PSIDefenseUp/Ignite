@@ -8,11 +8,11 @@ public class ChickenThinker : EnemyThinker
 	private int actionNumber = 0;
 	private readonly int2[] moveDirections = new int2[] { new int2(1, 1), new int2(-1, 1) };
 	private readonly int2[] dodgeDirections = new int2[] { new int2(-1, -1), new int2(1, -1) };
-	private static Sprite bulletSprite;
+	private static Sprite[] bulletSprite;
 
 	public void Start()
 	{
-		bulletSprite = Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
+		bulletSprite = Resources.LoadAll<Sprite>("Final/FoxFire");
 	}
 
 	public override void Think()

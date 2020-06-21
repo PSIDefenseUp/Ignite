@@ -4,17 +4,16 @@ using System.Linq;
 
 public class BulletReflectionSystem
 {
-	private Sprite enemyBulletSprite;
-	private Sprite playerBulletSprite;
-	private Sprite neutralBulletSprite;
+	private Sprite[] enemyBulletSprites;
+	private Sprite[] playerBulletSprites;
+	private Sprite[] neutralBulletSprite;
 	public BulletReflectionSystem()
 	{
-		enemyBulletSprite = Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
-		playerBulletSprite = Resources.Load<Sprite>("Dev/Sprites/PlayerBullet");
-		neutralBulletSprite = Resources.Load<Sprite>("Dev/Sprites/NeutralBullet");
-
-
+		enemyBulletSprites = Resources.LoadAll<Sprite>("Final/Enemy_Bullet");
+		playerBulletSprites = Resources.LoadAll<Sprite>("Final/Marisa_Projectile");
+		neutralBulletSprite = Resources.LoadAll<Sprite>("Dev/Sprites/NeutralBullet");
 	}
+
 	public void Tick()
 	{
 		var bullets = Object.FindObjectsOfType<Bullet>();
@@ -36,6 +35,7 @@ public class BulletReflectionSystem
 						var bulletBackoutOffset = bulletPosition.GetAbsoluteOffset(new int2(0, -1));
 						bulletPosition.Value += bulletBackoutOffset;
 					}
+
 					if(reflector.ChangesBulletTeam)
 					{
 						bullet.Team = reflector.ReflectedBulletTeam;
@@ -43,15 +43,15 @@ public class BulletReflectionSystem
 						{
 							case Team.ENEMY:
 								bullet.Team = Team.ENEMY;
-								bullet.GetComponent<SpriteRenderer>().sprite = enemyBulletSprite;
+								bullet.GetComponent<SpriteAnimator>().Frames = enemyBulletSprites;
 								break;
 							case Team.PLAYER:
 								bullet.Team = Team.PLAYER;
-								bullet.GetComponent<SpriteRenderer>().sprite = playerBulletSprite;
+								bullet.GetComponent<SpriteAnimator>().Frames = playerBulletSprites;
 								break;
 							case Team.NEUTRAL:
 								bullet.Team = Team.NEUTRAL;
-								bullet.GetComponent<SpriteRenderer>().sprite = neutralBulletSprite;
+								bullet.GetComponent<SpriteAnimator>().Frames = neutralBulletSprite;
 								break;
 						}
 					}

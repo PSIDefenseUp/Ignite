@@ -129,7 +129,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.250244, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -260,11 +260,6 @@ MonoBehaviour:
   - {fileID: 3300090004798007941, guid: c449659071628e444a5390ef7d5adf18, type: 3}
   - {fileID: 8171735593882030646, guid: c449659071628e444a5390ef7d5adf18, type: 3}
   - {fileID: -6337723611137050539, guid: c449659071628e444a5390ef7d5adf18, type: 3}
-  - {fileID: -1412643203058143278, guid: c449659071628e444a5390ef7d5adf18, type: 3}
-  - {fileID: 8106342905122801113, guid: c449659071628e444a5390ef7d5adf18, type: 3}
-  - {fileID: -4387261302433643054, guid: c449659071628e444a5390ef7d5adf18, type: 3}
-  - {fileID: -6119361593677574884, guid: c449659071628e444a5390ef7d5adf18, type: 3}
-  - {fileID: 4695380398443922105, guid: c449659071628e444a5390ef7d5adf18, type: 3}
   FlipDownSprite: 0
   Down:
   - {fileID: 8306706823247857057, guid: ee5b90efb1d364a48935be0ec51a14ef, type: 3}
@@ -312,11 +307,6 @@ MonoBehaviour:
   - {fileID: -6118014784341145666, guid: ee5b90efb1d364a48935be0ec51a14ef, type: 3}
   - {fileID: 6335674371847679991, guid: ee5b90efb1d364a48935be0ec51a14ef, type: 3}
   - {fileID: 469034882404508614, guid: ee5b90efb1d364a48935be0ec51a14ef, type: 3}
-  - {fileID: -3249821713574645335, guid: ee5b90efb1d364a48935be0ec51a14ef, type: 3}
-  - {fileID: -722746420249507903, guid: ee5b90efb1d364a48935be0ec51a14ef, type: 3}
-  - {fileID: 3132158293760215923, guid: ee5b90efb1d364a48935be0ec51a14ef, type: 3}
-  - {fileID: -8484498904088392863, guid: ee5b90efb1d364a48935be0ec51a14ef, type: 3}
-  - {fileID: -8474845680312465475, guid: ee5b90efb1d364a48935be0ec51a14ef, type: 3}
   FlipLeftSprite: 0
   Left:
   - {fileID: 5989175424368033310, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
@@ -364,11 +354,6 @@ MonoBehaviour:
   - {fileID: -8719556888084856534, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
   - {fileID: 3015821849319213101, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
   - {fileID: 4947490774739001666, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
-  - {fileID: 2181059211136926778, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
-  - {fileID: 6191370775300141703, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
-  - {fileID: 4288696411446554646, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
-  - {fileID: -5280347225037076954, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
-  - {fileID: -3037148886165412667, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
   FlipRightSprite: 1
   Right:
   - {fileID: 5989175424368033310, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
@@ -416,8 +401,3 @@ MonoBehaviour:
   - {fileID: -8719556888084856534, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
   - {fileID: 3015821849319213101, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
   - {fileID: 4947490774739001666, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
-  - {fileID: 2181059211136926778, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
-  - {fileID: 6191370775300141703, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
-  - {fileID: 4288696411446554646, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
-  - {fileID: -5280347225037076954, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}
-  - {fileID: -3037148886165412667, guid: 6a2549097ed0c71489d02f264bdfd977, type: 3}

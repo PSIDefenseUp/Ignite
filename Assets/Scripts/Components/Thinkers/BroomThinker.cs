@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 public class BroomThinker : Thinker
 {
-	private Sprite bulletSprite;
+	private Sprite[] bulletSprites;
 	public void Start()
 	{
-		bulletSprite = Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
+		bulletSprites = Resources.LoadAll<Sprite>("Final/Enemy_Bullet");
 	}
 
 	private bool AreWithinDistance(int2 a, int2 b, int distance)
@@ -101,7 +101,7 @@ public class BroomThinker : Thinker
 
 				var bulletOfTheBullet = bullet.GetComponent<Bullet>();
 				bulletOfTheBullet.Team = Team.ENEMY;
-				bulletOfTheBullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
+				bulletOfTheBullet.GetComponent<SpriteAnimator>().Frames = bulletSprites;
 			}
 
 			actor.SetAction(new TurnMoveAction(destination - position.Value));

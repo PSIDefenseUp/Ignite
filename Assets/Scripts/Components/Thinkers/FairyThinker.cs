@@ -12,7 +12,7 @@ public class FairyThinker : EnemyThinker
 
 	public void Start()
 	{
-		bulletSprite = Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
+		bulletSprite = Resources.Load<Sprite>("Final/Enemy_Bullet");
 	}
 
 	public override void Think()

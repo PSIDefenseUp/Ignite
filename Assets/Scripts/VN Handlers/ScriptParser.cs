@@ -1,6 +1,9 @@
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public struct Command
 {
     public string CommandName;
@@ -9,22 +12,19 @@ public struct Command
 
 public class ScriptParser
 {
-    public DialogueSystem DialogueSystem;
-    public Scene Scene;
+    private Scene Scene;
     private string script;
     private int index;
-    private string commandRegex = "\\[(?<command>[A-Za-z]+)\\]\\((?<parameters>[A-Za-z ,]*)\\)"; //"[COMMANDNAME](ARGSLIST)"
+    private string commandRegex = "\\[(?<command>[A-Za-z]+)\\]\\((?<parameters>[\\w | .!?…~\"',-n’ ]*)\\)"; //"[COMMANDNAME](ARGSLIST)"
     private Regex regex;
-    public ScriptParser(string filepath)
+    public ScriptParser(string filepath, Scene s)
     {
         //read contents of file and store it to the script
-        script = @"[DISPLAY](Marisa, xcoord, ycoord)
-[SPEAK](Marisa, SOME TEXT)
-[Display](SomeoneElse, xcoord, ycoord)
-[SPEAK](Marisa, SOME MORE TEXT)
-[SPEAK](SomeoneElse, Hi im TEXT)
-[ClearActors]()";    //delete this
+        
         regex = new Regex (commandRegex);
+        Scene = s;
+        var stream = new StreamReader(filepath);
+        script = stream.ReadToEnd();
     }
     public Command? ReadNextCommand()
     {
@@ -34,6 +34,7 @@ public class ScriptParser
         {
             return null;
         }
+        index += match.Groups[0].Length;
         return new Command
         {
             CommandName = match.Groups[1].Value,
@@ -41,19 +42,42 @@ public class ScriptParser
         };
 
     }
-    
+    public void Next()
+    {
+        var nextCommand = ReadNextCommand();
+        if(nextCommand.HasValue)
+        {
+            ExecuteCommand(nextCommand.Value);
+        }
+        else
+        {
+            Debug.Log("There was a problem getting next command");
+        }
+    }
     public void ExecuteCommand(Command c)
     {
         switch(c.CommandName)
         {
-            case "DISPLAY":
-                Scene.DisplayActor(c.Args[0], float.Parse(c.Args[1]), float.Parse(c.Args[2]));
+            case "display":
+                Scene.Display(c.Args[0], c.Args[1], c.Args[2]);
+                Debug.Log("Display Invoked on: "+ c.Args[2]);
                 break;
-            case "SPEAK":
-                DialogueSystem.Say(c.Args[1], c.Args[0]);
+            case "say":
+                Scene.Say(c.Args[0], c.Args[1]);
+                Debug.Log("Say Invoked");
+                Debug.Log("speaker: " + c.Args[1]);
+                Debug.Log("Speech: "+ c.Args[0]);
                 break;
-            case "CLEARACTORS":
-                Scene.ClearScene();
+            case "expression":
+                Scene.Expression(c.Args[0], c.Args[1]);
+                Next();
+                break;
+            case "delete":
+                Scene.Delete(c.Args[0]);
+                break;
+            case "load":
+                Scene.Say("", "");
+                SceneManager.LoadScene(c.Args[0]);
                 break;
         }
 

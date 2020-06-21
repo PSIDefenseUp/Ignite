@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 6580230989124821237}
   - component: {fileID: 3568125083646476592}
   - component: {fileID: 5057590494374980287}
-  - component: {fileID: 1634785691287584336}
   - component: {fileID: 3214391234598804021}
   - component: {fileID: 1709644511202038841}
   - component: {fileID: 8776663672454884166}
@@ -124,8 +123,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7516624447451515919, guid: 8780270b9e830d84ca0fd6b4f61f3312,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: e624b10cf024acc44b8d42728399e687, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,22 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HasNotFinished: 0
---- !u!114 &1634785691287584336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6580230989124821244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0925827b94ae8c48b95ef6e0123841a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Frames: []
-  CurrentFrame: 0
-  Framerate: 16
-  Loop: 1
 --- !u!114 &3214391234598804021
 MonoBehaviour:
   m_ObjectHideFlags: 0
