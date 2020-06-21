@@ -37,11 +37,16 @@ public class FireAction : IAction
 
 	public void Perform(GameObject actor)
 	{
+		var pushReflectors = Object.FindObjectsOfType<BulletReflector>()
+			.Where(reflector => reflector.PushesBulletBack)
+			.Select(reflector => reflector.GetComponent<Position>());
+
 		foreach (var bullet in bulletData)
 		{
-			// TODO: animation?
-
-			bullet.Instantiate();
+			if (!pushReflectors.Any(reflector => reflector.Value.Equals(bullet.Position)))
+			{
+				bullet.Instantiate();
+			}
 		}
 	}
 }
