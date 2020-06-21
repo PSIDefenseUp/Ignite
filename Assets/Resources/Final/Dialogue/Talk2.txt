@@ -17,7 +17,7 @@
 [expression](Neutral|Yukari)
 [say](Yukari|Hm hm~ A stubborn little girl. Well, I won’t stop you now, but what’s to say someone else won’t?)
 [delete](Yukari)
-[display](Neutral|Hayami)
+[display](Neutral|Hayami|Right)
 [say] (Hayami|Hm? Who’s there?!)
 
 [expression](Nervous|Marisa)

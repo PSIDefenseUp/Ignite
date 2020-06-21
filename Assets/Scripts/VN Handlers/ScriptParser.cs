@@ -34,7 +34,8 @@ public class ScriptParser
         {
             return null;
         }
-        index += match.Groups[0].Length;
+        // Debug.Log("matches groups value: " + match.Groups[0].Value);
+        index += match.Groups[0].Value.Length;
         return new Command
         {
             CommandName = match.Groups[1].Value,
@@ -47,7 +48,14 @@ public class ScriptParser
         var nextCommand = ReadNextCommand();
         if(nextCommand.HasValue)
         {
+            Debug.Log(nextCommand.Value.CommandName + "Invoked");
+            var args = nextCommand.Value.Args;
+            foreach (string s in args)
+            {
+                Debug.Log(s);
+            }
             ExecuteCommand(nextCommand.Value);
+
         }
         else
         {
@@ -59,23 +67,26 @@ public class ScriptParser
         switch(c.CommandName)
         {
             case "display":
+            case "Display":
                 Scene.Display(c.Args[0], c.Args[1], c.Args[2]);
-                Debug.Log("Display Invoked on: "+ c.Args[2]);
+                Next();
                 break;
             case "say":
+            case "Say":
                 Scene.Say(c.Args[0], c.Args[1]);
-                Debug.Log("Say Invoked");
-                Debug.Log("speaker: " + c.Args[1]);
-                Debug.Log("Speech: "+ c.Args[0]);
                 break;
             case "expression":
+            case "Expression":
                 Scene.Expression(c.Args[0], c.Args[1]);
                 Next();
                 break;
             case "delete":
+            case "Delete":
                 Scene.Delete(c.Args[0]);
+                Next();
                 break;
             case "load":
+            case "Load":
                 Scene.Say("", "");
                 SceneManager.LoadScene(c.Args[0]);
                 break;
