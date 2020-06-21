@@ -50,4 +50,9 @@ public class Position : MonoBehaviour
 
 		return ret;
 	}
+
+	public int DistanceTo(int2 other)
+	{
+		return Mathf.Abs(other.x - Value.x) + Mathf.Abs(other.y - Value.y);
+	}
 }

@@ -8,12 +8,6 @@ public class MapToWorldPositionSystem
 
 		foreach (var position in mapPositions)
 		{
-			var isBackgroundTile = position.GetComponent<BackgroundTile>() != null;
-			if (isBackgroundTile)
-			{
-				continue;
-			}
-
 			var isDecal = position.GetComponent<Decal>() != null;
 			if (isDecal)
 			{
