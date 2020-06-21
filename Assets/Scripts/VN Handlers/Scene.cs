@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Scene : MonoBehaviour
 {    
-    private List<Object> actors;
+    private List<GameObject> actors;
     private GameObject newActor;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class Scene : MonoBehaviour
     }
     public void ClearScene()
     {
-        foreach(Object actor in actors)
+        foreach(GameObject actor in actors)
         {
             Destroy(actor);
         }
