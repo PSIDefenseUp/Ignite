@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+[System.Serializable]
+public class Expression
+{
+    public string Name;
+    public Sprite Sprite;
+}
 public class Expressive : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Dictionary<string,Sprite> Expressions;
+    // public Dictionary<string,Sprite> Expressions;
+    public Expression[] Expressions;
     private Image myImage;
     void Start()
     {
@@ -18,8 +24,18 @@ public class Expressive : MonoBehaviour
     {
         
     }
-    public void ChangeExpression(string Name)
+    public bool ChangeExpression(string Name)
     {
-        myImage.sprite = Expressions[Name];
+        // myImage.sprite = Expressions[Name];
+        foreach (Expression e in Expressions)
+        {
+            if (e.Name == Name)
+            {
+                myImage.sprite = e.Sprite;
+                return true;
+            }
+        }
+        return false;
+
     }
 }
