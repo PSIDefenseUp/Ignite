@@ -9,7 +9,7 @@
 [delete](Marisa)
 [display](Neutral|Sen|left)
 [expression](Surprised|Sen)
-[say] (Sen| Oh sh*t, Lady Yukari...)
+[say] (Sen| Oh hell, Lady Yukari...)
 [delete](Yukari)
 [display](Neutral|Hayami|right)
 [expression](Annoyed|Hayami) 
@@ -61,7 +61,7 @@
 [say] (Marisa|Reimu!!)
 
 [expression](Surprised|Reimu) 
-[say](Reimu| (Marisa?! What are you doing here?!)
+[say](Reimu|Marisa?! What are you doing here?!)
 
 [expression](Bashful|Marisa) 
 [say](Marisa| I came to see you!! I really wanted to play with you again.)
@@ -135,7 +135,7 @@
 [say](Sen|It’s a long way from here to there, so I was thinking, maybe I can uh... escort you home...)
 
 [expression](Smile|Hayami)
-[say]( Hayami|An escort would certainly put my mind at ease on the journey back.) I accept your offer~)
+[say]( Hayami|An escort would certainly put my mind at ease on the journey back. I accept your offer~)
 
 [expression](Surprised|Sen)
 [say](Sen| Y-you do?)

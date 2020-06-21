@@ -53,7 +53,7 @@
 [Expression] (Happy|Marisa)
 [say](Marisa|Sweet! Thanks a lot, miss!)
 
-[Expression] (Nervous) Sen| ....)
+[Expression] (Nervous|Sen)[say](Sen| ...)
 
 [say](Sen|I hope she’s not mad...)
 [load](talk 10)

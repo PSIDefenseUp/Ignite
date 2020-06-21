@@ -4,7 +4,7 @@
 
 [Expression](Neutral|Hayami)[say](Hayami|A forest huh... do be careful, my child.)
 
-[Expression](Happy|Marisa)[say](Marisa|Bah!) Careful is my middle name!)
+[Expression](Happy|Marisa)[say](Marisa|Bah! Careful is my middle name!)
 
 [Expression](Nervous|Marisa)[say](Marisa|... It’s a bit spooky though...)
 [load](Level5)

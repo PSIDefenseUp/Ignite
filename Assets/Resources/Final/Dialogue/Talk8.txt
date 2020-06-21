@@ -30,8 +30,8 @@
 [say](Yukari|Oh would you look at that A kitsune! Good luck~)
 [delete](Yukari)
 [display](Nervous|Marisa|Left)
-[Expression] (Nervous|Marisa)[say]
-(Marisa|...How does she do that?)
+[Expression] (Nervous|Marisa)
+[say](Marisa|...How does she do that?)
 
 [say](Sen|Ah! I knew it! A human child!)
 
@@ -44,8 +44,8 @@
 [Expression](Grin|Sen)
 [say](Sen|Uh- Th-That’s right! I haven’t had dinner so I’m real hungry right now! You best go away before I catch you for my next meal!)
 
-[Expression](Angry|Marisa)[say]
-(Marisa|No thank you! Get out of my way, I’m going to the shrine!)
+[Expression](Angry|Marisa)
+[say](Marisa|No thank you! Get out of my way, I’m going to the shrine!)
 
 [Expression](Surprised|Sen)
 [say](Sen|Um… hold on a second there... What a pain...)
