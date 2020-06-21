@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2a6f637e5b7ce1d41831e801d72e5449
+  - enabled: 1
     path: Assets/Scenes/ControlsMenu.unity
     guid: d972f24a52d000c4db91b421cb31a092
   - enabled: 1
@@ -47,4 +50,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NitoriBattle.unity
     guid: 5d9a396deb6b22c4d89d9c84ba55ddbf
+  - enabled: 1
+    path: Assets/Scenes/credits.unity
+    guid: b84d7eb18de3f154bb980278e09dce95
+  - enabled: 1
+    path: Assets/Scenes/FoxBattle.unity
+    guid: 01f27a5c14317004b85d314f02de2964
+  - enabled: 1
+    path: Assets/Scenes/Talk1.unity
+    guid: 3c9dde2de5449c847b488c0966280ac3
+  - enabled: 1
+    path: Assets/Scenes/Talk2.unity
+    guid: de1ca3dde69f7984eb52c78254283531
+  - enabled: 1
+    path: Assets/Scenes/Talk3.unity
+    guid: 1ffcc3329013d7646a69be67e790dc2a
+  - enabled: 1
+    path: Assets/Scenes/Talk4.unity
+    guid: ce429971b00323d48b99a8fd87d85ec1
+  - enabled: 1
+    path: Assets/Scenes/Talk5.unity
+    guid: 9ff7c1dd005ef464ba6a57dba0397085
+  - enabled: 1
+    path: Assets/Scenes/Talk6.unity
+    guid: 2a034b1574c184448969c55a82cbd9bd
+  - enabled: 0
+    path: Assets/Scenes/VNtest.unity
+    guid: daa66f3f96240a54ea6b6a6b46114001
   m_configObjects: {}
