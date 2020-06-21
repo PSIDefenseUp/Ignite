@@ -7,15 +7,15 @@ public class BulletData
 	public float Rotation;
 	public int Damage;
 	public Team Team;
-	public Sprite Sprite;
+	public Sprite[] Sprites;
 
-	public BulletData(int2 position, float rotation, int damage, Team team, Sprite sprite)
+	public BulletData(int2 position, float rotation, int damage, Team team, params Sprite[] sprites)
 	{
 		this.Position = position;
 		this.Rotation = rotation;
 		this.Damage = damage;
 		this.Team = team;
-		this.Sprite = sprite;
+		this.Sprites = sprites;
 	}
 
 	public GameObject Instantiate()
@@ -31,8 +31,8 @@ public class BulletData
 		var bulletComponent = bullet.GetComponent<Bullet>();
 		bulletComponent.Init(Damage, Team);
 
-		var bulletSprite = bullet.GetComponent<SpriteRenderer>();
-		bulletSprite.sprite = Sprite;
+		var bulletSprite = bullet.GetComponent<SpriteAnimator>();
+		bulletSprite.Frames = Sprites;
 
 		Object.Instantiate(bullet);
 

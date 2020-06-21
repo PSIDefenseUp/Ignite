@@ -14,14 +14,17 @@ public class NeetoriThinker : Thinker
 
 	public void Start()
 	{
-		bulletSprite = bulletSprite ?? Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
+		bulletSprite = bulletSprite ?? Resources.Load<Sprite>("Final/Enemy_Bullet");
 		turretPrefab = turretPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/Nitori/NitoriTurret");
 		wallPrefab = wallPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/Nitori/NitoriWall");
 	}
 
 	public void OnDestroy()
 	{
-		GameState.Instance.StageWon = true;
+		if (GetComponent<Health>().Value <= 0)
+		{
+			GameState.Instance.StageWon = true;
+		}
 	}
 
 	public override void Think()

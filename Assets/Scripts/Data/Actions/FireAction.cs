@@ -13,13 +13,14 @@ public class FireAction : IAction
 
 	public bool CanPerform(GameObject actor)
 	{
-		// can fire so long as at least one bullet isn't being spawned in a wall
+		// can fire so long as at least one bullet isn't being spawned in a reflector that pushes
 		var reflectors = Object.FindObjectsOfType<BulletReflector>();
 
-		return bulletData.Any(bullet => {
+		return bulletData.Any(bullet =>
+		{
 			foreach (var reflector in reflectors)
 			{
-				if (reflector.GetComponent<Position>().Value.Equals(bullet.Position))
+				if (reflector.GetComponent<Position>().Value.Equals(bullet.Position) && reflector.PushesBulletBack)
 				{
 					return false;
 				}

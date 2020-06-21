@@ -10,7 +10,7 @@ public class NitoriTurretThinker : Thinker
 
 	public void Start()
 	{
-		bulletSprite = bulletSprite ?? Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
+		bulletSprite = bulletSprite ?? Resources.Load<Sprite>("Final/Enemy_Bullet");
 	}
 
 	public override void Think()

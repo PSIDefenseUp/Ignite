@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -8011056892909380409}
   - component: {fileID: -6836232864712104220}
   - component: {fileID: -5442962684563880881}
+  - component: {fileID: -2350055973127021120}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -64,9 +65,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Value:
-    x: 5
-    y: 3
-  Rotation: 0
+    x: 12
+    y: 4
+  Rotation: 270
 --- !u!114 &8411449643456811650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +133,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fde91d0457293a741939577968e0f1fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 92e49c0c3d2dc4f4bb07d49355e1146e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -168,3 +169,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HasNotFinished: 0
+--- !u!114 &-2350055973127021120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220745958082529045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0925827b94ae8c48b95ef6e0123841a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Frames: []
+  CurrentFrame: 0
+  Framerate: 12
+  Loop: 1

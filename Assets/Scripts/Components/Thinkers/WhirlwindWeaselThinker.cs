@@ -9,13 +9,14 @@ public class WhirlwindWeaselThinker : EnemyThinker
     // Start is called before the first frame update
 	private static GameObject whirlwindPrefab;
 	private static GameObject deployedWeaselPrefab;
-    private static Sprite bulletSprite;
+	private static Sprite[] bulletSprites;
+	private bool hasTeleported = false;
+
 	public void Start()
 	{
-		bulletSprite = bulletSprite ?? Resources.Load<Sprite>("Dev/Sprites/EnemyBullet");
+		bulletSprites = bulletSprites ?? Resources.LoadAll<Sprite>("Final/Enemy_Bullet");
 		whirlwindPrefab = whirlwindPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/Whirlwind");
 		deployedWeaselPrefab = deployedWeaselPrefab ?? Resources.Load<GameObject>("Prefabs/Enemies/DeployedWeasel");
-
 	}
 
 	private bool AreWithinDistance(int2 a, int2 b, int distance)
@@ -25,6 +26,11 @@ public class WhirlwindWeaselThinker : EnemyThinker
 
 	public override void Think()
 	{
+		if (hasTeleported)
+		{
+			// time to turn into a deployed nerd
+		}
+
 		var actor = GetComponent<Actor>();
 		var position = GetComponent<Position>();
 		var bullets = FindObjectsOfType<Bullet>()
@@ -45,40 +51,42 @@ public class WhirlwindWeaselThinker : EnemyThinker
 
 			foreach (var bullet in bullets)
 			{
-				if(rightPos.Equals(bullet.Value))
+				if (rightPos.Equals(bullet.Value))
 				{
 					right.Add(bullet);
 				}
-				if(leftPos.Equals(bullet.Value))
+				if (leftPos.Equals(bullet.Value))
 				{
 					left.Add(bullet);
 				}
-				if(upPos.Equals(bullet.Value))
+				if (upPos.Equals(bullet.Value))
 				{
 					up.Add(bullet);
 				}
-				if(downPos.Equals(bullet.Value))
+				if (downPos.Equals(bullet.Value))
 				{
 					down.Add(bullet);
 				}
-				if(position.Value.Equals(bullet.Value))
+				if (position.Value.Equals(bullet.Value))
 				{
 					standing.Add(bullet);
 				}
 			}
+
 			int2 destination = position.Value;
 			var curr = standing;
-			if(up.Count >= standing.Count && up.Count >= left.Count && up.Count >= right.Count && up.Count >= down.Count)
+
+			if (up.Count >= standing.Count && up.Count >= left.Count && up.Count >= right.Count && up.Count >= down.Count)
 			{
 				destination = upPos;
 				curr = up;
 			}
-			else if(down.Count >= standing.Count && down.Count >= left.Count && down.Count >= right.Count)
+			else if (down.Count >= standing.Count && down.Count >= left.Count && down.Count >= right.Count)
 			{
 				destination = downPos;
 				curr = down;
 			}
-			else if(right.Count >= standing.Count && right.Count >= left.Count)
+			else if (right.Count >= standing.Count && right.Count >= left.Count)
 			{
 				destination = rightPos;
 				curr = right;
@@ -88,15 +96,17 @@ public class WhirlwindWeaselThinker : EnemyThinker
 				destination = leftPos;
 				curr = left;
 			}
-            var reflectDirections = new float[]{0, 90, 180, 270};
-            foreach(var bullet in curr)
-				{
-					bullet.Rotation = reflectDirections.RandomValue();
-					var bulletOfTheBullet = bullet.GetComponent<Bullet>();
-					bulletOfTheBullet.Team = Team.ENEMY;
-					bulletOfTheBullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
 
-				}
+			var reflectDirections = new float[] {0, 90, 180, 270};
+			foreach (var bullet in curr)
+			{
+				bullet.Rotation = reflectDirections.RandomValue();
+				var bulletOfTheBullet = bullet.GetComponent<Bullet>();
+				bulletOfTheBullet.Team = Team.ENEMY;
+				bulletOfTheBullet.GetComponent<SpriteAnimator>().Frames = bulletSprites;
+
+			}
+
 			actor.SetAction(new TurnMoveAction(destination-position.Value));
 		}
 
@@ -104,12 +114,12 @@ public class WhirlwindWeaselThinker : EnemyThinker
 		{
 			var player = FindObjectOfType<Player>();
 
-			if(player != null)
+			if (player != null)
 			{
 				var playerPosition = player.GetComponent<Position>();
 				var behindPlayer = playerPosition.GetRelativePosition(new int2 (0, -1));
 
-				if(AreWithinDistance(playerPosition.Value, position.Value, 4) && CanCreateWeasel(behindPlayer))
+				if (AreWithinDistance(playerPosition.Value, position.Value, 4) && CanCreateWeasel(behindPlayer))
 				{
 					//create whirlwind here
 					var whirlwind = Instantiate(whirlwindPrefab);

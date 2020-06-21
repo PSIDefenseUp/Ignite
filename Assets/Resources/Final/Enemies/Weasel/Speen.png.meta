@@ -1,67 +1,49 @@
 fileFormatVersion: 2
-guid: 8b13307169f9067498bebc70e4ec5ee3
+guid: c051cff1be199ff4380c33c0c4144990
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8407887560924575583
-    second: Weasel_Tornado_0
+      213: -3494580732859084298
+    second: Speen_0
   - first:
-      213: -2488153753541275843
-    second: Weasel_Tornado_1
+      213: 2863082836028535482
+    second: Speen_1
   - first:
-      213: 8769903466794665939
-    second: Weasel_Tornado_2
+      213: -8944731241848049650
+    second: Speen_2
   - first:
-      213: -841311408582007662
-    second: Weasel_Tornado_3
+      213: 6093563055698575975
+    second: Speen_3
   - first:
-      213: -5255875672502394791
-    second: Weasel_Tornado_4
+      213: -7494363691189497534
+    second: Speen_4
   - first:
-      213: 8727112733259321240
-    second: Weasel_Tornado_5
+      213: 3766580413760245819
+    second: Speen_5
   - first:
-      213: -2782696553697935148
-    second: Weasel_Tornado_6
+      213: 4740716798116689872
+    second: Speen_6
   - first:
-      213: -3353115007743846891
-    second: Weasel_Tornado_7
+      213: 4234787423539135517
+    second: Speen_7
   - first:
-      213: 3457263843369871239
-    second: Weasel_Tornado_8
+      213: 8782508388373949154
+    second: Speen_8
   - first:
-      213: -1942230807726137858
-    second: Weasel_Tornado_9
+      213: 5089852901807167836
+    second: Speen_9
   - first:
-      213: -4141152710059981121
-    second: Weasel_Tornado_0
+      213: 376113293827975230
+    second: Speen_10
   - first:
-      213: -1584910880418614848
-    second: Weasel_Tornado_1
+      213: -296811471978693512
+    second: Speen_11
   - first:
-      213: 7165142968638725801
-    second: Weasel_Tornado_2
+      213: -8869062443320741279
+    second: Speen_12
   - first:
-      213: 4179025701514467744
-    second: Weasel_Tornado_3
-  - first:
-      213: 6054129038768395975
-    second: Weasel_Tornado_4
-  - first:
-      213: -8938634630495017189
-    second: Weasel_Tornado_5
-  - first:
-      213: -4912788114476069032
-    second: Weasel_Tornado_6
-  - first:
-      213: -1892849139224477760
-    second: Weasel_Tornado_7
-  - first:
-      213: -1600012974105387984
-    second: Weasel_Tornado_8
-  - first:
-      213: -7501202711164814072
-    second: Weasel_Tornado_9
+      213: 8471313284482209142
+    second: Speen_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -144,18 +126,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -171,7 +141,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Weasel_Tornado_0
+      name: Speen_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1920ba651c08fc0800000000000000
+      internalID: -3494580732859084298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speen_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2bffb8ba6bbb720800000000000000
+      internalID: 2863082836028535482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speen_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00fe46a35eedd380800000000000000
+      internalID: -8944731241848049650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speen_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7628b57605fa09450800000000000000
+      internalID: 6093563055698575975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speen_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 500
+        width: 250
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24190110eebaef790800000000000000
+      internalID: -7494363691189497534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speen_5
       rect:
         serializedVersion: 2
         x: 0
@@ -185,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb68a3c0d8ba786c0800000000000000
-      internalID: -4141152710059981121
+      spriteID: b309f1c1ee4954430800000000000000
+      internalID: 3766580413760245819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weasel_Tornado_1
+      name: Speen_6
       rect:
         serializedVersion: 2
         x: 250
@@ -206,14 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c13ff393f3410ae0800000000000000
-      internalID: -1584910880418614848
+      spriteID: 0d7f87c7fc86ac140800000000000000
+      internalID: 4740716798116689872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weasel_Tornado_2
+      name: Speen_7
       rect:
         serializedVersion: 2
         x: 500
@@ -227,14 +302,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ae59924193bf6360800000000000000
-      internalID: 7165142968638725801
+      spriteID: d14875f89bcf4ca30800000000000000
+      internalID: 4234787423539135517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weasel_Tornado_3
+      name: Speen_8
       rect:
         serializedVersion: 2
         x: 750
@@ -248,14 +323,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a95ffdebb1eef930800000000000000
-      internalID: 4179025701514467744
+      spriteID: 2eaeae5f8dcb1e970800000000000000
+      internalID: 8782508388373949154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weasel_Tornado_4
+      name: Speen_9
       rect:
         serializedVersion: 2
         x: 1000
@@ -269,14 +344,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c6da2cd846940450800000000000000
-      internalID: 6054129038768395975
+      spriteID: c59153b3f3ac2a640800000000000000
+      internalID: 5089852901807167836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weasel_Tornado_5
+      name: Speen_10
       rect:
         serializedVersion: 2
         x: 0
@@ -290,14 +365,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b17e658992793f380800000000000000
-      internalID: -8938634630495017189
+      spriteID: e382be94c09383500800000000000000
+      internalID: 376113293827975230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weasel_Tornado_6
+      name: Speen_11
       rect:
         serializedVersion: 2
         x: 250
@@ -311,14 +386,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85f84eb2d3542dbb0800000000000000
-      internalID: -4912788114476069032
+      spriteID: 87cf27fe98381ebf0800000000000000
+      internalID: -296811471978693512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weasel_Tornado_7
+      name: Speen_12
       rect:
         serializedVersion: 2
         x: 500
@@ -332,14 +407,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cffe139cbf3bb5e0800000000000000
-      internalID: -1892849139224477760
+      spriteID: 162fb17b2b2cae480800000000000000
+      internalID: -8869062443320741279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weasel_Tornado_8
+      name: Speen_13
       rect:
         serializedVersion: 2
         x: 750
@@ -353,29 +428,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03c9e626dac9bc9e0800000000000000
-      internalID: -1600012974105387984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weasel_Tornado_9
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 250
-        height: 250
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80df2d490ef56e790800000000000000
-      internalID: -7501202711164814072
+      spriteID: 6751c9e9c86209570800000000000000
+      internalID: 8471313284482209142
       vertices: []
       indices: 
       edges: []
