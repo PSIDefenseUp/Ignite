@@ -4,14 +4,28 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public Expressive Left;
-    public Expressive Right;
+    private Expressive Left;
+    private Expressive Right;
     private Expressive active;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        Left.gameObject.SetActive(false);
-        Right.gameObject.SetActive(false);
+        Expressive[] children = this.GetComponentsInChildren<Expressive>();
+        foreach(Expressive e in children)
+        {
+            if (e.gameObject.name == "Right")
+            {
+                Right = e;
+                Debug.Log("Right Set");
+            }
+            else
+            {
+                Left = e;
+                Debug.Log("Left Set");
+            }
+        }
+        Left.Deactivate();
+        Right.Deactivate();
     }
     public Character Instantiate(string expression, string side)
     {
@@ -23,24 +37,24 @@ public class Character : MonoBehaviour
         {
             ActivateLeft();
         }
-        Set(expression, active);
+        Set(expression);
         return this;
     }
     void ActivateLeft()
     {
-        Right.gameObject.SetActive(false);
-        Left.gameObject.SetActive(true);
+        Right.Deactivate();
+        Left.Activate();;
         active = Left;
     }
     void ActivateRight()
     {
-        Left.gameObject.SetActive(false);
-        Left.gameObject.SetActive(true);
+        Left.Deactivate();
+        Left.Activate();
         active = Right;
     }
-    void Set(string expression, Expressive e)
+    public void Set(string expression)
     {
-        if(!e.ChangeExpression(expression))
+        if(!active.ChangeExpression(expression))
         {
             Debug.Log("Not Found, Right Not Set to: " + expression);
         }

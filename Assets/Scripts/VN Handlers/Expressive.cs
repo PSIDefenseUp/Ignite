@@ -16,7 +16,17 @@ public class Expressive : MonoBehaviour
     private Image myImage;
     void Start()
     {
-        myImage = GetComponent<Image>();
+    }
+    public void Activate()
+    {
+    
+        myImage = myImage ?? GetComponent<Image>();
+        
+
+    }
+    public void Deactivate()
+    {
+        myImage = null;
     }
 
     // Update is called once per frame
