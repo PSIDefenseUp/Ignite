@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7493891622522422049}
   - component: {fileID: 948726092349055714}
   - component: {fileID: 2578184224936847591}
-  - component: {fileID: 1863550801822820849}
   - component: {fileID: -5134742661577853991}
+  - component: {fileID: 3389282896901234513}
   m_Layer: 0
   m_Name: Whirlwind
   m_TagString: Untagged
@@ -136,25 +136,6 @@ MonoBehaviour:
   PushesBulletBack: 0
   ChangesBulletTeam: 1
   ReflectedBulletTeam: 2
---- !u!95 &1863550801822820849
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7493891622522422062}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6720ac5726d629c4988f97fe02c330fa, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &-5134742661577853991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,3 +149,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Value: 6
+--- !u!114 &3389282896901234513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7493891622522422062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0925827b94ae8c48b95ef6e0123841a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Frames:
+  - {fileID: -8407887560924575583, guid: 8b13307169f9067498bebc70e4ec5ee3, type: 3}
+  - {fileID: -2488153753541275843, guid: 8b13307169f9067498bebc70e4ec5ee3, type: 3}
+  - {fileID: 8769903466794665939, guid: 8b13307169f9067498bebc70e4ec5ee3, type: 3}
+  - {fileID: -841311408582007662, guid: 8b13307169f9067498bebc70e4ec5ee3, type: 3}
+  - {fileID: -5255875672502394791, guid: 8b13307169f9067498bebc70e4ec5ee3, type: 3}
+  - {fileID: 8727112733259321240, guid: 8b13307169f9067498bebc70e4ec5ee3, type: 3}
+  - {fileID: -2782696553697935148, guid: 8b13307169f9067498bebc70e4ec5ee3, type: 3}
+  - {fileID: -3353115007743846891, guid: 8b13307169f9067498bebc70e4ec5ee3, type: 3}
+  - {fileID: 3457263843369871239, guid: 8b13307169f9067498bebc70e4ec5ee3, type: 3}
+  - {fileID: -1942230807726137858, guid: 8b13307169f9067498bebc70e4ec5ee3, type: 3}
+  CurrentFrame: 0
+  Framerate: 16
+  Loop: 1

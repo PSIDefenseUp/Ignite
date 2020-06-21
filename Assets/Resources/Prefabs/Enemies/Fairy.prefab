@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 3381360811040257791}
   - component: {fileID: -2100664194971549065}
   - component: {fileID: 6438366979707313520}
-  - component: {fileID: 3743134134356667898}
   - component: {fileID: -8519003407115777633}
+  - component: {fileID: 3743134134356667898}
   m_Layer: 0
   m_Name: Fairy
   m_TagString: Untagged
@@ -185,22 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HasNotFinished: 0
---- !u!114 &3743134134356667898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4915725573359048499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 489493102607f99429c7a3909cc00b9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Frames: []
-  CurrentFrame: 0
-  Framerate: 16
-  Loop: 1
 --- !u!114 &-8519003407115777633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +194,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 4915725573359048499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc71b44ec945b1f4ca88fd78699c2b1c, type: 3}
+  m_Script: {fileID: 11500000, guid: b0925827b94ae8c48b95ef6e0123841a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Frames: []
+  CurrentFrame: 0
+  Framerate: 16
+  Loop: 1
+--- !u!114 &3743134134356667898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4915725573359048499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09c64adac79f1a45889c8d58246fef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FlipUpSprite: 0

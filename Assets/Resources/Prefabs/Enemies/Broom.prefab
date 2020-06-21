@@ -194,7 +194,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5823146773675742436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 489493102607f99429c7a3909cc00b9f, type: 3}
+  m_Script: {fileID: 11500000, guid: b0925827b94ae8c48b95ef6e0123841a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Frames: []
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5823146773675742436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc71b44ec945b1f4ca88fd78699c2b1c, type: 3}
+  m_Script: {fileID: 11500000, guid: b09c64adac79f1a45889c8d58246fef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FlipUpSprite: 0

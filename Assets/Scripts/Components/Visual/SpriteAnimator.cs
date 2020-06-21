@@ -1,8 +1,6 @@
 using UnityEngine;
 public class SpriteAnimator : MonoBehaviour
 {
-
-	[HideInInspector]
 	public Sprite[] Frames;
 	[HideInInspector]
 	public int CurrentFrame = 0;
@@ -33,6 +31,6 @@ public class SpriteAnimator : MonoBehaviour
 			FrameProgress %= FrameTime;
 		}
 
-		renderer.sprite = Frames[CurrentFrame%Frames.Length];             
+		renderer.sprite = Frames[CurrentFrame%Frames.Length];
 	}
 }

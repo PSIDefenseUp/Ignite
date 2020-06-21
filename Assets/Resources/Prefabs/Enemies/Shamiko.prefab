@@ -194,7 +194,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7229972092117375009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 489493102607f99429c7a3909cc00b9f, type: 3}
+  m_Script: {fileID: 11500000, guid: b0925827b94ae8c48b95ef6e0123841a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Frames: []
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7229972092117375009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc71b44ec945b1f4ca88fd78699c2b1c, type: 3}
+  m_Script: {fileID: 11500000, guid: b09c64adac79f1a45889c8d58246fef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FlipUpSprite: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   - {fileID: 7287311509602349435, guid: 479d26745fed75846b5343a8679fb4f8, type: 3}
   - {fileID: 582150154330683626, guid: 479d26745fed75846b5343a8679fb4f8, type: 3}
   - {fileID: -7018334978159312832, guid: 479d26745fed75846b5343a8679fb4f8, type: 3}
-  FlipDownSprite: 0
+  FlipDownSprite: 1
   Down:
   - {fileID: 1726370447198517261, guid: 90453d5c81ef92a479777b2763488ac1, type: 3}
   - {fileID: 28279001571275146, guid: 90453d5c81ef92a479777b2763488ac1, type: 3}
