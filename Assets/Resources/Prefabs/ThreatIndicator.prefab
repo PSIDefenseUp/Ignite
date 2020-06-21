@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Value:
-    x: 21
-    y: 7
-  Rotation: 270
+    x: 17
+    y: 5
+  Rotation: 180
 --- !u!114 &4517144352100001064
 MonoBehaviour:
   m_ObjectHideFlags: 0
