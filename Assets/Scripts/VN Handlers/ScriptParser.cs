@@ -15,7 +15,7 @@ public class ScriptParser
     private Scene Scene;
     private string script;
     private int index;
-    private string commandRegex = "\\[(?<command>[A-Za-z]+)\\]\\((?<parameters>[\\w | .!?…~\"',]*)\\)"; //"[COMMANDNAME](ARGSLIST)"
+    private string commandRegex = "\\[(?<command>[A-Za-z]+)\\]\\((?<parameters>[\\w | .!?…~\"',-*]*)\\)"; //"[COMMANDNAME](ARGSLIST)"
     private Regex regex;
     public ScriptParser(string filepath, Scene s)
     {
