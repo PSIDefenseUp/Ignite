@@ -13,7 +13,10 @@ public class Scene : MonoBehaviour
     {
         actors = new Dictionary<string, Character>();
         script = new ScriptParser(ScriptPath , this);
-        script.Next();
+        while(!Dialogue.isSpeaking)
+        {
+            script.Next();
+        }
     }
     void Update()
     {
