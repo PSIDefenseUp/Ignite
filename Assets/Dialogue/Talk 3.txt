@@ -1,0 +1,10 @@
+[display](Neutral|Umbrella|Right)
+[display](Angry|Marisa|Left)
+[say](Marisa|I told you! I’m not going home, not until I see Reimu again!)
+
+[say](Umbrella|Ugh… well, at least I know you can hold your own to some degree....)
+
+[say](Umbrella|Fine, it seems I can’t change your mind on this matter, and I can’t force you to go home either.)
+
+[say](Umbrella|However, allow me to accompany you to the shrine, so I can make sure you make it there safely.)
+[load](talk4)
