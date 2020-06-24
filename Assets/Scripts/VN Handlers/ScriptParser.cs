@@ -23,8 +23,10 @@ public class ScriptParser
         
         regex = new Regex (commandRegex);
         Scene = s;
-        var stream = new StreamReader(filepath);
-        script = stream.ReadToEnd();
+        // var stream = new StreamReader(filepath);
+        // script = stream.ReadToEnd();
+
+        script = Resources.Load<TextAsset>(filepath).text;
     }
     public Command? ReadNextCommand()
     {

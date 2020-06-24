@@ -11,6 +11,7 @@ public class Scene : MonoBehaviour
     public GameObject CharacterLayer;
     void Awake()
     {
+
         script = new ScriptParser(ScriptPath , this);
     }
     void Start()

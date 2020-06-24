@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue: {fileID: 1659452723}
-  ScriptPath: Assets/Resources/Final/Dialogue/prologue.txt
+  ScriptPath: Final/Dialogue/prologue
   CharacterLayer: {fileID: 464571490}
 --- !u!1 &939898351
 GameObject:
