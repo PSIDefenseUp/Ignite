@@ -38,7 +38,7 @@
 [Expression](Neutral|Marisa)
 [say](Marisa|Are you the big bad yokai that’s going to try to eat me?)
 
-[Expression](Nervous Smile)
+[Expression](Nervous Smile|Sen)
 [say](Sen|W-wha..?)
 
 [Expression](Grin|Sen)

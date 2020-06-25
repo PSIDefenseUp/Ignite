@@ -6,8 +6,8 @@
 
 [Expression] (Neutral|Nitori)[Say](Nitori|I forgot to ask back there, but where are you going?)
 
-[Expression] (Neutral|Marisa)[Say](Marisa|Oh, I’m going to see a good friend of mine! Her name’s Reimu, she’s  real smart and real pretty!) 
+[Expression] (Neutral|Marisa)[Say](Marisa|Oh, I’m going to see a good friend of mine! Her name’s Reimu, she’s  real smart and real pretty!)
 [Say](Marisa|She lives at the Hakurei Shrine!)
 
 [Expression] (Confused|Nitori)[Say](Nitori|A good friend huh...)
-[load](level 9)
+[load](Level9)
