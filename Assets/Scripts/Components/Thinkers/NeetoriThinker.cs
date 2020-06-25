@@ -99,6 +99,7 @@ public class NeetoriThinker : Thinker
 					var wall = Instantiate(wallPrefab);
 					var wallPosition = wall.GetComponent<Position>();
 					wallPosition.Value = wallBase.Value;
+					wallPosition.Rotation = wallBase.Rotation;
 				}
 			}
 		}
